@@ -461,6 +461,9 @@ a {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .page-side-note strong {
@@ -572,6 +575,42 @@ a {
   background: rgba(223, 244, 234, 0.9);
 }
 
+.page-hero-visual.visual-card-bread {
+  background-image:
+    linear-gradient(135deg, rgba(255, 248, 237, 0.96) 0%, rgba(255, 244, 230, 0.84) 46%, rgba(255, 248, 237, 0.12) 100%),
+    url("assets/images/bread-crust.jpg");
+}
+
+.page-hero-visual.visual-card-liquid {
+  background-image:
+    linear-gradient(135deg, rgba(240, 249, 244, 0.96) 0%, rgba(232, 243, 238, 0.84) 46%, rgba(240, 249, 244, 0.12) 100%),
+    url("assets/images/oil-water.jpg");
+}
+
+.page-hero-visual.visual-card-water {
+  background-image:
+    linear-gradient(135deg, rgba(241, 249, 250, 0.96) 0%, rgba(231, 243, 245, 0.84) 46%, rgba(241, 249, 250, 0.16) 100%),
+    url("assets/images/water-bubbles.jpg");
+}
+
+.page-hero-visual.visual-card-fruit {
+  background-image:
+    linear-gradient(135deg, rgba(252, 249, 242, 0.96) 0%, rgba(248, 242, 230, 0.84) 46%, rgba(252, 249, 242, 0.12) 100%),
+    url("assets/images/sliced-apple.jpg");
+}
+
+.page-hero-visual.visual-card-books {
+  background-image:
+    linear-gradient(135deg, rgba(251, 245, 235, 0.96) 0%, rgba(243, 233, 216, 0.88) 46%, rgba(251, 245, 235, 0.18) 100%),
+    url("assets/images/books-shelf.jpg");
+}
+
+.page-hero-visual.visual-card-lab {
+  background-image:
+    linear-gradient(135deg, rgba(244, 249, 245, 0.96) 0%, rgba(232, 241, 235, 0.88) 46%, rgba(244, 249, 245, 0.14) 100%),
+    url("assets/images/female-lab.jpg");
+}
+
 .visual-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -633,20 +672,29 @@ a {
 }
 
 .visual-card-bread .visual-art {
-  background:
-    radial-gradient(circle at 32% 30%, rgba(104, 58, 21, 0.72) 0%, rgba(104, 58, 21, 0) 28%),
-    radial-gradient(circle at 68% 38%, rgba(104, 58, 21, 0.62) 0%, rgba(104, 58, 21, 0) 24%),
-    linear-gradient(180deg, #f4cc8d 0%, #d68a3b 100%);
+  background-image:
+    linear-gradient(180deg, rgba(84, 48, 20, 0.16) 0%, rgba(84, 48, 20, 0.3) 100%),
+    url("assets/images/bread-crust.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .visual-card-liquid {
   background: linear-gradient(180deg, rgba(233, 248, 241, 0.96) 0%, rgba(208, 236, 225, 0.9) 100%);
 }
 
+.visual-card-water {
+  background: linear-gradient(180deg, rgba(238, 248, 250, 0.98) 0%, rgba(214, 232, 237, 0.92) 100%);
+}
+
 .visual-card-liquid .visual-art {
-  background:
-    radial-gradient(circle at 22% 24%, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 24%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0 34%, rgba(68, 170, 136, 0.9) 34% 100%);
+  background-image:
+    linear-gradient(180deg, rgba(12, 37, 31, 0.1) 0%, rgba(12, 37, 31, 0.28) 100%),
+    url("assets/images/oil-water.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .visual-card-liquid .visual-art::after {
@@ -658,15 +706,30 @@ a {
   background: rgba(255, 255, 255, 0.26);
 }
 
+.visual-card-water .visual-art {
+  background-image:
+    linear-gradient(180deg, rgba(17, 49, 63, 0.08) 0%, rgba(17, 49, 63, 0.24) 100%),
+    url("assets/images/water-bubbles.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .visual-card-fruit {
   background: linear-gradient(180deg, rgba(245, 239, 230, 0.98) 0%, rgba(236, 223, 203, 0.92) 100%);
 }
 
+.visual-card-egg {
+  background: linear-gradient(180deg, rgba(252, 247, 238, 0.98) 0%, rgba(241, 231, 214, 0.92) 100%);
+}
+
 .visual-card-fruit .visual-art {
-  background:
-    radial-gradient(circle at 42% 44%, rgba(255, 244, 204, 0.9) 0%, rgba(255, 226, 164, 0.92) 22%, rgba(195, 120, 39, 0.96) 24%, rgba(195, 120, 39, 0) 38%),
-    radial-gradient(circle at 65% 60%, rgba(136, 74, 26, 0.84) 0%, rgba(136, 74, 26, 0) 22%),
-    linear-gradient(180deg, #f2d59b 0%, #ca8340 100%);
+  background-image:
+    linear-gradient(180deg, rgba(76, 55, 18, 0.1) 0%, rgba(76, 55, 18, 0.24) 100%),
+    url("assets/images/sliced-apple.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .visual-card-fruit .visual-art::before {
@@ -675,6 +738,15 @@ a {
   left: 22px;
   top: 18px;
   background: rgba(255, 255, 255, 0.24);
+}
+
+.visual-card-egg .visual-art {
+  background-image:
+    linear-gradient(180deg, rgba(89, 57, 21, 0.08) 0%, rgba(89, 57, 21, 0.22) 100%),
+    url("assets/images/egg-food.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .stat-band,

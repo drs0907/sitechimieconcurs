@@ -314,8 +314,8 @@ const renderAdditiveResult = (selectedAdditive, matches, query) => {
 
   updateAdditiveMeta(
     matches.length === 1
-      ? `Am gasit un rezultat pentru "${query}".`
-      : `Am gasit ${matches.length} rezultate pentru "${query}". Este afisat primul rezultat.`
+      ? `Am găsit un rezultat pentru "${query}".`
+      : `Am găsit ${matches.length} rezultate pentru "${query}". Este afișat primul rezultat.`
   );
 
   requestScrollMotionUpdate();
@@ -329,22 +329,22 @@ const runAdditiveSearch = (rawQuery) => {
   }
 
   if (!additivesData.length) {
-    renderAdditiveEmptyState("Date indisponibile", "Fisierul cu aditivi nu a fost incarcat corect pe aceasta pagina.");
-    updateAdditiveMeta("Nu exista date disponibile pentru cautare.");
+    renderAdditiveEmptyState("Date indisponibile", "Fișierul cu aditivi nu a fost încărcat corect pe această pagină.");
+    updateAdditiveMeta("Nu există date disponibile pentru căutare.");
     return;
   }
 
   if (!query) {
-    renderAdditiveEmptyState("Introdu un cod sau un nume", "Poti incepe cu un exemplu simplu, cum ar fi E100 sau E330.");
-    updateAdditiveMeta(`Baza de date contine ${additivesData.length} aditivi.`);
+    renderAdditiveEmptyState("Introdu un cod sau un nume", "Poți începe cu un exemplu simplu, cum ar fi E100 sau E330.");
+    updateAdditiveMeta(`Baza de date conține ${additivesData.length} aditivi.`);
     return;
   }
 
   const matches = findAdditiveMatches(query);
 
   if (!matches.length) {
-    renderAdditiveEmptyState("Nu am gasit acest aditiv", `Nu exista potriviri pentru "${query}". Incearca un alt cod sau un alt nume.`);
-    updateAdditiveMeta(`Nu exista potriviri pentru "${query}".`);
+    renderAdditiveEmptyState("Nu am găsit acest aditiv", `Nu există potriviri pentru "${query}". Încearcă un alt cod sau un alt nume.`);
+    updateAdditiveMeta(`Nu există potriviri pentru "${query}".`);
     return;
   }
 
