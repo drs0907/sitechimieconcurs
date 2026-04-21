@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chimia în alimentație | Food Lab</title>
+  <title>Chimia în alimentație</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
 <body data-page="home">
   <header class="navbar">
     <div class="nav-inner">
-      <a class="logo" href="index.html">
-        <span class="logo-icon">+</span>
-        <span>Food Lab</span>
-      </a>
       <nav>
         <a class="nav-link" data-page="home" href="index.html">Acasă</a>
         <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
@@ -58,31 +54,30 @@
               Chimia în alimentație
             </span>
           </h1>
-          <p class="hero-lead">Acest site este o prezentăre informativă despre felul
-            în care chimia apare în alimentele de zi cu zi.</p>
+          <p class="hero-lead">Cea mai complexă bază de date despre aditivii alimentari și procesele chimice din bucătăria ta, explicată pe înțelesul tuturor.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="concepte.html">Începe cu noțiunile de bază</a>
-            <a class="button button-secondary" href="resurse.html">Vezi bibliografia</a>
+            <a class="button button-primary" href="aditivi.html">Deschide Exploratorul de Aditivi</a>
+            <a class="button button-secondary" href="concepte.html">Vezi noțiuni de bază</a>
           </div>
           <div class="hero-tags">
-            <span>explicații simple</span>
+            <span>bază de date interactivă</span>
+            <span>reacții explicate</span>
             <span>exemple reale</span>
-            <span>termeni ușor de urmărit</span>
           </div>
         </div>
         <aside class="hero-panel" data-parallax data-parallax-speed="0.06" data-rotate-speed="0.002">
-          <div class="panel-kicker">Harta site-ului</div>
+          <div class="panel-kicker">Funcție Principală</div>
           <div class="panel-item">
-            <strong>4 pagini principale</strong>
-            <span>concepte, reacții, aditivi, bibliografie</span>
+            <strong>Căutare Aditivi (E-uri)</strong>
+            <span>Identifică rapid orice substanță după cod sau nume.</span>
           </div>
           <div class="panel-item">
-            <strong>Introducere clară</strong>
-            <span>pentru persoane fără experiență anterioară</span>
+            <strong>Reacții Chimice</strong>
+            <span>Vezi ce se întâmplă când gătești, explicat detaliat.</span>
           </div>
           <div class="panel-item">
-            <strong>Exemple reale</strong>
-            <span>paine, ou, fructe, emulsii, coacere</span>
+            <strong>Exemple Practice</strong>
+            <span>De la coacerea pâinii la oxidarea fructelor.</span>
           </div>
         </aside>
       </div>
@@ -130,27 +125,37 @@
           <h2>Imagini magnifice despre subiectul parcurs</h2>
         </div>
         <div class="visual-gallery">
-          <article class="visual-card visual-card-bread" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002">
+          <article class="visual-card visual-card-bread clickable-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002" onclick="openVisualDetail('bread')">
             <span class="visual-kicker">Textura și coacere</span>
             <h3>Suprafete rumenite</h3>
-            <p>Un cadru inspirat din coacere, gândit să sustina partea despre reacție termica și schimbare de culoare.</p>
+            <p>Apasă pentru a vedea cum reacția termică schimbă structura pâinii.</p>
             <div class="visual-art" aria-hidden="true"></div>
           </article>
-          <article class="visual-card visual-card-liquid" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.002">
+          <article class="visual-card visual-card-liquid clickable-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.002" onclick="openVisualDetail('liquid')">
             <span class="visual-kicker">Apa și emulsii</span>
             <h3>Straturi și stabilitate</h3>
-            <p>Aspectul de laborator alimentar rămâne curat și discret, fără să pară o galerie separată de conținut.</p>
+            <p>Descoperă chimia din spatele amestecurilor de apă și ulei.</p>
             <div class="visual-art" aria-hidden="true"></div>
           </article>
-          <article class="visual-card visual-card-fruit" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002">
-            <span class="visual-kicker">Oxidare și pigmenti</span>
+          <article class="visual-card visual-card-fruit clickable-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002" onclick="openVisualDetail('fruit')">
+            <span class="visual-kicker">Oxidare și pigmenți</span>
             <h3>Fructe și schimbări vizibile</h3>
-            <p>Cardul sugerează procese observabile rapid, ca închiderea la culoare sau transformarea aspectului la aer.</p>
+            <p>Vezi de ce fructele își schimbă culoarea în contact cu aerul.</p>
             <div class="visual-art" aria-hidden="true"></div>
           </article>
         </div>
       </div>
     </section>
+
+    <!-- Overlay pentru detalii vizuale -->
+    <div id="detailOverlay" class="detail-overlay">
+      <div class="detail-content">
+        <button class="close-detail" onclick="closeDetail()">&times;</button>
+        <div id="detailBody">
+          <!-- Continutul se incarca din JS -->
+        </div>
+      </div>
+    </div>
     <section class="section">
       <div class="container highlight-grid">
         <article class="highlight-strip" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
@@ -256,7 +261,6 @@
   <footer class="footer">
     <div class="container footer-grid" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001">
       <div>
-        <a class="logo" href="index.html"><span class="logo-icon">+</span> Food Lab</a>
       </div>
       <div class="footer-links">
         <a href="concepte.html">Concepte</a>
@@ -272,6 +276,7 @@
     </div>
   </footer>
 
+  <script src="additives-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

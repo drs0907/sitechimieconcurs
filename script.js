@@ -1,3 +1,251 @@
+const visualDetails = {
+  bread: {
+    title: "Știința Coacerii",
+    description: "Când pâinea intră în cuptor, are loc o transformare dramatică. Căldura determină evaporarea apei de la suprafață, permițând temperaturii să crească peste 140°C, punctul unde începe magia chimică.",
+    image: "assets/images/bread-crust.jpg",
+    examples: [
+      { name: "Expansiunea gazelor", text: "Dioxidul de carbon produs de drojdie se dilată rapid, făcând pâinea să crească." },
+      { name: "Formarea crustei", text: "Reacția Maillard creează sute de arome noi și culoarea brună specifică." }
+    ]
+  },
+  liquid: {
+    title: "Chimia Lichidelor",
+    description: "Apa și uleiul sunt inamici naturali din cauza polarității lor diferite. Pentru a le uni, avem nevoie de molecule 'amfibii' numite emulsificatori, care au un capăt ce iubește apa și unul ce iubește grăsimea.",
+    image: "assets/images/water-bubbles.jpg",
+    examples: [
+      { name: "Tensiunea superficială", text: "Forța care face picăturile de apă să fie sferice." },
+      { name: "Micelii", text: "Structuri microscopice unde uleiul este 'împachetat' de emulsificator pentru a sta în apă." }
+    ]
+  },
+  fruit: {
+    title: "Biochimia Fructelor",
+    description: "Fructele sunt organisme vii care respiră. Atunci când tăiem un măr, distrugem celulele și eliberăm enzime care, în contact cu oxigenul, încep un proces de auto-apărare vizibil prin schimbarea culorii.",
+    image: "assets/images/sliced-apple.jpg",
+    examples: [
+      { name: "Polifenoloxidaza", text: "Enzima principală responsabilă pentru 'ruginirea' fructelor." },
+      { name: "Antioxidanții naturali", text: "Vitamina C poate opri acest proces prin sacrificarea propriilor electroni." }
+    ]
+  }
+};
+
+window.openVisualDetail = (key) => {
+  const data = visualDetails[key];
+  if (!data) return;
+
+  const overlay = document.getElementById("detailOverlay");
+  const body = document.getElementById("detailBody");
+
+  const imageHtml = data.image 
+    ? `<img src="${data.image}" alt="${data.title}">`
+    : `<div class="detail-image-placeholder-text">Loc gol pentru imagine<br>(${data.title})</div>`;
+
+  body.innerHTML = `
+    <div class="detail-header">
+      <h2>${data.title}</h2>
+      <span class="section-tag">Ghid Vizual Detaliat</span>
+    </div>
+    <div class="detail-image-container">
+      ${imageHtml}
+    </div>
+    <div class="detail-body">
+      <p>${data.description}</p>
+      <h3>Ce observăm în imagine?</h3>
+      <div class="detail-examples">
+        ${data.examples.map(ex => `
+          <div class="detail-example-card">
+            <h4>${ex.name}</h4>
+            <p>${ex.text}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  overlay.classList.add("open");
+  document.body.style.overflow = "hidden";
+};
+
+const conceptDetails = {
+  apa: {
+    title: "Apa în alimente",
+    description: "Apa nu este doar un ingredient, ci mediul în care au loc toate interacțiunile chimice. Ea influențează direct textura (suculența), stabilitatea și modul în care căldura este transferată în interiorul alimentului.",
+    image: "", 
+    examples: [
+      { name: "Activitatea apei (aw)", text: "Reprezintă apa 'liberă' care poate fi folosită de microorganisme pentru a se dezvolta." },
+      { name: "Hidratarea", text: "Procesul prin care proteinele și amidonul absorb apa, esențial în formarea aluatului." }
+    ]
+  },
+  glucide: {
+    title: "Carbohidrații (Zaharurile)",
+    description: "Sunt compuși organici formați din carbon, hidrogen și oxigen. În bucătărie, carbohidrații sunt responsabili pentru gustul dulce, pentru structura oferită de amidon și pentru culoarea brună obținută prin caramelizare.",
+    image: "", 
+    examples: [
+      { name: "Amidonul", text: "La încălzire în prezența apei, granulele de amidon se umflă și gelifică sosurile." },
+      { name: "Zaharurile reducătoare", text: "Sunt cele care participă la reacția Maillard, oferind aroma de copt." }
+    ]
+  },
+  lipide: {
+    title: "Lipidele (Grăsimile)",
+    description: "Grăsimile sunt esențiale pentru transportul aromelor (multe arome sunt solubile doar în ulei) și pentru crearea texturilor fine. Ele oferă energie concentrată și ajută la transferul termic uniform în timpul prăjirii.",
+    image: "", 
+    examples: [
+      { name: "Punctul de fum", text: "Temperatura la care o grăsime începe să se descompună și să scoată fum." },
+      { name: "Auto-oxidarea", text: "Procesul chimic prin care grăsimile reacționează cu oxigenul, ducând la râncezire." }
+    ]
+  },
+  proteine: {
+    title: "Proteinele",
+    description: "Sunt molecule gigant formate din lanțuri de aminoacizi. În chimie alimentară, proteinele sunt cele care dau structură (prin coagulare) și care permit formarea spumelor (ca în cazul albușului de ou bătut).",
+    image: "", 
+    examples: [
+      { name: "Glutenul", text: "O rețea proteică elastică formată în aluat care reține gazele de fermentație." },
+      { name: "Denaturarea", text: "Procesul prin care proteinele își pierd structura nativă sub influența căldurii sau acizilor." }
+    ]
+  }
+};
+
+window.openConcept = (key) => {
+  const data = conceptDetails[key];
+  if (!data) return;
+
+  const overlay = document.getElementById("detailOverlay");
+  const body = document.getElementById("detailBody");
+
+  const imageHtml = data.image 
+    ? `<img src="${data.image}" alt="${data.title}">`
+    : `<div class="detail-image-placeholder-text">Loc gol pentru imagine<br>(${data.title})</div>`;
+
+  body.innerHTML = `
+    <div class="detail-header">
+      <h2>${data.title}</h2>
+      <span class="section-tag">Concept Fundamental</span>
+    </div>
+    <div class="detail-image-container">
+      ${imageHtml}
+    </div>
+    <div class="detail-body">
+      <p>${data.description}</p>
+      <h3>Detalii Tehnice & Exemple</h3>
+      <div class="detail-examples">
+        ${data.examples.map(ex => `
+          <div class="detail-example-card">
+            <h4>${ex.name}</h4>
+            <p>${ex.text}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  overlay.classList.add("open");
+  document.body.style.overflow = "hidden";
+};
+
+const reactionDetails = {
+  maillard: {
+    title: "Reacția Maillard",
+    description: "Este o reacție chimică complexă între aminoacizi și zaharuri reducătoare, care are loc de obicei la temperaturi ridicate. Aceasta conferă alimentelor gătite culoarea lor brună caracteristică și aromele irezistibile de 'prăjit' sau 'copt'.",
+    image: "",
+    examples: [
+      { name: "Pâinea proaspătă", text: "Coaja maronie și mirosul specific sunt rezultatul direct al acestei reacții." },
+      { name: "Friptura", text: "Rumenirea cărnii la suprafață eliberează sute de compuși aromatici noi." }
+    ]
+  },
+  caramelizare: {
+    title: "Caramelizarea",
+    description: "Spre deosebire de Maillard, caramelizarea implică doar descompunerea zaharurilor sub acțiunea căldurii intense. Procesul elimină apa și creează polimeri complecși cu gust dulce-amărui și culoare aurie spre maro închis.",
+    image: "",
+    examples: [
+      { name: "Zahărul ars", text: "Exemplul clasic unde zahărul alb devine un lichid brun și aromat." },
+      { name: "Legumele sote", text: "Ceapa devine dulce și maronie când este gătită lent datorită caramelizării propriilor zaharuri." }
+    ]
+  },
+  denaturare: {
+    title: "Denaturarea și Coagularea",
+    description: "Denaturarea reprezintă modificarea structurii tridimensionale a proteinelor sub influența căldurii, acizilor sau forței mecanice. Coagularea este etapa următoare, unde proteinele 'desfăcute' se leagă între ele formând o rețea solidă.",
+    image: "",
+    examples: [
+      { name: "Oul prăjit", text: "Albușul devine alb și solid deoarece proteinele se denaturează termic și coagulează." },
+      { name: "Brânza", text: "Acidul adăugat în lapte denaturează cazeina, ducând la formarea cheagului." }
+    ]
+  },
+  fermentatie: {
+    title: "Fermentația",
+    description: "Un proces metabolic prin care microorganismele (precum drojdiile sau bacteriile) transformă glucidele în alcool, acizi sau gaze. Este esențială pentru conservare și pentru dezvoltarea unor arome complexe.",
+    image: "",
+    examples: [
+      { name: "Iaurtul", text: "Bacteriile lactice transformă lactoza în acid lactic, îngroșând laptele." },
+      { name: "Dospirea aluatului", text: "Drojdia produce dioxid de carbon, care creează bulele de aer din pâine." }
+    ]
+  },
+  oxidare: {
+    title: "Oxidarea",
+    description: "Reacția substanțelor din alimente cu oxigenul. În bucătărie, ne întâlnim cel mai des cu oxidarea enzimatică (închiderea la culoare a fructelor) și râncezirea grăsimilor.",
+    image: "",
+    examples: [
+      { name: "Mărul tăiat", text: "Enzimele din măr reacționează cu aerul și produc pigmenți bruni (melanine)." },
+      { name: "Uleiul rânced", text: "Grăsimile expuse la lumină și aer se descompun în compuși cu miros neplăcut." }
+    ]
+  },
+  emulsificare: {
+    title: "Emulsificarea",
+    description: "Procesul de amestecare a două lichide care în mod normal nu se combină (ca apa și uleiul). Un agent emulsificator (ca lecitina din gălbenuș) ajută la stabilizarea picăturilor mici de ulei în apă.",
+    image: "",
+    examples: [
+      { name: "Maioneza", text: "O emulsie stabilă de ulei în suc de lămâie/oțet, legată de gălbenușul de ou." },
+      { name: "Laptele", text: "O emulsie naturală de grăsimi în apă, stabilizată de proteinele laptelui." }
+    ]
+  }
+};
+
+window.openDetail = (key) => {
+  const data = reactionDetails[key];
+  if (!data) return;
+
+  const overlay = document.getElementById("detailOverlay");
+  const body = document.getElementById("detailBody");
+
+  const imageHtml = data.image 
+    ? `<img src="${data.image}" alt="${data.title}">`
+    : `<div class="detail-image-placeholder-text">Loc gol pentru imagine<br>(${data.title})</div>`;
+
+  body.innerHTML = `
+    <div class="detail-header">
+      <h2>${data.title}</h2>
+      <span class="section-tag">Explicație detaliată</span>
+    </div>
+    <div class="detail-image-container">
+      ${imageHtml}
+    </div>
+    <div class="detail-body">
+      <p>${data.description}</p>
+      <h3>Exemple practice</h3>
+      <div class="detail-examples">
+        ${data.examples.map(ex => `
+          <div class="detail-example-card">
+            <h4>${ex.name}</h4>
+            <p>${ex.text}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  overlay.classList.add("open");
+  document.body.style.overflow = "hidden";
+};
+
+window.closeDetail = () => {
+  const overlay = document.getElementById("detailOverlay");
+  overlay.classList.remove("open");
+  document.body.style.overflow = "";
+};
+
+// Inchide la click in exterior
+document.getElementById("detailOverlay")?.addEventListener("click", (e) => {
+  if (e.target.id === "detailOverlay") closeDetail();
+});
+
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const navbar = document.querySelector(".navbar");

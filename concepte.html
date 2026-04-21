@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Concepte fundamentale | Food Lab</title>
+  <title>Concepte fundamentale</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
 <body data-page="concepte">
   <header class="navbar">
     <div class="nav-inner">
-      <a class="logo" href="index.html"><span class="logo-icon">+</span><span>Food Lab</span></a>
+      
       <nav>
         <a class="nav-link" data-page="home" href="index.html">Acasă</a>
         <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
@@ -62,45 +62,39 @@
           <h2>Ce substanțe se găsesc frecvent în alimente</h2>
         </div>
         <div class="detail-grid">
-          <article class="detail-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002">
+          <article class="detail-card clickable-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002" onclick="openConcept('apa')">
             <h3>Apa</h3>
             <p>Apa este prezentă în majoritatea alimentelor și influențează textura, dizolvarea și multe reacții chimice.</p>
-            <ul class="bullet-list">
-              <li>Ajută substanțele să se deplaseze și să reactioneze.</li>
-              <li>Influența cantității de apă se vede în uscare, fierbere sau congelare.</li>
-              <li>Poate afecta și stabilitatea microbiologică a alimentului.</li>
-            </ul>
+            <span class="card-more">Vezi detalii și exemple →</span>
           </article>
-          <article class="detail-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.002">
+          <article class="detail-card clickable-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.002" onclick="openConcept('glucide')">
             <h3>Carbohidrați</h3>
             <p>Carbohidrații oferă energie și pot influența gustul, consistența și rumenirea.</p>
-            <ul class="bullet-list">
-              <li>Amidonul poate ingrosa sau gelifica unele preparate.</li>
-              <li>Zaharurile contribuie la gustul dulce și la unele reacții termice.</li>
-              <li>Fibrele pot reține apa și pot schimba textura.</li>
-            </ul>
+            <span class="card-more">Vezi detalii și exemple →</span>
           </article>
-          <article class="detail-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002">
+          <article class="detail-card clickable-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002" onclick="openConcept('lipide')">
             <h3>Lipide</h3>
             <p>Lipidele contribuie la aroma, la senzația de cremos și la unele proprietăți de textura.</p>
-            <ul class="bullet-list">
-              <li>Transportă compuși aromatici solubili în grăsime.</li>
-              <li>Au rol important în emulsii.</li>
-              <li>Se pot degrada prin oxidare.</li>
-            </ul>
+            <span class="card-more">Vezi detalii și exemple →</span>
           </article>
-          <article class="detail-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.002">
+          <article class="detail-card clickable-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.002" onclick="openConcept('proteine')">
             <h3>Proteine</h3>
             <p>Proteinele își pot schimba structura atunci când sunt încălzite, agitate sau puse într-un mediu acid.</p>
-            <ul class="bullet-list">
-              <li>La ou se vede ușor cum proteinele coaguleaza la încălzire.</li>
-              <li>In aluat, unele proteine contribuie la elasticitate.</li>
-              <li>Schimbările de pH pot influența stabilitatea lor.</li>
-            </ul>
+            <span class="card-more">Vezi detalii și exemple →</span>
           </article>
         </div>
       </div>
     </section>
+
+    <!-- Overlay pentru detalii concepte -->
+    <div id="detailOverlay" class="detail-overlay">
+      <div class="detail-content">
+        <button class="close-detail" onclick="closeDetail()">&times;</button>
+        <div id="detailBody">
+          <!-- Continutul se incarca din JS -->
+        </div>
+      </div>
+    </div>
 
     <section class="section">
       <div class="container highlight-grid">
@@ -211,7 +205,7 @@
   <footer class="footer">
     <div class="container footer-grid" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001">
       <div>
-        <a class="logo" href="index.html"><span class="logo-icon">+</span> Food Lab</a>
+        
         <p class="footer-text">Concepte esențiale prezentăte clar, pentru o primă înțelegere a chimiei din alimente.</p>
       </div>
       <div class="footer-links">

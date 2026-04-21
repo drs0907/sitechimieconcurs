@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aditivi alimentari | Food Lab</title>
+  <title>Aditivi alimentari</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
 <body data-page="aditivi">
   <header class="navbar">
     <div class="nav-inner">
-      <a class="logo" href="index.html"><span class="logo-icon">+</span><span>Food Lab</span></a>
+      
       <nav>
         <a class="nav-link" data-page="home" href="index.html">Acasă</a>
         <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
@@ -29,60 +29,37 @@
     </div>
   </header>
 
-  <main>
-    <section class="page-hero page-hero-amber">
-      <div class="container page-hero-grid">
-        <div data-parallax data-parallax-speed="0.05" data-rotate-speed="-0.001">
-          <span class="section-tag">Aditivi alimentari</span>
-          <h1 class="page-title">Găsește rapid un cod și vezi informațiile esențiale</h1>
-          <p class="page-lead">Scrii un cod precum E100 și primești imediat denumirea, tipul, descrierea și efectul aditivului din bază de date integrată în site.</p>
-        </div>
-        <aside class="page-hero-visual visual-card-lab" data-parallax data-parallax-speed="0.04" data-rotate-speed="0.002">
-          <span class="hero-visual-kicker">Căutare rapidă</span>
-          <h2 class="hero-visual-title">Un singur loc pentru cod, denumire și rol</h2>
-          <p class="hero-visual-copy">Pagina este gândită pentru căutare directă, astfel încât să poți trece repede de la cod la informatie clară și ușor de urmărit.</p>
-          <div class="hero-visual-stack">
-            <div class="hero-visual-chip">
-              Cod
-              <span>E100, E330, E621</span>
-            </div>
-            <div class="hero-visual-chip">
-              Rezultat
-              <span>nume, tip, descriere, efect</span>
-            </div>
-          </div>
-        </aside>
+
+
+
+    <section class="hero page-hero">
+      <div class="hero-bg">
+        <div class="molecule mol1" data-parallax data-parallax-speed="0.1" data-rotate-speed="0.005"></div>
       </div>
-    </section>
+      <div class="container hero-search-layout">
+        <div class="hero-copy" data-parallax data-parallax-speed="0.08">
+          <span class="section-tag tag-white">Bază de date</span>
+          <h1>Explorator Detaliat</h1>
+          <p class="hero-lead">Identifică rapid orice aditiv alimentar după codul european sau după denumirea sa chimică.</p>
+          
+          <article class="hero-search-box">
+            <form class="additive-search-form" id="additiveSearchForm" autocomplete="off">
+              <input class="additive-search-input" id="additiveSearchInput" name="query" type="search" placeholder="Caută (ex: E120, Glutamat)..." />
+              <button class="button button-primary" type="submit">Caută</button>
+            </form>
+            <div class="additive-chip-list" id="additiveExamples">
+              <button class="additive-chip" type="button" data-additive-example="E101">E101</button>
+              <button class="additive-chip" type="button" data-additive-example="E202">E202</button>
+              <button class="additive-chip" type="button" data-additive-example="E415">E415</button>
+            </div>
+          </article>
+        </div>
 
-    <section class="section">
-      <div class="container additive-shell">
-        <article class="additive-search-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
-          <span class="section-tag">Interogare</span>
-          <h2>Caută dupa cod sau nume</h2>
-          <p>Introdu un cod exact, cum ar fi E100, sau începe cu numele unui aditiv pentru a restrânge lista.</p>
-          <form class="additive-search-form" id="additiveSearchForm" autocomplete="off">
-            <label class="sr-only" for="additiveSearchInput">Caută aditiv</label>
-            <input class="additive-search-input" id="additiveSearchInput" name="query" type="search" placeholder="Exemplu: E100" />
-            <button class="button button-primary" type="submit">Caută</button>
-          </form>
-          <div class="additive-chip-list" id="additiveExamples">
-            <button class="additive-chip" type="button" data-additive-example="E100">E100</button>
-            <button class="additive-chip" type="button" data-additive-example="E200">E200</button>
-            <button class="additive-chip" type="button" data-additive-example="E300">E300</button>
-            <button class="additive-chip" type="button" data-additive-example="E330">E330</button>
-            <button class="additive-chip" type="button" data-additive-example="E621">E621</button>
-          </div>
-          <div class="additive-search-note" id="additiveSearchMeta">Baza de date se încarcă direct din fișierul local al site-ului.</div>
-        </article>
-
-        <article class="additive-result-card" id="additiveResult" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.001" aria-live="polite">
-          <div class="additive-result-empty">
-            <span class="section-tag">Rezultat</span>
-            <h2>Rezultatul căutării va apărea aici</h2>
-            <p>La deschiderea paginii este afișat automat un exemplu, iar apoi poți schimba căutarea oricând.</p>
-          </div>
-        </article>
+        <div class="hero-result-area">
+          <article class="additive-result-card" id="additiveResult" aria-live="polite">
+             <!-- Rezultat -->
+          </article>
+        </div>
       </div>
     </section>
 
@@ -117,7 +94,7 @@
   <footer class="footer">
     <div class="container footer-grid" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001">
       <div>
-        <a class="logo" href="index.html"><span class="logo-icon">+</span> Food Lab</a>
+        
         <p class="footer-text">Pagina de căutare pentru aditivi alimentari, integrată direct în structura vizuala a site-ului.</p>
       </div>
       <div class="footer-links">
