@@ -9,12 +9,12 @@ const visualDetails = {
     ]
   },
   liquid: {
-    title: "Chimia Lichidelor",
-    description: "Apa și uleiul sunt inamici naturali din cauza polarității lor diferite. Pentru a le uni, avem nevoie de molecule 'amfibii' numite emulsificatori, care au un capăt ce iubește apa și unul ce iubește grăsimea.",
-    image: "assets/images/water-bubbles.jpg",
+    title: "Chimia apei",
+    description: "Apa este un solvent polar, ceea ce inseamna ca poate dizolva usor anumite substante, dar interactioneaza greu cu grasimile. Tocmai aceasta diferenta explica de ce unele amestecuri raman omogene, iar altele se separa rapid.",
+    image: "assets/images/water-pouring.png",
     examples: [
-      { name: "Tensiunea superficială", text: "Forța care face picăturile de apă să fie sferice." },
-      { name: "Micelii", text: "Structuri microscopice unde uleiul este 'împachetat' de emulsificator pentru a sta în apă." }
+      { name: "Polaritatea", text: "Molecula de apa are o distributie inegala a sarcinilor, iar asta o face foarte buna pentru dizolvare si transport." },
+      { name: "Tensiunea superficială", text: "Forta de la suprafata lichidului influenteaza forma picaturilor si felul in care apa se distribuie pe alte materiale." }
     ]
   },
   fruit: {
@@ -28,6 +28,15 @@ const visualDetails = {
   }
 };
 
+const buildDetailImageHtml = (data) => {
+  if (!data.image) {
+    return `<div class="detail-image-placeholder-text">Loc gol pentru imagine<br>(${data.title})</div>`;
+  }
+
+  const imageClass = data.imageFit === "contain" ? ` class="detail-image-fit-contain"` : "";
+  return `<img src="${data.image}" alt="${data.title}"${imageClass}>`;
+};
+
 window.openVisualDetail = (key) => {
   const data = visualDetails[key];
   if (!data) return;
@@ -35,17 +44,13 @@ window.openVisualDetail = (key) => {
   const overlay = document.getElementById("detailOverlay");
   const body = document.getElementById("detailBody");
 
-  const imageHtml = data.image 
-    ? `<img src="${data.image}" alt="${data.title}">`
-    : `<div class="detail-image-placeholder-text">Loc gol pentru imagine<br>(${data.title})</div>`;
-
   body.innerHTML = `
     <div class="detail-header">
       <h2>${data.title}</h2>
       <span class="section-tag">Ghid Vizual Detaliat</span>
     </div>
     <div class="detail-image-container">
-      ${imageHtml}
+      ${buildDetailImageHtml(data)}
     </div>
     <div class="detail-body">
       <p>${data.description}</p>
@@ -69,7 +74,7 @@ const conceptDetails = {
   apa: {
     title: "Apa în alimente",
     description: "Apa nu este doar un ingredient, ci mediul în care au loc toate interacțiunile chimice. Ea influențează direct textura (suculența), stabilitatea și modul în care căldura este transferată în interiorul alimentului.",
-    image: "", 
+    image: "assets/images/water-pouring.png",
     examples: [
       { name: "Activitatea apei (aw)", text: "Reprezintă apa 'liberă' care poate fi folosită de microorganisme pentru a se dezvolta." },
       { name: "Hidratarea", text: "Procesul prin care proteinele și amidonul absorb apa, esențial în formarea aluatului." }
@@ -78,7 +83,7 @@ const conceptDetails = {
   glucide: {
     title: "Carbohidrații (Zaharurile)",
     description: "Sunt compuși organici formați din carbon, hidrogen și oxigen. În bucătărie, carbohidrații sunt responsabili pentru gustul dulce, pentru structura oferită de amidon și pentru culoarea brună obținută prin caramelizare.",
-    image: "", 
+    image: "assets/images/carbohydrates-foods.png",
     examples: [
       { name: "Amidonul", text: "La încălzire în prezența apei, granulele de amidon se umflă și gelifică sosurile." },
       { name: "Zaharurile reducătoare", text: "Sunt cele care participă la reacția Maillard, oferind aroma de copt." }
@@ -87,7 +92,7 @@ const conceptDetails = {
   lipide: {
     title: "Lipidele (Grăsimile)",
     description: "Grăsimile sunt esențiale pentru transportul aromelor (multe arome sunt solubile doar în ulei) și pentru crearea texturilor fine. Ele oferă energie concentrată și ajută la transferul termic uniform în timpul prăjirii.",
-    image: "", 
+    image: "assets/images/lipid-foods.png",
     examples: [
       { name: "Punctul de fum", text: "Temperatura la care o grăsime începe să se descompună și să scoată fum." },
       { name: "Auto-oxidarea", text: "Procesul chimic prin care grăsimile reacționează cu oxigenul, ducând la râncezire." }
@@ -96,7 +101,7 @@ const conceptDetails = {
   proteine: {
     title: "Proteinele",
     description: "Sunt molecule gigant formate din lanțuri de aminoacizi. În chimie alimentară, proteinele sunt cele care dau structură (prin coagulare) și care permit formarea spumelor (ca în cazul albușului de ou bătut).",
-    image: "", 
+    image: "assets/images/protein-foods.png",
     examples: [
       { name: "Glutenul", text: "O rețea proteică elastică formată în aluat care reține gazele de fermentație." },
       { name: "Denaturarea", text: "Procesul prin care proteinele își pierd structura nativă sub influența căldurii sau acizilor." }
@@ -111,17 +116,13 @@ window.openConcept = (key) => {
   const overlay = document.getElementById("detailOverlay");
   const body = document.getElementById("detailBody");
 
-  const imageHtml = data.image 
-    ? `<img src="${data.image}" alt="${data.title}">`
-    : `<div class="detail-image-placeholder-text">Loc gol pentru imagine<br>(${data.title})</div>`;
-
   body.innerHTML = `
     <div class="detail-header">
       <h2>${data.title}</h2>
       <span class="section-tag">Concept Fundamental</span>
     </div>
     <div class="detail-image-container">
-      ${imageHtml}
+      ${buildDetailImageHtml(data)}
     </div>
     <div class="detail-body">
       <p>${data.description}</p>
@@ -145,7 +146,8 @@ const reactionDetails = {
   maillard: {
     title: "Reacția Maillard",
     description: "Este o reacție chimică complexă între aminoacizi și zaharuri reducătoare, care are loc de obicei la temperaturi ridicate. Aceasta conferă alimentelor gătite culoarea lor brună caracteristică și aromele irezistibile de 'prăjit' sau 'copt'.",
-    image: "",
+    image: "assets/images/maillard-diagram.png",
+    imageFit: "contain",
     examples: [
       { name: "Pâinea proaspătă", text: "Coaja maronie și mirosul specific sunt rezultatul direct al acestei reacții." },
       { name: "Friptura", text: "Rumenirea cărnii la suprafață eliberează sute de compuși aromatici noi." }
@@ -154,7 +156,7 @@ const reactionDetails = {
   caramelizare: {
     title: "Caramelizarea",
     description: "Spre deosebire de Maillard, caramelizarea implică doar descompunerea zaharurilor sub acțiunea căldurii intense. Procesul elimină apa și creează polimeri complecși cu gust dulce-amărui și culoare aurie spre maro închis.",
-    image: "",
+    image: "assets/images/sugar-liquid-detail.png",
     examples: [
       { name: "Zahărul ars", text: "Exemplul clasic unde zahărul alb devine un lichid brun și aromat." },
       { name: "Legumele sote", text: "Ceapa devine dulce și maronie când este gătită lent datorită caramelizării propriilor zaharuri." }
@@ -163,7 +165,7 @@ const reactionDetails = {
   denaturare: {
     title: "Denaturarea și Coagularea",
     description: "Denaturarea reprezintă modificarea structurii tridimensionale a proteinelor sub influența căldurii, acizilor sau forței mecanice. Coagularea este etapa următoare, unde proteinele 'desfăcute' se leagă între ele formând o rețea solidă.",
-    image: "",
+    image: "assets/images/egg-food.jpg",
     examples: [
       { name: "Oul prăjit", text: "Albușul devine alb și solid deoarece proteinele se denaturează termic și coagulează." },
       { name: "Brânza", text: "Acidul adăugat în lapte denaturează cazeina, ducând la formarea cheagului." }
@@ -172,7 +174,7 @@ const reactionDetails = {
   fermentatie: {
     title: "Fermentația",
     description: "Un proces metabolic prin care microorganismele (precum drojdiile sau bacteriile) transformă glucidele în alcool, acizi sau gaze. Este esențială pentru conservare și pentru dezvoltarea unor arome complexe.",
-    image: "",
+    image: "assets/images/bread-loaves.png",
     examples: [
       { name: "Iaurtul", text: "Bacteriile lactice transformă lactoza în acid lactic, îngroșând laptele." },
       { name: "Dospirea aluatului", text: "Drojdia produce dioxid de carbon, care creează bulele de aer din pâine." }
@@ -181,7 +183,7 @@ const reactionDetails = {
   oxidare: {
     title: "Oxidarea",
     description: "Reacția substanțelor din alimente cu oxigenul. În bucătărie, ne întâlnim cel mai des cu oxidarea enzimatică (închiderea la culoare a fructelor) și râncezirea grăsimilor.",
-    image: "",
+    image: "assets/images/sliced-apple.jpg",
     examples: [
       { name: "Mărul tăiat", text: "Enzimele din măr reacționează cu aerul și produc pigmenți bruni (melanine)." },
       { name: "Uleiul rânced", text: "Grăsimile expuse la lumină și aer se descompun în compuși cu miros neplăcut." }
@@ -190,7 +192,8 @@ const reactionDetails = {
   emulsificare: {
     title: "Emulsificarea",
     description: "Procesul de amestecare a două lichide care în mod normal nu se combină (ca apa și uleiul). Un agent emulsificator (ca lecitina din gălbenuș) ajută la stabilizarea picăturilor mici de ulei în apă.",
-    image: "",
+    image: "assets/images/water-polarity.png",
+    imageFit: "contain",
     examples: [
       { name: "Maioneza", text: "O emulsie stabilă de ulei în suc de lămâie/oțet, legată de gălbenușul de ou." },
       { name: "Laptele", text: "O emulsie naturală de grăsimi în apă, stabilizată de proteinele laptelui." }
@@ -205,17 +208,13 @@ window.openDetail = (key) => {
   const overlay = document.getElementById("detailOverlay");
   const body = document.getElementById("detailBody");
 
-  const imageHtml = data.image 
-    ? `<img src="${data.image}" alt="${data.title}">`
-    : `<div class="detail-image-placeholder-text">Loc gol pentru imagine<br>(${data.title})</div>`;
-
   body.innerHTML = `
     <div class="detail-header">
       <h2>${data.title}</h2>
       <span class="section-tag">Explicație detaliată</span>
     </div>
     <div class="detail-image-container">
-      ${imageHtml}
+      ${buildDetailImageHtml(data)}
     </div>
     <div class="detail-body">
       <p>${data.description}</p>
@@ -463,13 +462,15 @@ const findAdditiveMatches = (rawQuery) => {
     const type = additive.type.toLowerCase();
     const description = additive.description.toLowerCase();
     const effect = additive.effect.toLowerCase();
+    const bodyEffect = (additive.bodyEffect || "").toLowerCase();
     const isExactCodeMatch = code === normalizedCode;
     const isPartialMatch =
       code.includes(normalizedCode) ||
       name.includes(normalizedText) ||
       type.includes(normalizedText) ||
       description.includes(normalizedText) ||
-      effect.includes(normalizedText);
+      effect.includes(normalizedText) ||
+      bodyEffect.includes(normalizedText);
 
     if (isExactCodeMatch) {
       exactCodeMatches.push(additive);
@@ -549,8 +550,12 @@ const renderAdditiveResult = (selectedAdditive, matches, query) => {
         <p>${escapeHtml(selectedAdditive.type)}</p>
       </div>
       <div class="additive-meta-block">
-        <span>Efect</span>
+        <span>Efect in aliment</span>
         <p>${escapeHtml(selectedAdditive.effect)}</p>
+      </div>
+      <div class="additive-meta-block additive-meta-block-wide">
+        <span>Efect asupra corpului</span>
+        <p>${escapeHtml(selectedAdditive.bodyEffect || "Nu este disponibil momentan.")}</p>
       </div>
       <div class="additive-meta-block additive-meta-block-wide">
         <span>Descriere</span>
