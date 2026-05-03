@@ -1,29 +1,32 @@
 const visualDetails = {
   bread: {
-    title: "Știința Coacerii",
-    description: "Când pâinea intră în cuptor, are loc o transformare dramatică. Căldura determină evaporarea apei de la suprafață, permițând temperaturii să crească peste 140°C, punctul unde începe magia chimică.",
+    title: "Stiinta Coacerii",
+    description:
+      "Cand painea intra in cuptor, are loc o transformare dramatica. Caldura determina evaporarea apei de la suprafata, permitand temperaturii sa creasca peste 140C, punctul unde incepe schimbarea chimica intensa.",
     image: "assets/images/bread-crust.jpg",
     examples: [
-      { name: "Expansiunea gazelor", text: "Dioxidul de carbon produs de drojdie se dilată rapid, făcând pâinea să crească." },
-      { name: "Formarea crustei", text: "Reacția Maillard creează sute de arome noi și culoarea brună specifică." }
+      { name: "Expansiunea gazelor", text: "Dioxidul de carbon produs de drojdie se dilata rapid si face painea sa creasca." },
+      { name: "Formarea crustei", text: "Reactia Maillard creeaza arome noi si culoarea bruna specifica." }
     ]
   },
   liquid: {
     title: "Chimia apei",
-    description: "Apa este un solvent polar, ceea ce inseamna ca poate dizolva usor anumite substante, dar interactioneaza greu cu grasimile. Tocmai aceasta diferenta explica de ce unele amestecuri raman omogene, iar altele se separa rapid.",
+    description:
+      "Apa este un solvent polar. Poate dizolva usor anumite substante, dar interactioneaza mai greu cu grasimile. Diferenta aceasta explica de ce unele amestecuri raman omogene, iar altele se separa rapid.",
     image: "assets/images/water-pouring.png",
     examples: [
-      { name: "Polaritatea", text: "Molecula de apa are o distributie inegala a sarcinilor, iar asta o face foarte buna pentru dizolvare si transport." },
-      { name: "Tensiunea superficială", text: "Forta de la suprafata lichidului influenteaza forma picaturilor si felul in care apa se distribuie pe alte materiale." }
+      { name: "Polaritatea", text: "Molecula de apa are o distributie inegala a sarcinilor si devine foarte buna pentru dizolvare si transport." },
+      { name: "Tensiunea superficiala", text: "Forta de la suprafata lichidului influenteaza forma picaturilor si felul in care apa se distribuie pe alte materiale." }
     ]
   },
   fruit: {
     title: "Biochimia Fructelor",
-    description: "Fructele sunt organisme vii care respiră. Atunci când tăiem un măr, distrugem celulele și eliberăm enzime care, în contact cu oxigenul, încep un proces de auto-apărare vizibil prin schimbarea culorii.",
+    description:
+      "Fructele sunt organisme vii care respira. Cand taiem un mar, distrugem celulele si eliberam enzime care, in contact cu oxigenul, incep un proces vizibil prin schimbarea culorii.",
     image: "assets/images/sliced-apple.jpg",
     examples: [
-      { name: "Polifenoloxidaza", text: "Enzima principală responsabilă pentru 'ruginirea' fructelor." },
-      { name: "Antioxidanții naturali", text: "Vitamina C poate opri acest proces prin sacrificarea propriilor electroni." }
+      { name: "Polifenoloxidaza", text: "Enzima principala responsabila pentru inchiderea la culoare a fructelor." },
+      { name: "Antioxidantii naturali", text: "Vitamina C poate opri acest proces prin sacrificarea propriilor electroni." }
     ]
   }
 };
@@ -39,29 +42,35 @@ const buildDetailImageHtml = (data) => {
 
 window.openVisualDetail = (key) => {
   const data = visualDetails[key];
-  if (!data) return;
-
   const overlay = document.getElementById("detailOverlay");
   const body = document.getElementById("detailBody");
+
+  if (!data || !overlay || !body) {
+    return;
+  }
 
   body.innerHTML = `
     <div class="detail-header">
       <h2>${data.title}</h2>
-      <span class="section-tag">Ghid Vizual Detaliat</span>
+      <span class="section-tag">Ghid vizual detaliat</span>
     </div>
     <div class="detail-image-container">
       ${buildDetailImageHtml(data)}
     </div>
     <div class="detail-body">
       <p>${data.description}</p>
-      <h3>Ce observăm în imagine?</h3>
+      <h3>Ce observam in imagine?</h3>
       <div class="detail-examples">
-        ${data.examples.map(ex => `
-          <div class="detail-example-card">
-            <h4>${ex.name}</h4>
-            <p>${ex.text}</p>
-          </div>
-        `).join('')}
+        ${data.examples
+          .map(
+            (example) => `
+              <div class="detail-example-card">
+                <h4>${example.name}</h4>
+                <p>${example.text}</p>
+              </div>
+            `
+          )
+          .join("")}
       </div>
     </div>
   `;
@@ -72,68 +81,78 @@ window.openVisualDetail = (key) => {
 
 const conceptDetails = {
   apa: {
-    title: "Apa în alimente",
-    description: "Apa nu este doar un ingredient, ci mediul în care au loc toate interacțiunile chimice. Ea influențează direct textura (suculența), stabilitatea și modul în care căldura este transferată în interiorul alimentului.",
+    title: "Apa in alimente",
+    description:
+      "Apa nu este doar un ingredient, ci mediul in care au loc interactiunile chimice. Ea influenteaza direct textura, stabilitatea si modul in care caldura este transferata in interiorul alimentului.",
     image: "assets/images/water-pouring.png",
     examples: [
-      { name: "Activitatea apei (aw)", text: "Reprezintă apa 'liberă' care poate fi folosită de microorganisme pentru a se dezvolta." },
-      { name: "Hidratarea", text: "Procesul prin care proteinele și amidonul absorb apa, esențial în formarea aluatului." }
+      { name: "Activitatea apei", text: "Reprezinta apa libera care poate fi folosita de microorganisme pentru a se dezvolta." },
+      { name: "Hidratarea", text: "Procesul prin care proteinele si amidonul absorb apa, esential in formarea aluatului." }
     ]
   },
   glucide: {
-    title: "Carbohidrații (Zaharurile)",
-    description: "Sunt compuși organici formați din carbon, hidrogen și oxigen. În bucătărie, carbohidrații sunt responsabili pentru gustul dulce, pentru structura oferită de amidon și pentru culoarea brună obținută prin caramelizare.",
+    title: "Carbohidratii",
+    description:
+      "Sunt compusi organici formati din carbon, hidrogen si oxigen. In bucatarie, ei sunt responsabili pentru gustul dulce, structura oferita de amidon si culoarea bruna obtinuta prin caramelizare.",
     image: "assets/images/carbohydrates-foods.png",
     examples: [
-      { name: "Amidonul", text: "La încălzire în prezența apei, granulele de amidon se umflă și gelifică sosurile." },
-      { name: "Zaharurile reducătoare", text: "Sunt cele care participă la reacția Maillard, oferind aroma de copt." }
+      { name: "Amidonul", text: "La incalzire in prezenta apei, granulele de amidon se umfla si gelifica sosurile." },
+      { name: "Zaharurile reducatoare", text: "Acestea participa la reactia Maillard si contribuie la aroma de copt." }
     ]
   },
   lipide: {
-    title: "Lipidele (Grăsimile)",
-    description: "Grăsimile sunt esențiale pentru transportul aromelor (multe arome sunt solubile doar în ulei) și pentru crearea texturilor fine. Ele oferă energie concentrată și ajută la transferul termic uniform în timpul prăjirii.",
+    title: "Lipidele",
+    description:
+      "Grasimile sunt esentiale pentru transportul aromelor si pentru crearea texturilor fine. Ele ofera energie concentrata si ajuta la transferul termic uniform in timpul prajirii.",
     image: "assets/images/lipid-foods.png",
     examples: [
-      { name: "Punctul de fum", text: "Temperatura la care o grăsime începe să se descompună și să scoată fum." },
-      { name: "Auto-oxidarea", text: "Procesul chimic prin care grăsimile reacționează cu oxigenul, ducând la râncezire." }
+      { name: "Punctul de fum", text: "Temperatura la care o grasime incepe sa se descompuna si sa scoata fum." },
+      { name: "Auto-oxidarea", text: "Procesul chimic prin care grasimile reactioneaza cu oxigenul si duc la rancezire." }
     ]
   },
   proteine: {
     title: "Proteinele",
-    description: "Sunt molecule gigant formate din lanțuri de aminoacizi. În chimie alimentară, proteinele sunt cele care dau structură (prin coagulare) și care permit formarea spumelor (ca în cazul albușului de ou bătut).",
+    description:
+      "Sunt molecule mari formate din lanturi de aminoacizi. In chimia alimentara, ele dau structura prin coagulare si permit formarea spumelor, cum se intampla la albusul batut.",
     image: "assets/images/protein-foods.png",
     examples: [
-      { name: "Glutenul", text: "O rețea proteică elastică formată în aluat care reține gazele de fermentație." },
-      { name: "Denaturarea", text: "Procesul prin care proteinele își pierd structura nativă sub influența căldurii sau acizilor." }
+      { name: "Forma glutenului", text: "Dupa hidratare, glutenul nu are granule regulate, ci formeaza structuri neregulate, alungite si elastice care se unesc intr-o retea continua in aluat." },
+      { name: "Denaturarea", text: "Procesul prin care proteinele isi pierd structura nativa sub influenta caldurii sau a acizilor." }
     ]
   }
 };
 
 window.openConcept = (key) => {
   const data = conceptDetails[key];
-  if (!data) return;
-
   const overlay = document.getElementById("detailOverlay");
   const body = document.getElementById("detailBody");
+
+  if (!data || !overlay || !body) {
+    return;
+  }
 
   body.innerHTML = `
     <div class="detail-header">
       <h2>${data.title}</h2>
-      <span class="section-tag">Concept Fundamental</span>
+      <span class="section-tag">Concept fundamental</span>
     </div>
     <div class="detail-image-container">
       ${buildDetailImageHtml(data)}
     </div>
     <div class="detail-body">
       <p>${data.description}</p>
-      <h3>Detalii Tehnice & Exemple</h3>
+      <h3>Detalii tehnice si exemple</h3>
       <div class="detail-examples">
-        ${data.examples.map(ex => `
-          <div class="detail-example-card">
-            <h4>${ex.name}</h4>
-            <p>${ex.text}</p>
-          </div>
-        `).join('')}
+        ${data.examples
+          .map(
+            (example) => `
+              <div class="detail-example-card">
+                <h4>${example.name}</h4>
+                <p>${example.text}</p>
+              </div>
+            `
+          )
+          .join("")}
       </div>
     </div>
   `;
@@ -144,74 +163,85 @@ window.openConcept = (key) => {
 
 const reactionDetails = {
   maillard: {
-    title: "Reacția Maillard",
-    description: "Este o reacție chimică complexă între aminoacizi și zaharuri reducătoare, care are loc de obicei la temperaturi ridicate. Aceasta conferă alimentelor gătite culoarea lor brună caracteristică și aromele irezistibile de 'prăjit' sau 'copt'.",
+    title: "Reactia Maillard",
+    description:
+      "Este o reactie chimica complexa intre aminoacizi si zaharuri reducatoare, care are loc de obicei la temperaturi ridicate. Aceasta confera alimentelor gatite culoarea lor bruna caracteristica si aromele de prajit sau copt.",
     image: "assets/images/maillard-diagram.png",
     imageFit: "contain",
     examples: [
-      { name: "Pâinea proaspătă", text: "Coaja maronie și mirosul specific sunt rezultatul direct al acestei reacții." },
-      { name: "Friptura", text: "Rumenirea cărnii la suprafață eliberează sute de compuși aromatici noi." }
+      { name: "Painea proaspat coapta", text: "Coaja maronie si mirosul specific sunt rezultatul direct al acestei reactii." },
+      { name: "Friptura", text: "Rumenirea carnii la suprafata elibereaza multi compusi aromatici noi." }
     ]
   },
   caramelizare: {
     title: "Caramelizarea",
-    description: "Spre deosebire de Maillard, caramelizarea implică doar descompunerea zaharurilor sub acțiunea căldurii intense. Procesul elimină apa și creează polimeri complecși cu gust dulce-amărui și culoare aurie spre maro închis.",
+    description:
+      "Spre deosebire de Maillard, caramelizarea implica doar descompunerea zaharurilor sub actiunea caldurii intense. Procesul elimina apa si creeaza compusi cu gust dulce-amarui si culoare aurie spre maro inchis.",
     image: "assets/images/sugar-liquid-detail.png",
     examples: [
-      { name: "Zahărul ars", text: "Exemplul clasic unde zahărul alb devine un lichid brun și aromat." },
-      { name: "Legumele sote", text: "Ceapa devine dulce și maronie când este gătită lent datorită caramelizării propriilor zaharuri." }
+      { name: "Zaharul ars", text: "Exemplul clasic in care zaharul alb devine un lichid brun si aromat." },
+      { name: "Legumele sote", text: "Ceapa devine dulce si maronie cand este gatita lent datorita caramelizarii propriilor zaharuri." }
     ]
   },
   denaturare: {
-    title: "Denaturarea și Coagularea",
-    description: "Denaturarea reprezintă modificarea structurii tridimensionale a proteinelor sub influența căldurii, acizilor sau forței mecanice. Coagularea este etapa următoare, unde proteinele 'desfăcute' se leagă între ele formând o rețea solidă.",
+    title: "Denaturarea si coagularea",
+    description:
+      "Denaturarea reprezinta modificarea structurii tridimensionale a proteinelor sub influenta caldurii, acizilor sau fortei mecanice. Coagularea este etapa urmatoare, unde proteinele desfacute se leaga intre ele si formeaza o retea solida.",
     image: "assets/images/egg-food.jpg",
     examples: [
-      { name: "Oul prăjit", text: "Albușul devine alb și solid deoarece proteinele se denaturează termic și coagulează." },
-      { name: "Brânza", text: "Acidul adăugat în lapte denaturează cazeina, ducând la formarea cheagului." }
+      { name: "Oul prajit", text: "Albusul devine alb si solid deoarece proteinele se denatureaza termic si coaguleaza." },
+      { name: "Branza", text: "Acidul adaugat in lapte denatureaza cazeina si duce la formarea cheagului." }
     ]
   },
   fermentatie: {
-    title: "Fermentația",
-    description: "Un proces metabolic prin care microorganismele (precum drojdiile sau bacteriile) transformă glucidele în alcool, acizi sau gaze. Este esențială pentru conservare și pentru dezvoltarea unor arome complexe.",
+    title: "Fermentatia",
+    description:
+      "Un proces metabolic prin care microorganismele, precum drojdiile sau bacteriile, transforma glucidele in alcool, acizi sau gaze. Este esentiala pentru conservare si pentru dezvoltarea unor arome complexe.",
     image: "assets/images/bread-loaves.png",
     examples: [
-      { name: "Iaurtul", text: "Bacteriile lactice transformă lactoza în acid lactic, îngroșând laptele." },
-      { name: "Dospirea aluatului", text: "Drojdia produce dioxid de carbon, care creează bulele de aer din pâine." }
+      { name: "Iaurtul", text: "Bacteriile lactice transforma lactoza in acid lactic si ingroasa laptele." },
+      { name: "Dospirea aluatului", text: "Drojdia produce dioxid de carbon, care creeaza bulele de aer din paine." },
+      { name: "Obtinerea alcoolului etilic", text: "Drojdia transforma glucoza in alcool etilic si dioxid de carbon, proces folosit la obtinerea vinului si a berii." },
+      { name: "Fermentatia acetica", text: "Bacteriile acetice transforma alcoolul etilic in acid acetic, proces esential la obtinerea otetului." }
     ]
   },
   oxidare: {
     title: "Oxidarea",
-    description: "Reacția substanțelor din alimente cu oxigenul. În bucătărie, ne întâlnim cel mai des cu oxidarea enzimatică (închiderea la culoare a fructelor) și râncezirea grăsimilor.",
+    description:
+      "Reacția substantelor din alimente cu oxigenul. In bucatarie apare des oxidarea enzimatica, adica inchiderea la culoare a fructelor, dar si rancezirea grasimilor.",
     image: "assets/images/sliced-apple.jpg",
     examples: [
-      { name: "Mărul tăiat", text: "Enzimele din măr reacționează cu aerul și produc pigmenți bruni (melanine)." },
-      { name: "Uleiul rânced", text: "Grăsimile expuse la lumină și aer se descompun în compuși cu miros neplăcut." }
+      { name: "Marul taiat", text: "Enzimele din mar reactioneaza cu aerul si produc pigmenti bruni." },
+      { name: "Vitamina C pe mar", text: "Daca ungem cu o pensula o solutie de vitamina C pe suprafata marului taiat, procesul de oxidare este mult mai intarziat." },
+      { name: "Uleiul ranced", text: "Grasimile expuse la lumina si aer se descompun in compusi cu miros neplacut." }
     ]
   },
   emulsificare: {
     title: "Emulsificarea",
-    description: "Procesul de amestecare a două lichide care în mod normal nu se combină (ca apa și uleiul). Un agent emulsificator (ca lecitina din gălbenuș) ajută la stabilizarea picăturilor mici de ulei în apă.",
+    description:
+      "Procesul de amestecare a doua lichide care in mod normal nu se combina, ca apa si uleiul. Un agent emulsificator ajuta la stabilizarea picaturilor mici de ulei in apa.",
     image: "assets/images/water-polarity.png",
     imageFit: "contain",
     examples: [
-      { name: "Maioneza", text: "O emulsie stabilă de ulei în suc de lămâie/oțet, legată de gălbenușul de ou." },
-      { name: "Laptele", text: "O emulsie naturală de grăsimi în apă, stabilizată de proteinele laptelui." }
+      { name: "Maioneza", text: "O emulsie stabila de ulei in suc de lamaie sau otet, legata de galbenusul de ou." },
+      { name: "Laptele", text: "O emulsie naturala de grasimi in apa, stabilizata de proteinele laptelui." }
     ]
   }
 };
 
 window.openDetail = (key) => {
   const data = reactionDetails[key];
-  if (!data) return;
-
   const overlay = document.getElementById("detailOverlay");
   const body = document.getElementById("detailBody");
+
+  if (!data || !overlay || !body) {
+    return;
+  }
 
   body.innerHTML = `
     <div class="detail-header">
       <h2>${data.title}</h2>
-      <span class="section-tag">Explicație detaliată</span>
+      <span class="section-tag">Explicatie detaliata</span>
     </div>
     <div class="detail-image-container">
       ${buildDetailImageHtml(data)}
@@ -220,12 +250,16 @@ window.openDetail = (key) => {
       <p>${data.description}</p>
       <h3>Exemple practice</h3>
       <div class="detail-examples">
-        ${data.examples.map(ex => `
-          <div class="detail-example-card">
-            <h4>${ex.name}</h4>
-            <p>${ex.text}</p>
-          </div>
-        `).join('')}
+        ${data.examples
+          .map(
+            (example) => `
+              <div class="detail-example-card">
+                <h4>${example.name}</h4>
+                <p>${example.text}</p>
+              </div>
+            `
+          )
+          .join("")}
       </div>
     </div>
   `;
@@ -236,13 +270,19 @@ window.openDetail = (key) => {
 
 window.closeDetail = () => {
   const overlay = document.getElementById("detailOverlay");
+
+  if (!overlay) {
+    return;
+  }
+
   overlay.classList.remove("open");
   document.body.style.overflow = "";
 };
 
-// Inchide la click in exterior
-document.getElementById("detailOverlay")?.addEventListener("click", (e) => {
-  if (e.target.id === "detailOverlay") closeDetail();
+document.getElementById("detailOverlay")?.addEventListener("click", (event) => {
+  if (event.target.id === "detailOverlay") {
+    closeDetail();
+  }
 });
 
 const menuBtn = document.getElementById("menuBtn");
@@ -300,6 +340,34 @@ const requestScrollMotionUpdate = () => {
   scrollTicking = true;
   requestAnimationFrame(updateScrollMotion);
 };
+
+if (pageName === "resurse") {
+  const bibliographyButtons = Array.from(document.querySelectorAll("[data-bibliography-filter]"));
+  const bibliographyPanels = Array.from(document.querySelectorAll("[data-bibliography-panel]"));
+
+  const applyBibliographyFilter = (filter) => {
+    bibliographyButtons.forEach((button) => {
+      const isActive = button.dataset.bibliographyFilter === filter;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    bibliographyPanels.forEach((panel) => {
+      const shouldShow = filter === "toate" || panel.dataset.bibliographyPanel === filter;
+      panel.hidden = !shouldShow;
+    });
+
+    requestScrollMotionUpdate();
+  };
+
+  bibliographyButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      applyBibliographyFilter(button.dataset.bibliographyFilter ?? "toate");
+    });
+  });
+
+  applyBibliographyFilter("toate");
+}
 
 if (navbar) {
   window.addEventListener("scroll", () => {
@@ -426,6 +494,9 @@ const additiveSearchForm = document.getElementById("additiveSearchForm");
 const additiveSearchInput = document.getElementById("additiveSearchInput");
 const additiveResult = document.getElementById("additiveResult");
 const additiveSearchMeta = document.getElementById("additiveSearchMeta");
+const additiveSuggestionPanel = document.getElementById("additiveSuggestionPanel");
+const additiveSuggestionList = document.getElementById("additiveSuggestionList");
+const additiveSuggestionStatus = document.getElementById("additiveSuggestionStatus");
 const additivesData = Array.isArray(window.ADDITIVES_DATA) ? window.ADDITIVES_DATA : [];
 
 const escapeHtml = (value) =>
@@ -443,6 +514,17 @@ const escapeHtml = (value) =>
 
 const normalizeQuery = (value) => value.trim().replace(/\s+/g, " ");
 const normalizeCodeQuery = (value) => normalizeQuery(value).toUpperCase().replace(/\s+/g, "");
+const getAdditiveCodeNumber = (code) => Number.parseInt(String(code).replace(/^\D+/u, ""), 10) || 0;
+
+const orderedAdditives = [...additivesData].sort((left, right) => {
+  const numberDiff = getAdditiveCodeNumber(left.code) - getAdditiveCodeNumber(right.code);
+
+  if (numberDiff !== 0) {
+    return numberDiff;
+  }
+
+  return left.code.localeCompare(right.code) || left.name.localeCompare(right.name);
+});
 
 const findAdditiveMatches = (rawQuery) => {
   const query = normalizeQuery(rawQuery);
@@ -483,6 +565,79 @@ const findAdditiveMatches = (rawQuery) => {
   });
 
   return [...exactCodeMatches, ...partialMatches];
+};
+
+const getPredictiveAdditives = (rawQuery) => {
+  const normalizedCode = normalizeCodeQuery(rawQuery);
+  const normalizedText = normalizeQuery(rawQuery).toLowerCase();
+
+  if (!normalizedCode || normalizedCode === "E") {
+    return orderedAdditives;
+  }
+
+  if (/^E\d+$/u.test(normalizedCode)) {
+    return orderedAdditives.filter((additive) => additive.code.toUpperCase().startsWith(normalizedCode));
+  }
+
+  if (/^\d+$/u.test(normalizedCode)) {
+    return orderedAdditives.filter((additive) => additive.code.toUpperCase().startsWith(`E${normalizedCode}`));
+  }
+
+  return orderedAdditives.filter((additive) => {
+    const name = additive.name.toLowerCase();
+    const type = additive.type.toLowerCase();
+    return name.includes(normalizedText) || type.includes(normalizedText);
+  });
+};
+
+const showAdditiveSuggestions = () => {
+  if (additiveSuggestionPanel) {
+    additiveSuggestionPanel.hidden = false;
+  }
+};
+
+const hideAdditiveSuggestions = () => {
+  if (additiveSuggestionPanel) {
+    additiveSuggestionPanel.hidden = true;
+  }
+};
+
+const renderPredictiveList = (rawQuery) => {
+  if (!additiveSuggestionList || !additiveSuggestionStatus) {
+    return;
+  }
+
+  const normalizedCode = normalizeCodeQuery(rawQuery);
+  const suggestions = getPredictiveAdditives(rawQuery);
+  const numericPrefix = normalizedCode.startsWith("E") ? normalizedCode.slice(1) : normalizedCode;
+  let statusMessage = `Lista completa ordonata: ${suggestions.length} aditivi.`;
+
+  if (!normalizedCode || normalizedCode === "E") {
+    statusMessage = `Lista completa ordonata: ${suggestions.length} aditivi.`;
+  } else if ((normalizedCode.startsWith("E") || /^\d+$/u.test(normalizedCode)) && /^\d+$/u.test(numericPrefix)) {
+    statusMessage = `Prefix numeric ${numericPrefix}: ${suggestions.length} potriviri.`;
+  } else {
+    statusMessage = `Potriviri text: ${suggestions.length}.`;
+  }
+
+  additiveSuggestionStatus.textContent = statusMessage;
+  showAdditiveSuggestions();
+
+  if (!suggestions.length) {
+    additiveSuggestionList.innerHTML = `<div class="additive-suggestion-empty">Nu exista aditivi pentru acest prefix.</div>`;
+    return;
+  }
+
+  additiveSuggestionList.innerHTML = suggestions
+    .map(
+      (additive) => `
+        <button class="additive-suggestion-item" type="button" data-additive-suggestion="${escapeHtml(additive.code)}" role="option">
+          <span class="additive-suggestion-code">${escapeHtml(additive.code)}</span>
+          <span class="additive-suggestion-name">${escapeHtml(additive.name)}</span>
+        </button>
+      `
+    )
+    .join("");
 };
 
 const renderAdditiveEmptyState = (title, message) => {
@@ -567,8 +722,8 @@ const renderAdditiveResult = (selectedAdditive, matches, query) => {
 
   updateAdditiveMeta(
     matches.length === 1
-      ? `Am găsit un rezultat pentru "${query}".`
-      : `Am găsit ${matches.length} rezultate pentru "${query}". Este afișat primul rezultat.`
+      ? `Am gasit un rezultat pentru "${query}".`
+      : `Am gasit ${matches.length} rezultate pentru "${query}". Este afisat primul rezultat.`
   );
 
   requestScrollMotionUpdate();
@@ -582,22 +737,23 @@ const runAdditiveSearch = (rawQuery) => {
   }
 
   if (!additivesData.length) {
-    renderAdditiveEmptyState("Date indisponibile", "Fișierul cu aditivi nu a fost încărcat corect pe această pagină.");
-    updateAdditiveMeta("Nu există date disponibile pentru căutare.");
+    renderAdditiveEmptyState("Date indisponibile", "Fisierul cu aditivi nu a fost incarcat corect pe aceasta pagina.");
+    updateAdditiveMeta("Nu exista date disponibile pentru cautare.");
     return;
   }
 
   if (!query) {
-    renderAdditiveEmptyState("Introdu un cod sau un nume", "Poți începe cu un exemplu simplu, cum ar fi E100 sau E330.");
-    updateAdditiveMeta(`Baza de date conține ${additivesData.length} aditivi.`);
+    renderPredictiveList("");
+    renderAdditiveEmptyState("Alege un aditiv din lista", "Lista este ordonata dupa cod. Scrie E si apoi cifre pentru a restrange sugestiile.");
+    updateAdditiveMeta(`Baza de date contine ${additivesData.length} aditivi.`);
     return;
   }
 
   const matches = findAdditiveMatches(query);
 
   if (!matches.length) {
-    renderAdditiveEmptyState("Nu am găsit acest aditiv", `Nu există potriviri pentru "${query}". Încearcă un alt cod sau un alt nume.`);
-    updateAdditiveMeta(`Nu există potriviri pentru "${query}".`);
+    renderAdditiveEmptyState("Nu am gasit acest aditiv", `Nu exista potriviri pentru "${query}". Incearca un alt cod sau un alt nume.`);
+    updateAdditiveMeta(`Nu exista potriviri pentru "${query}".`);
     return;
   }
 
@@ -605,26 +761,64 @@ const runAdditiveSearch = (rawQuery) => {
 };
 
 if (additiveSearchForm && additiveSearchInput && additiveResult) {
-  additiveSearchForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    runAdditiveSearch(additiveSearchInput.value);
-  });
+  const openPredictiveList = () => {
+    renderPredictiveList(additiveSearchInput.value);
+  };
+
+  const handleAdditiveSelection = (nextQuery) => {
+    additiveSearchInput.value = nextQuery;
+    runAdditiveSearch(nextQuery);
+    renderPredictiveList(nextQuery);
+    hideAdditiveSuggestions();
+    additiveSearchInput.focus();
+  };
 
   const handleAdditiveQuickSelect = (event) => {
-    const trigger = event.target.closest("[data-additive-example], [data-additive-code]");
+    const trigger = event.target.closest("[data-additive-example], [data-additive-code], [data-additive-suggestion]");
 
     if (!trigger) {
       return;
     }
 
-    const nextQuery = trigger.dataset.additiveExample ?? trigger.dataset.additiveCode ?? "";
-    additiveSearchInput.value = nextQuery;
-    runAdditiveSearch(nextQuery);
-    additiveSearchInput.focus();
+    const nextQuery =
+      trigger.dataset.additiveExample ??
+      trigger.dataset.additiveCode ??
+      trigger.dataset.additiveSuggestion ??
+      "";
+
+    handleAdditiveSelection(nextQuery);
   };
+
+  additiveSearchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    runAdditiveSearch(additiveSearchInput.value);
+  });
+
+  additiveSearchInput.addEventListener("focus", openPredictiveList);
+  additiveSearchInput.addEventListener("click", openPredictiveList);
+  additiveSearchInput.addEventListener("input", openPredictiveList);
+  additiveSearchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      hideAdditiveSuggestions();
+    }
+  });
 
   document.getElementById("additiveExamples")?.addEventListener("click", handleAdditiveQuickSelect);
   additiveResult.addEventListener("click", handleAdditiveQuickSelect);
+  additiveSuggestionList?.addEventListener("click", handleAdditiveQuickSelect);
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+
+    if (
+      target instanceof Node &&
+      additiveSuggestionPanel &&
+      !additiveSuggestionPanel.contains(target) &&
+      !additiveSearchForm.contains(target)
+    ) {
+      hideAdditiveSuggestions();
+    }
+  });
 
   const initialQuery = "E100";
   additiveSearchInput.value = initialQuery;

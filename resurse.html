@@ -11,20 +11,22 @@
   <header class="navbar">
     <div class="nav-inner">
       <nav>
-        <a class="nav-link" data-page="home" href="index.html">Acasă</a>
-        <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
-        <a class="nav-link" data-page="reactii" href="reactii.html">Reacții</a>
         <a class="nav-link" data-page="aditivi" href="aditivi.html">Aditivi</a>
-        <a class="nav-link" data-page="resurse" href="resurse.html">Resurse</a>
+        <a class="nav-link" data-page="home" href="index.html">Acasa</a>
+        <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
+        <a class="nav-link" data-page="reactii" href="reactii.html">Reactii</a>
+        <a class="nav-link" data-page="formule" href="formule.html">Formule</a>
+        <a class="nav-link" data-page="resurse" href="resurse.html">Bibliografie</a>
       </nav>
       <button class="menu-btn" id="menuBtn" aria-label="Deschide meniul">Menu</button>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a class="nav-link" data-page="home" href="index.html">Acasă</a>
-      <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
-      <a class="nav-link" data-page="reactii" href="reactii.html">Reacții</a>
       <a class="nav-link" data-page="aditivi" href="aditivi.html">Aditivi</a>
-      <a class="nav-link" data-page="resurse" href="resurse.html">Resurse</a>
+      <a class="nav-link" data-page="home" href="index.html">Acasa</a>
+      <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
+      <a class="nav-link" data-page="reactii" href="reactii.html">Reactii</a>
+      <a class="nav-link" data-page="formule" href="formule.html">Formule</a>
+      <a class="nav-link" data-page="resurse" href="resurse.html">Bibliografie</a>
     </div>
   </header>
 
@@ -34,22 +36,39 @@
         <div data-parallax data-parallax-speed="0.05" data-rotate-speed="-0.001">
           <span class="section-tag">Bibliografie</span>
           <h1 class="page-title">Surse folosite</h1>
-          <p class="page-lead">Această pagină include atât bibliografia proiectului, cât și creditele pentru imaginile integrate în site.</p>
+          <p class="page-lead">Aceasta pagina include bibliografia de continut pentru proiect, precum si creditele pentru imaginile integrate in site.</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section bibliography-toolbar-section">
+      <div class="container container-narrow">
+        <div class="bibliography-toolbar-shell">
+          <div class="bibliography-filter-list" role="tablist" aria-label="Filtre bibliografie">
+            <button class="bibliography-filter-button is-active" type="button" data-bibliography-filter="toate" aria-pressed="true">Toate</button>
+            <button class="bibliography-filter-button" type="button" data-bibliography-filter="imagini" aria-pressed="false">Imagini</button>
+            <button class="bibliography-filter-button" type="button" data-bibliography-filter="formule" aria-pressed="false">Formule</button>
+            <button class="bibliography-filter-button" type="button" data-bibliography-filter="concepte" aria-pressed="false">Concepte</button>
+            <button class="bibliography-filter-button" type="button" data-bibliography-filter="reactii" aria-pressed="false">Reactii</button>
+            <button class="bibliography-filter-button" type="button" data-bibliography-filter="aditivi" aria-pressed="false">Aditivi</button>
+            <button class="bibliography-filter-button" type="button" data-bibliography-filter="nota" aria-pressed="false">Nota</button>
+          </div>
+          <p class="bibliography-toolbar-note">Alege o categorie si pagina afiseaza doar sectiunea respectiva.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bibliography-panel" data-bibliography-panel="imagini">
       <div class="container container-narrow">
         <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
           <span class="section-tag">Credite imagini</span>
-          <h2>Sursele imaginilor folosite în site</h2>
-          <p>Imaginile au fost salvate local în proiect. O parte provin din surse reutilizabile, iar o parte au fost furnizate direct pentru acest proiect.</p>
+          <h2>Sursele imaginilor folosite in site</h2>
+          <p>Imaginile au fost salvate local in proiect. O parte provin din surse reutilizabile, iar o parte au fost furnizate direct pentru acest proiect.</p>
         </div>
         <div class="definition-table">
           <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Imagini suplimentare furnizate pentru proiect</strong><span>Setul nou de imagini integrat in paginile Concepte si Reactii a fost adaugat local in folderul <code>assets/images</code>.</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Roger McLassus / Brown bread crust</strong><span><a href="https://commons.wikimedia.org/wiki/File:Brown_bread_crust.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · licența CC BY-SA 3.0 / GFDL</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>neekoh.fi / Oil and water</strong><span><a href="https://commons.wikimedia.org/wiki/File:Oil_and_water.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · licența CC BY 2.0</span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Roger McLassus / Brown bread crust</strong><span><a href="https://commons.wikimedia.org/wiki/File:Brown_bread_crust.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · licenta CC BY-SA 3.0 / GFDL</span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>neekoh.fi / Oil and water</strong><span><a href="https://commons.wikimedia.org/wiki/File:Oil_and_water.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · licenta CC BY 2.0</span></div>
           <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Marius Iordache / Sliced apple</strong><span><a href="https://commons.wikimedia.org/wiki/File:Sliced_apple.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
           <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Paolo Neo / Bubbles in glass of water</strong><span><a href="https://commons.wikimedia.org/wiki/File:Bubbles_in_glass_of_water.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
           <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Paolo Neo / Egg food</strong><span><a href="https://commons.wikimedia.org/wiki/File:Egg_food.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
@@ -59,33 +78,86 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section bibliography-panel" data-bibliography-panel="formule">
       <div class="container container-narrow">
         <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
           <span class="section-tag">Lista surselor</span>
-          <h2>Completează aici bibliografia de conținut</h2>
+          <h2>Bibliografie pentru continutul despre formule</h2>
+          <p>Sursele de mai jos au fost folosite pentru acizii organici si pentru formula generala a proteinelor din pagina de formule structurale.</p>
         </div>
         <div class="definition-table">
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Autor / Instituție 1</strong><span><a href="#" target="_blank" rel="noreferrer">Adaugă aici linkul sursei</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Autor / Instituție 2</strong><span><a href="#" target="_blank" rel="noreferrer">Adaugă aici linkul sursei</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Autor / Instituție 3</strong><span><a href="#" target="_blank" rel="noreferrer">Adaugă aici linkul sursei</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Autor / Instituție 4</strong><span><a href="#" target="_blank" rel="noreferrer">Adaugă aici linkul sursei</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Autor / Instituție 5</strong><span><a href="#" target="_blank" rel="noreferrer">Adaugă aici linkul sursei</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>PubChem - Lactic Acid</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Lactic-acid" target="_blank" rel="noreferrer">https://pubchem.ncbi.nlm.nih.gov/compound/Lactic-acid</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>PubChem - Malic Acid</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Malate" target="_blank" rel="noreferrer">https://pubchem.ncbi.nlm.nih.gov/compound/Malate</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>PubChem - Citric Acid</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Citric-Acid" target="_blank" rel="noreferrer">https://pubchem.ncbi.nlm.nih.gov/compound/Citric-Acid</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>OpenStax Biology - Proteins</strong><span><a href="https://openstax.org/books/biology/pages/3-4-proteins" target="_blank" rel="noreferrer">https://openstax.org/books/biology/pages/3-4-proteins</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>NCBI Bookshelf - Primary Protein Structure</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK564343/" target="_blank" rel="noreferrer">https://www.ncbi.nlm.nih.gov/books/NBK564343/</a></span></div>
         </div>
       </div>
     </section>
 
-    <section class="section section-light">
+    <section class="section bibliography-panel" data-bibliography-panel="concepte">
+      <div class="container container-narrow">
+        <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
+          <span class="section-tag">Concepte</span>
+          <h2>Surse pentru pagina de concepte</h2>
+          <p>Aceste linkuri sustin explicatiile despre apa, glucide, lipide, proteine, pH si enzime.</p>
+        </div>
+        <div class="definition-table">
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>USGS - Properties of Water</strong><span><a href="https://www.usgs.gov/index.php/special-topics/water-science-school/properties-water" target="_blank" rel="noreferrer">https://www.usgs.gov/index.php/special-topics/water-science-school/properties-water</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>OpenStax - Biological Molecules</strong><span><a href="https://openstax.org/books/concepts-biology/pages/2-3-biological-molecules" target="_blank" rel="noreferrer">https://openstax.org/books/concepts-biology/pages/2-3-biological-molecules</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>OpenStax - Proteins</strong><span><a href="https://openstax.org/books/biology/pages/3-4-proteins" target="_blank" rel="noreferrer">https://openstax.org/books/biology/pages/3-4-proteins</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>OpenStax - Enzymes</strong><span><a href="https://openstax.org/books/biology/pages/6-5-enzymes" target="_blank" rel="noreferrer">https://openstax.org/books/biology/pages/6-5-enzymes</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>OpenStax - pH and pOH</strong><span><a href="https://openstax.org/books/chemistry-atoms-first-2e/pages/14-2-ph-and-poh" target="_blank" rel="noreferrer">https://openstax.org/books/chemistry-atoms-first-2e/pages/14-2-ph-and-poh</a></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bibliography-panel" data-bibliography-panel="reactii">
+      <div class="container container-narrow">
+        <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
+          <span class="section-tag">Reactii</span>
+          <h2>Surse pentru pagina de reactii si procese</h2>
+          <p>Linkurile de mai jos acopera rumenirea, fermentatia, oxidarea si emulsificarea prezentate in site.</p>
+        </div>
+        <div class="definition-table">
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Britannica - Maillard Reaction</strong><span><a href="https://www.britannica.com/science/Maillard-reaction" target="_blank" rel="noreferrer">https://www.britannica.com/science/Maillard-reaction</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Britannica - Caramelization</strong><span><a href="https://www.britannica.com/topic/caramelization" target="_blank" rel="noreferrer">https://www.britannica.com/topic/caramelization</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>NCBI Bookshelf - Lactic Acid Fermentations</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK234703/" target="_blank" rel="noreferrer">https://www.ncbi.nlm.nih.gov/books/NBK234703/</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>NCBI Bookshelf - Bacterial Metabolism</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK7919/" target="_blank" rel="noreferrer">https://www.ncbi.nlm.nih.gov/books/NBK7919/</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>PMC - Enzymatic Browning</strong><span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10637886/" target="_blank" rel="noreferrer">https://pmc.ncbi.nlm.nih.gov/articles/PMC10637886/</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>NCBI Bookshelf - Vitamin C</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/n/nap9810/ddd0000144/" target="_blank" rel="noreferrer">https://www.ncbi.nlm.nih.gov/books/n/nap9810/ddd0000144/</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>NCBI Bookshelf - Emulsions</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK559084/" target="_blank" rel="noreferrer">https://www.ncbi.nlm.nih.gov/books/NBK559084/</a></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bibliography-panel" data-bibliography-panel="aditivi">
+      <div class="container container-narrow">
+        <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
+          <span class="section-tag">Aditivi</span>
+          <h2>Surse pentru pagina de aditivi alimentari</h2>
+          <p>Pentru zona de E-uri si functiile lor, cele mai utile surse sunt cele oficiale ale Comisiei Europene si EFSA.</p>
+        </div>
+        <div class="definition-table">
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>European Commission - Additives</strong><span><a href="https://food.ec.europa.eu/food-safety/food-improvement-agents/additives_en" target="_blank" rel="noreferrer">https://food.ec.europa.eu/food-safety/food-improvement-agents/additives_en</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>European Commission - Additives Database</strong><span><a href="https://food.ec.europa.eu/food-safety/food-improvement-agents/additives/database_en" target="_blank" rel="noreferrer">https://food.ec.europa.eu/food-safety/food-improvement-agents/additives/database_en</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>European Commission - EU Rules for Food Additives</strong><span><a href="https://food.ec.europa.eu/food-safety/food-improvement-agents/additives/eu-rules_en" target="_blank" rel="noreferrer">https://food.ec.europa.eu/food-safety/food-improvement-agents/additives/eu-rules_en</a></span></div>
+          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>EFSA - Food Additives</strong><span><a href="https://www.efsa.europa.eu/en/topics/topic/food-additives" target="_blank" rel="noreferrer">https://www.efsa.europa.eu/en/topics/topic/food-additives</a></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light bibliography-panel" data-bibliography-panel="nota">
       <div class="container container-narrow">
         <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
           <span class="section-tag">Nota</span>
-          <h2>Cum poți completa bibliografia</h2>
+          <h2>Cum poti completa bibliografia</h2>
         </div>
         <div class="topic-list">
-          <div class="topic-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Scrie autorul sau instituția</strong><span>De exemplu, numele site-ului, al manualului sau al organizației.</span></div>
-          <div class="topic-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Adaugă titlul materialului</strong><span>Poți menționa articolul, pagina sau documentul consultat.</span></div>
-          <div class="topic-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Pune linkul complet</strong><span>Astfel sursa poate fi verificată rapid.</span></div>
-          <div class="topic-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Completează anul dacă îl ai</strong><span>Ajută la identificarea mai ușoară a sursei.</span></div>
+          <div class="topic-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Scrie autorul sau institutia</strong><span>De exemplu, numele site-ului, al manualului sau al organizatiei.</span></div>
+          <div class="topic-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Adauga titlul materialului</strong><span>Poti mentiona articolul, pagina sau documentul consultat.</span></div>
+          <div class="topic-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Pune linkul complet</strong><span>Astfel sursa poate fi verificata rapid.</span></div>
+          <div class="topic-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Completeaza anul daca il ai</strong><span>Ajuta la identificarea mai usoara a sursei.</span></div>
         </div>
       </div>
     </section>
@@ -94,13 +166,14 @@
   <footer class="footer">
     <div class="container footer-grid" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001">
       <div>
-        <p class="footer-text">Pagina de bibliografie în care poți adăuga sursele, autorii și linkurile folosite.</p>
+        <p class="footer-text">Pagina de bibliografie in care sunt adunate sursele si linkurile folosite in proiect.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html">Acasă</a>
+        <a href="index.html">Acasa</a>
         <a href="concepte.html">Concepte</a>
+        <a href="formule.html">Formule</a>
         <a href="aditivi.html">Aditivi</a>
-        <a href="reactii.html">Reacții</a>
+        <a href="reactii.html">Reactii</a>
       </div>
       <div class="footer-meta">
         <span>Contact</span>
