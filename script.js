@@ -3,17 +3,17 @@ const visualDetails = {
     title: "Stiinta Coacerii",
     description:
       "Cand painea intra in cuptor, are loc o transformare dramatica. Caldura determina evaporarea apei de la suprafata, permitand temperaturii sa creasca peste 140C, punctul unde incepe schimbarea chimica intensa.",
-    image: "assets/images/bread-crust.jpg",
+    image: "assets/images/bread-loaves.png",
     examples: [
       { name: "Expansiunea gazelor", text: "Dioxidul de carbon produs de drojdie se dilata rapid si face painea sa creasca." },
-      { name: "Formarea crustei", text: "Reactia Maillard creeaza arome noi si culoarea bruna specifica." }
+      { name: "Formarea crustei", text: "Reacția Maillard creează arome noi și culoarea brună specifică." }
     ]
   },
   liquid: {
     title: "Chimia apei",
     description:
       "Apa este un solvent polar. Poate dizolva usor anumite substante, dar interactioneaza mai greu cu grasimile. Diferenta aceasta explica de ce unele amestecuri raman omogene, iar altele se separa rapid.",
-    image: "assets/images/water-pouring.png",
+    image: "assets/images/water-bubbles.jpg",
     examples: [
       { name: "Polaritatea", text: "Molecula de apa are o distributie inegala a sarcinilor si devine foarte buna pentru dizolvare si transport." },
       { name: "Tensiunea superficiala", text: "Forta de la suprafata lichidului influenteaza forma picaturilor si felul in care apa se distribuie pe alte materiale." }
@@ -26,7 +26,7 @@ const visualDetails = {
     image: "assets/images/sliced-apple.jpg",
     examples: [
       { name: "Polifenoloxidaza", text: "Enzima principala responsabila pentru inchiderea la culoare a fructelor." },
-      { name: "Antioxidantii naturali", text: "Vitamina C poate opri acest proces prin sacrificarea propriilor electroni." }
+      { name: "Antioxidanții naturali", text: "Vitamina C poate încetini acest proces prin reacția ei rapidă cu oxigenul." }
     ]
   }
 };
@@ -84,7 +84,7 @@ const conceptDetails = {
     title: "Apa in alimente",
     description:
       "Apa nu este doar un ingredient, ci mediul in care au loc interactiunile chimice. Ea influenteaza direct textura, stabilitatea si modul in care caldura este transferata in interiorul alimentului.",
-    image: "assets/images/water-pouring.png",
+    image: "assets/images/water-bubbles.jpg",
     examples: [
       { name: "Activitatea apei", text: "Reprezinta apa libera care poate fi folosita de microorganisme pentru a se dezvolta." },
       { name: "Hidratarea", text: "Procesul prin care proteinele si amidonul absorb apa, esential in formarea aluatului." }
@@ -97,7 +97,7 @@ const conceptDetails = {
     image: "assets/images/carbohydrates-foods.png",
     examples: [
       { name: "Amidonul", text: "La incalzire in prezenta apei, granulele de amidon se umfla si gelifica sosurile." },
-      { name: "Zaharurile reducatoare", text: "Acestea participa la reactia Maillard si contribuie la aroma de copt." }
+      { name: "Zaharurile reducătoare", text: "Acestea participă la reacția Maillard și contribuie la aroma de copt." }
     ]
   },
   lipide: {
@@ -163,9 +163,9 @@ window.openConcept = (key) => {
 
 const reactionDetails = {
   maillard: {
-    title: "Reactia Maillard",
+    title: "Reacția Maillard",
     description:
-      "Este o reactie chimica complexa intre aminoacizi si zaharuri reducatoare, care are loc de obicei la temperaturi ridicate. Aceasta confera alimentelor gatite culoarea lor bruna caracteristica si aromele de prajit sau copt.",
+      "Este o reacție chimică complexă între aminoacizi și zaharuri reducătoare, care are loc de obicei la temperaturi ridicate. Aceasta conferă alimentelor gătite culoarea brună caracteristică și aromele de prăjit sau copt.",
     image: "assets/images/maillard-diagram.png",
     imageFit: "contain",
     examples: [
@@ -194,7 +194,7 @@ const reactionDetails = {
     ]
   },
   fermentatie: {
-    title: "Fermentatia",
+    title: "Fermentația",
     description:
       "Un proces metabolic prin care microorganismele, precum drojdiile sau bacteriile, transforma glucidele in alcool, acizi sau gaze. Este esentiala pentru conservare si pentru dezvoltarea unor arome complexe.",
     image: "assets/images/bread-loaves.png",
@@ -208,7 +208,7 @@ const reactionDetails = {
   oxidare: {
     title: "Oxidarea",
     description:
-      "Reacția substantelor din alimente cu oxigenul. In bucatarie apare des oxidarea enzimatica, adica inchiderea la culoare a fructelor, dar si rancezirea grasimilor.",
+      "Reacția substanțelor din alimente cu oxigenul. În bucătărie apare des oxidarea enzimatică, adică închiderea la culoare a fructelor, dar și râncezirea grăsimilor.",
     image: "assets/images/sliced-apple.jpg",
     examples: [
       { name: "Marul taiat", text: "Enzimele din mar reactioneaza cu aerul si produc pigmenti bruni." },
@@ -291,6 +291,196 @@ const navbar = document.querySelector(".navbar");
 const parallaxElements = Array.from(document.querySelectorAll("[data-parallax]"));
 const pageName = document.body.dataset.page;
 const navLinks = Array.from(document.querySelectorAll(".nav-link[data-page]"));
+
+document.documentElement.classList.add("js-enhanced");
+
+const scrollProgress = document.createElement("div");
+scrollProgress.className = "scroll-progress";
+scrollProgress.setAttribute("aria-hidden", "true");
+document.body.prepend(scrollProgress);
+
+const modernToast = document.createElement("div");
+modernToast.className = "modern-toast";
+modernToast.setAttribute("role", "status");
+modernToast.setAttribute("aria-live", "polite");
+document.body.append(modernToast);
+
+let toastTimeout = null;
+
+const showModernToast = (message) => {
+  modernToast.textContent = message;
+  modernToast.classList.add("is-visible");
+  window.clearTimeout(toastTimeout);
+  toastTimeout = window.setTimeout(() => {
+    modernToast.classList.remove("is-visible");
+  }, 2600);
+};
+
+const updatePageProgress = () => {
+  const scrollableDistance = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableDistance > 0 ? window.scrollY / scrollableDistance : 0;
+  document.documentElement.style.setProperty("--scroll-progress", String(Math.max(0, Math.min(1, progress))));
+};
+
+window.addEventListener("scroll", updatePageProgress, { passive: true });
+window.addEventListener("resize", updatePageProgress);
+updatePageProgress();
+
+window.addEventListener("pointermove", (event) => {
+  document.documentElement.style.setProperty("--cursor-x", `${event.clientX}px`);
+  document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
+}, { passive: true });
+
+window.addEventListener("pointerdown", (event) => {
+  const burst = document.createElement("span");
+  burst.className = "chem-burst";
+  burst.style.setProperty("--burst-x", `${event.clientX}px`);
+  burst.style.setProperty("--burst-y", `${event.clientY}px`);
+  document.body.append(burst);
+  window.setTimeout(() => burst.remove(), 820);
+}, { passive: true });
+
+const localLinks = Array.from(document.querySelectorAll("a[href]"))
+  .map((link) => link.getAttribute("href"))
+  .filter((href) => href && !href.startsWith("#") && !href.startsWith("http") && !href.startsWith("mailto:"));
+
+const duplicateLocalLinks = localLinks.filter((href, index) => localLinks.indexOf(href) !== index);
+
+if (duplicateLocalLinks.length && window.location.protocol === "file:") {
+  console.info("Structura locala verificata: linkurile interne sunt folosite in mai multe zone de navigare.", [...new Set(duplicateLocalLinks)]);
+}
+
+const finaleData = {
+  home: {
+    intro: {
+      kicker: "Mini rezumat",
+      title: "Tot proiectul intr-un traseu de prezentare",
+      text: "Pornesti de la un fenomen observabil, explici moleculele implicate, demonstrezi prin simulator si inchei cu baza de date pentru aditivi."
+    },
+    panel: `
+      <div class="finale-steps">
+        <span>1. Observa alimentul</span>
+        <span>2. Explica procesul chimic</span>
+        <span>3. Cauta aditivul relevant</span>
+        <span>4. Leaga totul de surse</span>
+      </div>
+    `
+  },
+  concepte: {
+    intro: {
+      kicker: "Quiz rapid",
+      title: "Verifica daca ai prins ideea de baza",
+      text: "Un test scurt, gandit pentru public: raspuns imediat, explicatie clara si fara presiune."
+    },
+    quiz: {
+      question: "Ce componenta influenteaza puternic dizolvarea, textura si viteza unor reactii?",
+      options: [
+        { text: "Apa", correct: true },
+        { text: "Ambalajul", correct: false },
+        { text: "Lumina din sala", correct: false }
+      ],
+      success: "Corect. Apa este mediul in care se dizolva substante si in care au loc multe interactiuni chimice.",
+      fail: "Raspunsul corect este apa. Ea influenteaza dizolvarea, textura si multe reactii din alimente."
+    }
+  },
+  reactii: {
+    intro: {
+      kicker: "Quiz de reactie",
+      title: "Alege procesul potrivit",
+      text: "Sistemul fixeaza diferenta dintre procesele care pot parea asemanatoare la prima vedere."
+    },
+    quiz: {
+      question: "Ce proces explica brunificarea painii la temperatura ridicata?",
+      options: [
+        { text: "Reacția Maillard", correct: true },
+        { text: "Emulsificarea", correct: false },
+        { text: "Dizolvarea", correct: false }
+      ],
+      success: "Corect. Reacția Maillard implica aminoacizi si zaharuri reducatoare si produce culoare si aroma.",
+      fail: "Raspunsul corect este Reacția Maillard, nu emulsificarea sau simpla dizolvare."
+    }
+  },
+  formule: {
+    intro: {
+      kicker: "Sistem formula",
+      title: "Citeste formula ca pe o harta",
+      text: "Pagina se incheie cu o ancora vizuala: identifici grupa functionala, apoi legi formula de alimentul real."
+    },
+    panel: `
+      <div class="formula-molecule"><strong>HOOC-CH2-C(OH)(COOH)-CH2-COOH</strong></div>
+      <div class="formula-console">
+        <span>3 grupe carboxil: acid citric</span>
+        <span>1 grupa hidroxil: influenteaza proprietatile</span>
+        <span>Exemplu real: citrice si bauturi acidulate</span>
+      </div>
+    `
+  }
+};
+
+const buildQuizFinale = (quiz) => `
+  <div class="smart-quiz" data-smart-quiz>
+    <p class="smart-quiz-question">${quiz.question}</p>
+    <div class="smart-quiz-options">
+      ${quiz.options
+        .map((option) => `<button type="button" data-smart-correct="${option.correct}">${option.text}</button>`)
+        .join("")}
+    </div>
+    <p class="smart-quiz-result" data-smart-result>Alege un raspuns.</p>
+  </div>
+`;
+
+const mountPageFinale = () => {
+  const config = finaleData[pageName];
+  const main = document.querySelector("main");
+
+  if (!config || !main || document.querySelector(".page-finale")) {
+    return;
+  }
+
+  const section = document.createElement("section");
+  section.className = "page-finale";
+  section.innerHTML = `
+    <div class="container finale-shell">
+      <div class="finale-intro">
+        <span class="finale-kicker">${config.intro.kicker}</span>
+        <h2>${config.intro.title}</h2>
+        <p>${config.intro.text}</p>
+      </div>
+      <div class="finale-panel">
+        ${config.quiz ? buildQuizFinale(config.quiz) : config.panel}
+      </div>
+    </div>
+  `;
+
+  main.append(section);
+};
+
+mountPageFinale();
+
+document.addEventListener("click", (event) => {
+  const target = event.target;
+  const button = target instanceof Element ? target.closest("[data-smart-correct]") : null;
+
+  if (!button) {
+    return;
+  }
+
+  const quiz = button.closest("[data-smart-quiz]");
+  const result = quiz?.querySelector("[data-smart-result]");
+  const isCorrect = button.getAttribute("data-smart-correct") === "true";
+  const pageConfig = finaleData[pageName];
+
+  quiz?.querySelectorAll("[data-smart-correct]").forEach((option) => {
+    option.classList.remove("is-correct", "is-wrong");
+  });
+
+  button.classList.add(isCorrect ? "is-correct" : "is-wrong");
+
+  if (result && pageConfig?.quiz) {
+    result.textContent = isCorrect ? pageConfig.quiz.success : pageConfig.quiz.fail;
+  }
+});
+
 
 if (menuBtn && mobileMenu) {
   menuBtn.addEventListener("click", () => {
@@ -379,6 +569,55 @@ window.addEventListener("scroll", requestScrollMotionUpdate, { passive: true });
 window.addEventListener("resize", requestScrollMotionUpdate);
 requestScrollMotionUpdate();
 
+const revealTargets = Array.from(
+  document.querySelectorAll(
+    ".section-header, .feature-card, .detail-card, .timeline-card, .case-card, .info-card, .qa-card, .photo-card, .definition-row, .topic-row, .visual-card, .highlight-strip, .quote-panel, .additive-search-card, .hero-search-box, .additive-result-card"
+  )
+);
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+  );
+
+  revealTargets.forEach((element, index) => {
+    element.classList.add("reveal-ready");
+    element.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
+    revealObserver.observe(element);
+  });
+} else {
+  revealTargets.forEach((element) => {
+    element.classList.add("is-visible");
+  });
+}
+
+document
+  .querySelectorAll(".feature-card, .detail-card, .timeline-card, .case-card, .info-card, .photo-card, .additive-result-card")
+  .forEach((card) => {
+    card.classList.add("tilt-ready");
+
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const relativeX = (event.clientX - rect.left) / rect.width - 0.5;
+      const relativeY = (event.clientY - rect.top) / rect.height - 0.5;
+      card.style.setProperty("--tilt-x", `${(-relativeY * 5).toFixed(2)}deg`);
+      card.style.setProperty("--tilt-y", `${(relativeX * 5).toFixed(2)}deg`);
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.setProperty("--tilt-x", "0deg");
+      card.style.setProperty("--tilt-y", "0deg");
+    });
+  });
+
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (event) => {
     const targetSelector = anchor.getAttribute("href");
@@ -391,6 +630,220 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     event.preventDefault();
     target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
+});
+
+document.querySelectorAll(".hero, .page-hero").forEach((hero, heroIndex) => {
+  if (!hero.querySelector(".chem-canvas")) {
+    const canvas = document.createElement("canvas");
+    canvas.className = "chem-canvas";
+    canvas.setAttribute("aria-hidden", "true");
+    hero.prepend(canvas);
+  }
+
+  const chemCanvas = hero.querySelector(".chem-canvas");
+
+  if (!(chemCanvas instanceof HTMLCanvasElement)) {
+    return;
+  }
+
+  const context = chemCanvas.getContext("2d");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let particles = [];
+  let animationFrameId = null;
+
+  const resizeCanvas = () => {
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    const rect = chemCanvas.getBoundingClientRect();
+    chemCanvas.width = Math.max(1, Math.floor(rect.width * pixelRatio));
+    chemCanvas.height = Math.max(1, Math.floor(rect.height * pixelRatio));
+    chemCanvas.dataset.pixelRatio = String(pixelRatio);
+
+    const particleCount = Math.max(28, Math.min(74, Math.floor(rect.width / 20)));
+    particles = Array.from({ length: particleCount }, (_, index) => ({
+      x: Math.random() * chemCanvas.width,
+      y: Math.random() * chemCanvas.height,
+      radius: (index % 5 === 0 ? 3.8 : 2.2) * pixelRatio,
+      vx: (Math.random() - 0.5) * 0.28 * pixelRatio,
+      vy: (Math.random() - 0.5) * 0.28 * pixelRatio,
+      hue: (index + heroIndex) % 3
+    }));
+  };
+
+  const drawChemCanvas = () => {
+    if (!context) {
+      return;
+    }
+
+    const width = chemCanvas.width;
+    const height = chemCanvas.height;
+    const pixelRatio = Number(chemCanvas.dataset.pixelRatio || 1);
+
+    context.clearRect(0, 0, width, height);
+
+    particles.forEach((particle, index) => {
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+
+      if (particle.x < 0 || particle.x > width) {
+        particle.vx *= -1;
+      }
+
+      if (particle.y < 0 || particle.y > height) {
+        particle.vy *= -1;
+      }
+
+      for (let nextIndex = index + 1; nextIndex < particles.length; nextIndex += 1) {
+        const nextParticle = particles[nextIndex];
+        const dx = particle.x - nextParticle.x;
+        const dy = particle.y - nextParticle.y;
+        const distance = Math.hypot(dx, dy);
+        const linkDistance = 145 * pixelRatio;
+
+        if (distance < linkDistance) {
+          context.strokeStyle = `rgba(201, 241, 226, ${0.2 - distance / linkDistance / 5})`;
+          context.lineWidth = 1 * pixelRatio;
+          context.beginPath();
+          context.moveTo(particle.x, particle.y);
+          context.lineTo(nextParticle.x, nextParticle.y);
+          context.stroke();
+        }
+      }
+
+      const colors = ["rgba(201, 241, 226, 0.82)", "rgba(33, 212, 253, 0.72)", "rgba(245, 225, 191, 0.78)"];
+      context.fillStyle = colors[particle.hue];
+      context.beginPath();
+      context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+      context.fill();
+    });
+
+    if (!reducedMotion) {
+      animationFrameId = requestAnimationFrame(drawChemCanvas);
+    }
+  };
+
+  resizeCanvas();
+  drawChemCanvas();
+
+  window.addEventListener("resize", () => {
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+    }
+
+    resizeCanvas();
+    drawChemCanvas();
+  });
+});
+
+const phSlider = document.getElementById("phSlider");
+const phReadout = document.getElementById("phReadout");
+const phResult = document.getElementById("phResult");
+
+const updatePhSimulator = () => {
+  if (!(phSlider instanceof HTMLInputElement) || !phReadout || !phResult) {
+    return;
+  }
+
+  const phValue = Number(phSlider.value);
+  phReadout.textContent = `pH ${phValue.toFixed(1)}`;
+
+  if (phValue < 4) {
+    phResult.textContent = "Acid puternic: potrivit pentru exemple precum lamaia, otetul si oprirea oxidarii la fructe.";
+    phResult.style.background = "rgba(255, 107, 87, 0.14)";
+    return;
+  }
+
+  if (phValue < 6.8) {
+    phResult.textContent = "Usor acid: zona multor alimente fermentate, unde gustul si conservarea se modifica vizibil.";
+    phResult.style.background = "rgba(245, 225, 191, 0.72)";
+    return;
+  }
+
+  if (phValue <= 7.4) {
+    phResult.textContent = "Neutru: potrivit pentru a explica apa si solutiile simple.";
+    phResult.style.background = "rgba(223, 244, 234, 0.62)";
+    return;
+  }
+
+  phResult.textContent = "Bazic: util pentru discutii despre textura, proteine si schimbari de culoare la pigmenti.";
+  phResult.style.background = "rgba(232, 240, 255, 0.9)";
+};
+
+phSlider?.addEventListener("input", updatePhSimulator);
+updatePhSimulator();
+
+const foodScannerData = {
+  paine: {
+    title: "Paine ambalata",
+    text: "Cauta emulsificatori, conservanti si zaharuri. Leaga fiecare ingredient de textura si termenul de valabilitate.",
+    tags: ["E300", "E471", "gluten"]
+  },
+  suc: {
+    title: "Suc colorat",
+    text: "Identifica acidifiantii, colorantii si indulcitorii. Este un exemplu bun pentru pH, aroma si perceptia gustului.",
+    tags: ["acid citric", "coloranti", "zaharuri"]
+  },
+  iaurt: {
+    title: "Iaurt cu fructe",
+    text: "Explica fermentatia lactica, stabilizatorii si rolul pectinei in textura fina a produsului.",
+    tags: ["fermentatie", "pectina", "proteine"]
+  }
+};
+
+const scannerTabs = document.getElementById("foodScannerTabs");
+const scannerTitle = document.getElementById("scannerTitle");
+const scannerText = document.getElementById("scannerText");
+const scannerTags = document.getElementById("scannerTags");
+
+scannerTabs?.addEventListener("click", (event) => {
+  const target = event.target;
+  const trigger = target instanceof Element ? target.closest("[data-food-scan]") : null;
+
+  if (!trigger || !scannerTitle || !scannerText || !scannerTags) {
+    return;
+  }
+
+  const nextKey = trigger.dataset.foodScan;
+  const nextData = foodScannerData[nextKey];
+
+  if (!nextData) {
+    return;
+  }
+
+  scannerTabs.querySelectorAll("button").forEach((button) => {
+    button.classList.toggle("is-active", button === trigger);
+  });
+
+  scannerTitle.textContent = nextData.title;
+  scannerText.textContent = nextData.text;
+  scannerTags.innerHTML = nextData.tags.map((tag) => `<span>${tag}</span>`).join("");
+});
+
+const quizOptions = document.getElementById("quizOptions");
+const quizResult = document.getElementById("quizResult");
+
+quizOptions?.addEventListener("click", (event) => {
+  const target = event.target;
+  const selected = target instanceof Element ? target.closest("button") : null;
+
+  if (!selected || !quizResult) {
+    return;
+  }
+
+  quizOptions.querySelectorAll("button").forEach((button) => {
+    button.classList.remove("is-correct", "is-wrong");
+  });
+
+  const isCorrect = selected.dataset.correct === "true";
+  selected.classList.add(isCorrect ? "is-correct" : "is-wrong");
+  quizResult.textContent = isCorrect
+    ? "Corect. Reacția Maillard apare între aminoacizi și zaharuri reducătoare la temperatură ridicată."
+    : "Aproape, dar aici răspunsul corect este Reacția Maillard, responsabilă pentru crustă și aroma de copt.";
+});
+
+document.getElementById("presenterModeBtn")?.addEventListener("click", () => {
+  document.body.classList.toggle("presentation-mode");
+  const isActive = document.body.classList.contains("presentation-mode");
+  document.getElementById("presenterModeBtn").textContent = isActive ? "Iesi din prezentare" : "Mod prezentare";
 });
 
 document.querySelectorAll("[data-shiny-text]").forEach((element) => {
@@ -754,10 +1207,12 @@ const runAdditiveSearch = (rawQuery) => {
   if (!matches.length) {
     renderAdditiveEmptyState("Nu am gasit acest aditiv", `Nu exista potriviri pentru "${query}". Incearca un alt cod sau un alt nume.`);
     updateAdditiveMeta(`Nu exista potriviri pentru "${query}".`);
+    showModernToast(`Nu exista potriviri pentru "${query}".`);
     return;
   }
 
   renderAdditiveResult(matches[0], matches, query);
+  showModernToast(matches.length === 1 ? `Gasit: ${matches[0].code} - ${matches[0].name}` : `${matches.length} potriviri gasite pentru "${query}".`);
 };
 
 if (additiveSearchForm && additiveSearchInput && additiveResult) {

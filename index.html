@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chimia in alimentatie</title>
+  <title>Aditivi alimentari</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
-<body data-page="home">
+<body data-page="aditivi">
   <header class="navbar">
     <div class="nav-inner">
       <nav>
         <a class="nav-link" data-page="aditivi" href="aditivi.html">Aditivi</a>
-        <a class="nav-link" data-page="home" href="index.html">Acasa</a>
+        <a class="nav-link" data-page="home" href="acasa.html">Acasa</a>
         <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
         <a class="nav-link" data-page="reactii" href="reactii.html">Reactii</a>
         <a class="nav-link" data-page="formule" href="formule.html">Formule</a>
@@ -22,7 +22,7 @@
     </div>
     <div class="mobile-menu" id="mobileMenu">
       <a class="nav-link" data-page="aditivi" href="aditivi.html">Aditivi</a>
-      <a class="nav-link" data-page="home" href="index.html">Acasa</a>
+      <a class="nav-link" data-page="home" href="acasa.html">Acasa</a>
       <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
       <a class="nav-link" data-page="reactii" href="reactii.html">Reactii</a>
       <a class="nav-link" data-page="formule" href="formule.html">Formule</a>
@@ -31,240 +31,44 @@
   </header>
 
   <main>
-    <section class="hero hero-home">
+    <section class="hero page-hero">
       <div class="hero-bg">
-        <div class="molecule mol1" data-parallax data-parallax-speed="0.18" data-rotate-speed="0.008"></div>
-        <div class="molecule mol2" data-parallax data-parallax-speed="0.12" data-rotate-speed="-0.006"></div>
-        <div class="molecule mol3" data-parallax data-parallax-speed="0.22" data-rotate-speed="0.01"></div>
+        <div class="molecule mol1" data-parallax data-parallax-speed="0.1" data-rotate-speed="0.005"></div>
       </div>
-      <div class="container hero-grid">
-        <div class="hero-copy" data-parallax data-parallax-speed="0.08" data-rotate-speed="-0.002">
-          <h1>
-            <span
-              class="shiny-text hero-shiny"
-              data-shiny-text
-              data-speed="5"
-              data-delay="0"
-              data-color="#f8ead1"
-              data-shine-color="#ffffff"
-              data-spread="120"
-              data-direction="left"
-              data-yoyo="false"
-              data-pause-on-hover="false"
-              data-disabled="false"
-            >
-              Chimia in alimentatie
-            </span>
-          </h1>
-          <p class="hero-lead">O privire de ansamblu asupra aditivilor alimentari si a proceselor chimice din alimente, explicata clar si vizual.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="aditivi.html">Deschide Exploratorul de Aditivi</a>
-            <a class="button button-secondary" href="concepte.html">Vezi notiuni de baza</a>
-          </div>
-          <div class="hero-tags">
-            <span>baza de date interactiva</span>
-            <span>reactii explicate</span>
-            <span>exemple reale</span>
-          </div>
-        </div>
-        <aside class="hero-panel" data-parallax data-parallax-speed="0.06" data-rotate-speed="0.002">
-          <div class="panel-kicker">Functie principala</div>
-          <div class="panel-item">
-            <strong>Cautare Aditivi (E-uri)</strong>
-            <span>Identifica rapid orice substanta dupa cod sau nume.</span>
-          </div>
-          <div class="panel-item">
-            <strong>Reactii Chimice</strong>
-            <span>Vezi ce se intampla cand gatesti, explicat detaliat.</span>
-          </div>
-          <div class="panel-item">
-            <strong>Exemple Practice</strong>
-            <span>De la coacerea painii la oxidarea fructelor.</span>
-          </div>
-        </aside>
-      </div>
-    </section>
+      <div class="container hero-search-layout">
+        <div class="hero-copy" data-parallax data-parallax-speed="0.08">
+          <span class="section-tag tag-white">Baza de date</span>
+          <h1>Explorator Detaliat</h1>
+          <p class="hero-lead">Identifica rapid orice aditiv alimentar dupa codul european sau dupa denumirea sa chimica.</p>
 
-    <section class="section section-light">
-      <div class="container">
-        <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
-          <span class="section-tag">Panorama</span>
-          <h2>Ce gasesti pe acest site</h2>
-        </div>
-        <div class="link-grid">
-          <a class="link-card" href="concepte.html" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.003">
-            <div class="card-index">01</div>
-            <h3>Concepte fundamentale</h3>
-            <p>Afli ce rol au apa, glucidele, lipidele, proteinele, pH-ul si enzimele in alimente.</p>
-            <span class="card-link">Deschide pagina -></span>
-          </a>
-          <a class="link-card" href="reactii.html" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.003">
-            <div class="card-index">02</div>
-            <h3>Reactii si procese</h3>
-            <p>Vezi ce se intampla atunci cand alimentele sunt incalzite, oxidate, fermentate sau amestecate.</p>
-            <span class="card-link">Vezi exemplele -></span>
-          </a>
-          <a class="link-card" href="resurse.html" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.003">
-            <div class="card-index">03</div>
-            <h3>Bibliografie</h3>
-            <p>O pagina de bibliografie in care sunt adunate sursele si linkurile folosite in proiect.</p>
-            <span class="card-link">Deschide bibliografia -></span>
-          </a>
-          <a class="link-card" href="formule.html" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.003">
-            <div class="card-index">04</div>
-            <h3>Formule structurale</h3>
-            <p>Vezi acizi organici importanti si formula generala a proteinelor, cu exemple alimentare clare.</p>
-            <span class="card-link">Vezi formulele -></span>
-          </a>
-          <a class="link-card" href="aditivi.html" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.003">
-            <div class="card-index">05</div>
-            <h3>Aditivi alimentari</h3>
-            <p>Cauti un cod precum E100 si vezi imediat denumirea, tipul, descrierea si efectul principal.</p>
-            <span class="card-link">Deschide cautarea -></span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.001">
-          <span class="section-tag">Cadre vizuale</span>
-          <h2>Exemple vizuale despre subiectul parcurs</h2>
-        </div>
-        <div class="visual-gallery">
-          <article class="visual-card visual-card-bread clickable-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002" onclick="openVisualDetail('bread')">
-            <span class="visual-kicker">Textura si coacere</span>
-            <h3>Suprafete rumenite</h3>
-            <p>Apasa pentru a vedea cum reactia termica schimba structura painii.</p>
-            <div class="visual-art" aria-hidden="true">
-              <img src="assets/images/bread-crust.jpg" alt="" />
+          <article class="hero-search-box">
+            <form class="additive-search-form" id="additiveSearchForm" autocomplete="off">
+              <input class="additive-search-input" id="additiveSearchInput" name="query" type="search" placeholder="Cauta (ex: E120, Glutamat)..." />
+              <button class="button button-primary" type="submit">Cauta</button>
+            </form>
+            <div class="additive-suggestion-panel" id="additiveSuggestionPanel" hidden>
+              <div class="additive-suggestion-head">
+                <strong>Lista predictiva</strong>
+                <span id="additiveSuggestionStatus">Alege un cod din lista.</span>
+              </div>
+              <div class="additive-suggestion-list" id="additiveSuggestionList" role="listbox" aria-label="Sugestii aditivi"></div>
             </div>
-          </article>
-          <article class="visual-card visual-card-liquid clickable-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.002" onclick="openVisualDetail('liquid')">
-            <span class="visual-kicker">Apa si solutii</span>
-            <h3>Polaritate si dizolvare</h3>
-            <p>Descopera de ce apa amesteca usor unele substante, dar pastreaza altele separate.</p>
-            <div class="visual-art" aria-hidden="true">
-              <img src="assets/images/water-pouring.png" alt="" />
+            <div class="additive-chip-list" id="additiveExamples">
+              <button class="additive-chip" type="button" data-additive-example="E101">E101</button>
+              <button class="additive-chip" type="button" data-additive-example="E202">E202</button>
+              <button class="additive-chip" type="button" data-additive-example="E330">E330</button>
+              <button class="additive-chip" type="button" data-additive-example="E415">E415</button>
+              <button class="additive-chip" type="button" data-additive-example="E950">E950</button>
+              <button class="additive-chip" type="button" data-additive-example="E951">E951</button>
             </div>
-          </article>
-          <article class="visual-card visual-card-fruit clickable-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002" onclick="openVisualDetail('fruit')">
-            <span class="visual-kicker">Oxidare si pigmenti</span>
-            <h3>Fructe si schimbari vizibile</h3>
-            <p>Vezi de ce fructele isi schimba culoarea in contact cu aerul.</p>
-            <div class="visual-art" aria-hidden="true">
-              <img src="assets/images/sliced-apple.jpg" alt="" />
-            </div>
+            <p class="additive-search-note" id="additiveSearchMeta">Apasa pe campul de cautare sau pe buton pentru lista ordonata. Scrie E si apoi cifre ca sa restrangi lista.</p>
           </article>
         </div>
-      </div>
-    </section>
 
-    <div id="detailOverlay" class="detail-overlay">
-      <div class="detail-content">
-        <button class="close-detail" onclick="closeDetail()">&times;</button>
-        <div id="detailBody"></div>
-      </div>
-    </div>
-
-    <section class="section">
-      <div class="container highlight-grid">
-        <article class="highlight-strip" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
-          <span class="section-tag">Fir narativ</span>
-          <h3>Site-ul merge de la compozitie la transformare, cautare si apoi la surse</h3>
-          <div class="highlight-points">
-            <span>ce contine alimentul</span>
-            <span>ce se schimba la procesare</span>
-            <span>cum identifici un aditiv</span>
-            <span>de unde vine informatia</span>
-          </div>
-        </article>
-        <aside class="quote-panel" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.001">
-          <span class="quote-mark">+</span>
-          <h3>Chimia se vede cel mai bine atunci cand o legi de bucatarie.</h3>
-          <p>De aceea aproape fiecare pagina combina explicatia cu o situatie usor de imaginat.</p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="content-grid">
-          <article class="feature-card feature-card-wide" data-parallax data-parallax-speed="0.04" data-rotate-speed="-0.002">
-            <span class="eyebrow">Ideea centrala</span>
-            <h3>Alimentele trec prin schimbari chimice in mod constant</h3>
-            <p>Multe schimbari pe care le observam in bucatarie au legatura cu reactii chimice: rumenirea, schimbarea culorii, ingrosarea, coagularea sau alterarea.</p>
-            <ul class="bullet-list">
-              <li>Compozitia alimentului influenteaza gustul, textura si aspectul.</li>
-              <li>Caldura poate accelera sau modifica anumite procese.</li>
-              <li>Apa, grasimile si proteinele au un rol important in structura finala.</li>
-            </ul>
+        <div class="hero-result-area">
+          <article class="additive-result-card" id="additiveResult" aria-live="polite">
+            <!-- Rezultat -->
           </article>
-          <article class="feature-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.003">
-            <span class="eyebrow">Pe intelesul tuturor</span>
-            <h3>Cum este prezentata informatia</h3>
-            <p>Textele sunt scurte si merg direct la idee, astfel incat fiecare notiune sa poata fi inteleasa usor chiar fara pregatire anterioara.</p>
-          </article>
-          <article class="feature-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.003">
-            <span class="eyebrow">Aplicatie</span>
-            <h3>De la teorie la exemple reale</h3>
-            <p>Fiecare termen este legat de exemple simple, precum painea coapta, oul fiert, marul taiat sau maioneza.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container">
-        <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.001">
-          <span class="section-tag">Repere rapide</span>
-          <h2>Patru idei de baza de la care poti porni</h2>
-        </div>
-        <div class="info-grid">
-          <article class="info-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="-0.002">
-            <h3>Ce contine alimentul</h3>
-            <p>Rolul apei, glucidelor, proteinelor si lipidelor in structura alimentelor.</p>
-          </article>
-          <article class="info-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="0.002">
-            <h3>Ce se schimba la procesare</h3>
-            <p>Ce se intampla cand alimentul este gatit, fermentat sau pastrat.</p>
-          </article>
-          <article class="info-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="-0.002">
-            <h3>Ce factori conteaza</h3>
-            <p>Temperatura, pH-ul, oxigenul si umiditatea influenteaza rezultatul final.</p>
-          </article>
-          <article class="info-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="0.002">
-            <h3>Cum explici simplu</h3>
-            <p>Folosesti exemple concrete si termeni clari, fara formulare complicate inutil.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
-          <span class="section-tag">Intrebari frecvente</span>
-          <h2>Intrebari pe care toata lumea si le pune</h2>
-        </div>
-        <div class="qa-grid">
-          <div class="qa-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="-0.002">
-            <h3>De ce se rumeneste painea?</h3>
-            <p>Pentru ca la suprafata apar reactii favorizate de temperatura ridicata si de scaderea cantitatii de apa.</p>
-          </div>
-          <div class="qa-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="0.002">
-            <h3>De ce se separa o emulsie?</h3>
-            <p>Pentru ca fazele nu mai sunt suficient stabilizate si incep sa se desprinda una de alta.</p>
-          </div>
-          <div class="qa-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="-0.002">
-            <h3>De ce marul taiat se inchide la culoare?</h3>
-            <p>Pentru ca unele substante din el reactioneaza in contact cu oxigenul din aer.</p>
-          </div>
-          <div class="qa-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="0.002">
-            <h3>De ce conteaza apa?</h3>
-            <p>Pentru ca influenteaza textura, dizolvarea si viteza cu care au loc multe procese in aliment.</p>
-          </div>
         </div>
       </div>
     </section>
@@ -272,18 +76,20 @@
 
   <footer class="footer">
     <div class="container footer-grid" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001">
-      <div></div>
+      <div>
+        <p class="footer-text">Pagina de cautare pentru aditivi alimentari, integrata direct in structura vizuala a site-ului.</p>
+      </div>
       <div class="footer-links">
+        <a href="acasa.html">Acasa</a>
         <a href="concepte.html">Concepte</a>
         <a href="reactii.html">Reactii</a>
         <a href="formule.html">Formule</a>
-        <a href="aditivi.html">Aditivi</a>
         <a href="resurse.html">Bibliografie</a>
       </div>
       <div class="footer-meta">
-        <span>Contact</span>
-        <a href="mailto:contact@foodlab.ro">contact@foodlab.ro</a>
-        <span>Actualizat pentru prezentare informativa</span>
+        <span>Acces rapid</span>
+        <a href="#additiveSearchInput">Cauta un cod</a>
+        <span>Rezultatele folosesc baza de date locala</span>
       </div>
     </div>
   </footer>

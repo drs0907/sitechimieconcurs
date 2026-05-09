@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acasa - Chimia in alimentatie</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body data-page="home">
+  <header class="navbar">
+    <div class="nav-inner">
+      <nav>
+        <a class="nav-link" data-page="aditivi" href="aditivi.html">Aditivi</a>
+        <a class="nav-link" data-page="home" href="acasa.html">Acasa</a>
+        <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
+        <a class="nav-link" data-page="reactii" href="reactii.html">Reactii</a>
+        <a class="nav-link" data-page="formule" href="formule.html">Formule</a>
+        <a class="nav-link" data-page="resurse" href="resurse.html">Bibliografie</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Deschide meniul">Menu</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a class="nav-link" data-page="aditivi" href="aditivi.html">Aditivi</a>
+      <a class="nav-link" data-page="home" href="acasa.html">Acasa</a>
+      <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
+      <a class="nav-link" data-page="reactii" href="reactii.html">Reactii</a>
+      <a class="nav-link" data-page="formule" href="formule.html">Formule</a>
+      <a class="nav-link" data-page="resurse" href="resurse.html">Bibliografie</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-home">
+      <div class="hero-bg">
+        <div class="molecule mol1" data-parallax data-parallax-speed="0.18" data-rotate-speed="0.008"></div>
+        <div class="molecule mol2" data-parallax data-parallax-speed="0.12" data-rotate-speed="-0.006"></div>
+        <div class="molecule mol3" data-parallax data-parallax-speed="0.22" data-rotate-speed="0.01"></div>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-copy" data-parallax data-parallax-speed="0.08" data-rotate-speed="-0.002">
+          <span class="badge badge-glow">Material didactic interactiv</span>
+          <h1>
+            <span
+              class="shiny-text hero-shiny"
+              data-shiny-text
+              data-speed="5"
+              data-color="#f8ead1"
+              data-shine-color="#ffffff"
+              data-spread="120"
+            >
+              Chimia in alimentatie
+            </span>
+          </h1>
+          <p class="hero-lead">O experienta digitala pentru concurs: concepte clare, experimente vizuale, cautare de aditivi si exemple din alimentele de zi cu zi.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#laborator-live">Porneste laboratorul</a>
+            <a class="button button-secondary" href="aditivi.html">Deschide aditivii</a>
+          </div>
+          <div class="hero-tags">
+            <span>simulari live</span>
+            <span>reactii explicate</span>
+            <span>baza de date E-uri</span>
+          </div>
+        </div>
+        <aside class="hero-panel hero-command" data-parallax data-parallax-speed="0.06" data-rotate-speed="0.002">
+          <div class="panel-kicker">Panou de prezentare</div>
+          <div class="command-meter" aria-hidden="true">
+            <span style="--level: 94%"></span>
+          </div>
+          <div class="panel-item">
+            <strong>Observa</strong>
+            <span>pornesti de la un fenomen vizibil: rumenire, oxidare, emulsie sau aciditate.</span>
+          </div>
+          <div class="panel-item">
+            <strong>Explica</strong>
+            <span>legi fenomenul de molecule, pH, proteine, glucide si aditivi.</span>
+          </div>
+          <div class="panel-item">
+            <strong>Testeaza</strong>
+            <span>folosesti simulatorul si quizul pentru a implica publicul.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-lab" id="laborator-live">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Laborator live</span>
+          <h2>Sisteme interactive pentru prezentare</h2>
+          <p>Aceste module sunt gandite pentru a fi aratate publicului in timpul concursului, nu doar citite.</p>
+        </div>
+        <div class="lab-dashboard">
+          <article class="lab-card ph-card">
+            <div class="lab-card-head">
+              <span class="lab-icon">pH</span>
+              <div>
+                <h3>Simulator de aciditate</h3>
+                <p>Schimba pH-ul si vezi cum se modifica explicatia chimica.</p>
+              </div>
+            </div>
+            <div class="ph-readout" id="phReadout">pH 7.0</div>
+            <input class="ph-slider" id="phSlider" type="range" min="1" max="14" step="0.1" value="7" aria-label="Alege pH-ul" />
+            <div class="ph-scale" aria-hidden="true">
+              <span>acid</span>
+              <span>neutru</span>
+              <span>bazic</span>
+            </div>
+            <p class="lab-result" id="phResult">Neutru: potrivit pentru a explica apa si solutiile simple.</p>
+          </article>
+
+          <article class="lab-card scanner-card">
+            <div class="lab-card-head">
+              <span class="lab-icon">AI</span>
+              <div>
+                <h3>Scanner educativ de eticheta</h3>
+                <p>Alege un aliment si primesti o explicatie scurta pentru prezentare.</p>
+              </div>
+            </div>
+            <div class="food-tabs" id="foodScannerTabs" role="tablist" aria-label="Exemple alimentare">
+              <button class="is-active" type="button" data-food-scan="paine">Paine</button>
+              <button type="button" data-food-scan="suc">Suc</button>
+              <button type="button" data-food-scan="iaurt">Iaurt</button>
+            </div>
+            <div class="scanner-screen">
+              <span class="scanner-line" aria-hidden="true"></span>
+              <h4 id="scannerTitle">Paine ambalata</h4>
+              <p id="scannerText">Cauta emulsificatori, conservanti si zaharuri. Leaga fiecare ingredient de textura si termenul de valabilitate.</p>
+              <div class="scanner-tags" id="scannerTags">
+                <span>E300</span><span>E471</span><span>gluten</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="lab-card quiz-card">
+            <div class="lab-card-head">
+              <span class="lab-icon">Q</span>
+              <div>
+                <h3>Quiz fulger</h3>
+                <p>Un moment rapid pentru a tine publicul atent.</p>
+              </div>
+            </div>
+            <p class="quiz-question" id="quizQuestion">Ce proces brunifica suprafata painii?</p>
+            <div class="quiz-options" id="quizOptions">
+              <button type="button" data-correct="false">Fermentatia lactica</button>
+              <button type="button" data-correct="true">Reacția Maillard</button>
+              <button type="button" data-correct="false">Dizolvarea sarii</button>
+            </div>
+            <p class="lab-result" id="quizResult">Alege un raspuns pentru a vedea explicatia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Navigare rapida</span>
+          <h2>Alege zona pe care vrei sa o prezinti</h2>
+        </div>
+        <div class="link-grid">
+          <a class="link-card" href="aditivi.html">
+            <div class="card-index">01</div>
+            <h3>Aditivi alimentari</h3>
+            <p>Cauta un cod E si vezi denumirea, rolul si efectul principal.</p>
+            <span class="card-link">Deschide sistemul -></span>
+          </a>
+          <a class="link-card" href="concepte.html">
+            <div class="card-index">02</div>
+            <h3>Concepte fundamentale</h3>
+            <p>Apa, glucide, lipide, proteine, pH si enzime explicate simplu.</p>
+            <span class="card-link">Vezi conceptele -></span>
+          </a>
+          <a class="link-card" href="reactii.html">
+            <div class="card-index">03</div>
+            <h3>Reactii si procese</h3>
+            <p>Maillard, caramelizare, fermentație, oxidare și emulsificare.</p>
+            <span class="card-link">Vezi reactiile -></span>
+          </a>
+          <a class="link-card" href="formule.html">
+            <div class="card-index">04</div>
+            <h3>Formule structurale</h3>
+            <p>Compusi importanti si formule simplificate pentru chimia alimentara.</p>
+            <span class="card-link">Vezi formulele -></span>
+          </a>
+          <a class="link-card" href="resurse.html">
+            <div class="card-index">05</div>
+            <h3>Bibliografie</h3>
+            <p>Sursele folosite pentru continut, imagini si explicatii.</p>
+            <span class="card-link">Verifica sursele -></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-showcase">
+      <div class="container showcase-grid">
+        <div class="showcase-copy">
+          <span class="section-tag section-tag-light">Scenariu didactic</span>
+          <h2>De la fenomen vizibil la explicatie chimica</h2>
+          <p>Pagina Acasa functioneaza ca intrare pentru prezentare: incepi cu un efect vizual, apoi mergi catre aditivi, concepte, reactii si formule.</p>
+        </div>
+        <div class="lesson-orbit" aria-hidden="true">
+          <span>Observa</span>
+          <span>Explica</span>
+          <span>Testeaza</span>
+          <span>Aplica</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001">
+      <div>
+        <p class="footer-text">Pagina Acasa este gandita pentru prezentarea generala a proiectului si pentru acces rapid la capitole.</p>
+      </div>
+      <div class="footer-links">
+        <a href="aditivi.html">Aditivi</a>
+        <a href="concepte.html">Concepte</a>
+        <a href="reactii.html">Reactii</a>
+        <a href="formule.html">Formule</a>
+        <a href="resurse.html">Bibliografie</a>
+      </div>
+      <div class="footer-meta">
+        <span>Start site</span>
+        <a href="index.html">Explorator aditivi</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=20260425-4"></script>
+</body>
+</html>
