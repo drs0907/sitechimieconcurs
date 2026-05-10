@@ -292,7 +292,105 @@ const parallaxElements = Array.from(document.querySelectorAll("[data-parallax]")
 const pageName = document.body.dataset.page;
 const navLinks = Array.from(document.querySelectorAll(".nav-link[data-page]"));
 
+const GOOGLE_TRANSLATE_LANGS = "ro|en";
+
+const setGoogleComboLanguage = (lang) => {
+  const combo = document.querySelector(".goog-te-combo");
+  if (!(combo instanceof HTMLSelectElement)) {
+    return false;
+  }
+
+  combo.value = lang;
+  combo.dispatchEvent(new Event("change"));
+  return true;
+};
+
+const ensureGoogleTranslate = () => {
+  if (document.getElementById("google_translate_element")) {
+    return;
+  }
+
+  const mount = document.createElement("div");
+  mount.id = "google_translate_element";
+  mount.setAttribute("aria-hidden", "true");
+  document.body.append(mount);
+
+  window.googleTranslateElementInit = () => {
+    if (!(window.google && window.google.translate && window.google.translate.TranslateElement)) {
+      return;
+    }
+
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: "ro",
+        includedLanguages: GOOGLE_TRANSLATE_LANGS,
+        autoDisplay: false
+      },
+      "google_translate_element"
+    );
+  };
+
+  if (!document.querySelector('script[src*="translate.google.com/translate_a/element.js"]')) {
+    const script = document.createElement("script");
+    script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    script.async = true;
+    document.head.append(script);
+  }
+};
+
+const applySiteLanguage = (language) => {
+  const lang = language === "en" ? "en" : "ro";
+  document.documentElement.lang = lang;
+  localStorage.setItem("site-language", lang);
+  document.body.dataset.lang = lang;
+
+  document.querySelectorAll(".lang-switch-btn").forEach((button) => {
+    const isActive = button.dataset.langValue === lang;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+
+  const applied = setGoogleComboLanguage(lang);
+  if (!applied) {
+    let tries = 0;
+    const interval = window.setInterval(() => {
+      tries += 1;
+      if (setGoogleComboLanguage(lang) || tries > 24) {
+        window.clearInterval(interval);
+      }
+    }, 250);
+  }
+};
+
+const mountLanguageSwitcher = () => {
+  const navInner = document.querySelector(".nav-inner");
+  if (!navInner || document.querySelector(".lang-switch")) {
+    return;
+  }
+
+  const switcher = document.createElement("div");
+  switcher.className = "lang-switch";
+  switcher.innerHTML = `
+    <button class="lang-switch-btn" data-lang-value="ro" type="button" aria-pressed="false">RO</button>
+    <button class="lang-switch-btn" data-lang-value="en" type="button" aria-pressed="false">EN</button>
+  `;
+
+  navInner.append(switcher);
+
+  switcher.addEventListener("click", (event) => {
+    const target = event.target;
+    const trigger = target instanceof Element ? target.closest("[data-lang-value]") : null;
+    if (!trigger) {
+      return;
+    }
+    applySiteLanguage(trigger.dataset.langValue);
+  });
+};
+
 document.documentElement.classList.add("js-enhanced");
+mountLanguageSwitcher();
+ensureGoogleTranslate();
+applySiteLanguage(localStorage.getItem("site-language") || "ro");
 
 const scrollProgress = document.createElement("div");
 scrollProgress.className = "scroll-progress";

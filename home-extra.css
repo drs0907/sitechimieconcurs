@@ -1,0 +1,122 @@
+/* Home extra styles for acasa.html */
+
+.info-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  padding: 2rem 0;
+}
+
+.showcase-copy {
+  max-width: 760px;
+}
+
+.info-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.info-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(22,22,22,0.06);
+  flex: 1 1 220px;
+}
+
+.section-tag-light {
+  background: transparent;
+  color: #6b6b6b;
+  font-weight: 600;
+}
+
+.presenter-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.presenter-notes {
+  background: #f7f7f7;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  color: #222;
+  font-size: 0.95rem;
+}
+
+.challenge-actions { margin-top: 1.25rem; }
+
+.contest-flow-card {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.contest-flow-card .flow-card-tip {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #4f6f95;
+  opacity: 0.82;
+}
+
+.contest-flow-card:hover,
+.contest-flow-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(72, 202, 228, 0.45);
+  box-shadow: 0 14px 28px rgba(8, 28, 56, 0.15);
+}
+
+.contest-flow-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 8px 18px rgba(8, 28, 56, 0.2);
+}
+
+.presenter-details-strong summary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.presenter-details-strong summary::before {
+  content: "▶";
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.presenter-details-strong[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.presenter-details-strong summary:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.challenge-actions .button {
+  transition: transform 0.14s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.challenge-actions .button:hover {
+  box-shadow: 0 10px 24px rgba(16, 35, 60, 0.25);
+}
+
+.challenge-actions .button:active {
+  transform: translateY(1px) scale(0.97);
+  filter: saturate(1.18);
+}
+
+@media (max-width: 720px) {
+  .info-list { flex-direction: column; }
+  .info-grid { padding: 1rem 0; }
+}
