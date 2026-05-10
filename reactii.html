@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reacții și procese</title>
+  <title>Reactii si procese — Chimia in alimentatie</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animations.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
 <body data-page="reactii">
   <header class="navbar">
     <div class="nav-inner">
-      
       <nav>
         <a class="nav-link" data-page="aditivi" href="aditivi.html">Aditivi</a>
         <a class="nav-link" data-page="home" href="acasa.html">Acasă</a>
@@ -35,70 +35,71 @@
     <section class="page-hero page-hero-green">
       <div class="container page-hero-grid">
         <div data-parallax data-parallax-speed="0.05" data-rotate-speed="-0.001">
-          <span class="section-tag section-tag-light">Reacții și procese</span>
-          <h1 class="page-title page-title-light">Transformări chimice în alimente</h1>
-          <p class="page-lead page-lead-light">Aici sunt explicate procesele care schimbă gustul, culoarea, textura sau mirosul alimentelor, cu exemple simple și ușor de recunoscut.</p>
+          <span class="section-tag section-tag-light">Reactii si procese</span>
+          <h1 class="page-title page-title-light">Transformari chimice in alimente</h1>
+          <p class="page-lead page-lead-light">Procesele care schimba gustul, culoarea, textura sau mirosul alimentelor — explicate chimic, cu reactanti, conditii si exemple concrete.</p>
         </div>
         <aside class="page-hero-visual visual-card-bread" data-parallax data-parallax-speed="0.04" data-rotate-speed="0.002">
-          <span class="hero-visual-kicker">Cadru de reacție</span>
-          <h2 class="hero-visual-title">Urmele proceselor se vad în textura, culoare și miros</h2>
-          <p class="hero-visual-copy">Panoul completează pagina cu un element vizual cald, apropiat de tema de coacere, oxidare și transformare.</p>
+          <span class="hero-visual-kicker">Reactii frecvente</span>
+          <h2 class="hero-visual-title">Caldura si oxigenul declanseaza cele mai vizibile transformari</h2>
           <div class="hero-visual-stack">
             <div class="hero-visual-chip">
-              Căldura
-              <span>accelerează procese importante</span>
+              Maillard &gt; 140°C
+              <span>aminoacizi + zaharuri reducatoare</span>
             </div>
             <div class="hero-visual-chip">
-              Oxigen
-              <span>poate schimba aroma și culoarea</span>
+              Caramelizare &gt; 160°C
+              <span>zaharuri fara aminoacizi</span>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
+    <!-- Reactii principale cu detalii -->
     <section class="section">
       <div class="container">
         <div class="section-header section-header-left" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
-          <span class="section-tag">Procese esențiale</span>
-          <h2>Reacții importante explicate simplu</h2>
+          <span class="section-tag">Procese esentiale</span>
+          <h2>Cele 6 reactii principale din chimia alimentara</h2>
+          <p>Apasa pe fiecare reactie pentru a vedea mecanismul chimic, conditiile si exemple alimentare.</p>
         </div>
         <div class="timeline-grid">
           <article class="timeline-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002" onclick="openDetail('maillard')">
             <div class="card-index">R1</div>
-            <h3>Reacția Maillard</h3>
-            <p>Ajută la formarea culorii și a aromei în paine, cartofi prajiti sau alte produse bine rumenite.</p>
-            <span class="card-more">Vezi detalii și exemple →</span>
+            <h3>Reactia Maillard</h3>
+            <p>Reactie intre aminoacizi si zaharuri reducatoare la temperaturi peste 140°C. Produce melanoidine (pigmenti bruni) si sute de compusi aromatici. Nu implica zaharoza pura.</p>
+            <span class="card-more">Mecanism si exemple →</span>
           </article>
           <article class="timeline-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.002" onclick="openDetail('caramelizare')">
             <div class="card-index">R2</div>
             <h3>Caramelizare</h3>
-            <p>Apare atunci când zaharurile sunt încălzite și încep să își schimbe culoarea și gustul.</p>
-            <span class="card-more">Vezi detalii și exemple →</span>
+            <p>Descompunerea termica a zaharurilor la temperaturi de 160–180°C, fara implicarea aminoacizilor. Zaharoza se hidrolizeaza mai intai in glucoza si fructoza, apoi se formeaza compusi cu culoare ambra.</p>
+            <span class="card-more">Mecanism si exemple →</span>
           </article>
           <article class="timeline-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002" onclick="openDetail('denaturare')">
             <div class="card-index">R3</div>
-            <h3>Denaturare și coagulare</h3>
-            <p>Proteinele se modifica la încălzire sau acidifiere, iar acest lucru se observa bine la ou sau lapte.</p>
-            <span class="card-more">Vezi detalii și exemple →</span>
+            <h3>Denaturare si coagulare</h3>
+            <p>Caldura, acizii sau agitarea mecanica rup legaturile slabe care mentin structura 3D a proteinelor. Lanturile se desfasoara si se leaga intre ele (coagulare). Procesul este ireversibil.</p>
+            <span class="card-more">Mecanism si exemple →</span>
           </article>
           <article class="timeline-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.002" onclick="openDetail('fermentatie')">
             <div class="card-index">R4</div>
-            <h3>Fermentație</h3>
-            <p>Microorganismele transformă anumite substanțe și produc schimbări de gust, miros și textură.</p>
-            <span class="card-more">Vezi detalii și exemple →</span>
+            <h3>Fermentatie</h3>
+            <p>Microorganismele (bacterii, drojdii) transforma zaharurile in acid lactic, etanol sau CO₂ in conditii anaerobe. Fermentatia lactica: C₆H₁₂O₆ → 2 CH₃CHOHCOOH. Fermentatia alcoolica: C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂.</p>
+            <span class="card-more">Mecanism si exemple →</span>
           </article>
           <article class="timeline-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002" onclick="openDetail('oxidare')">
             <div class="card-index">R5</div>
             <h3>Oxidare</h3>
-            <p>Contactul cu oxigenul poate duce la schimbări de culoare sau la degradarea unor grașimi și arome.</p>
-            <span class="card-more">Vezi detalii și exemple →</span>
+            <p>Reactie cu oxigenul care produce radicali liberi, degradand grasimile (rancezire), vitaminele si pigmentii. Brunificarea enzimatica a fructelor implica enzima polifenol oxidaza si compusi fenolici.</p>
+            <span class="card-more">Mecanism si exemple →</span>
           </article>
           <article class="timeline-card" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.002" onclick="openDetail('emulsificare')">
             <div class="card-index">R6</div>
             <h3>Emulsificare</h3>
-            <p>Este procesul prin care doua lichide diferite, cum sunt apa și uleiul, pot forma un amestec mai stabil.</p>
-            <span class="card-more">Vezi detalii și exemple →</span>
+            <p>Emulgatorii (lecitina, mono- si digliceride) au o parte hidrofila si una hidrofoba. Se aseaza la interfata apa-ulei, reducand tensiunea superficiala si stabilizand picaturile dispersate.</p>
+            <span class="card-more">Mecanism si exemple →</span>
           </article>
         </div>
       </div>
@@ -108,81 +109,138 @@
     <div id="detailOverlay" class="detail-overlay">
       <div class="detail-content">
         <button class="close-detail" onclick="closeDetail()">&times;</button>
-        <div id="detailBody">
-          <!-- Continutul se incarca din JS -->
-        </div>
+        <div id="detailBody"></div>
       </div>
     </div>
 
-    <section class="section section-light">
+    <!-- Tabel comparativ -->
+    <section class="section section-soft">
       <div class="container">
         <div class="section-header section-header-left" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
-          <span class="section-tag">Studii de caz</span>
-          <h2>Exemple ușor de observat în viata de zi cu zi</h2>
+          <span class="section-tag">Comparatie</span>
+          <h2>Reactia Maillard vs Caramelizare</h2>
+          <p>Cele doua reactii sunt adesea confundate, dar au mecanisme si conditii diferite.</p>
         </div>
-        <div class="case-grid">
-          <article class="case-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="-0.002"><h3>Pâine</h3><p>Aluatul crește prin fermentație, iar la coacere apare culoarea rumenă de la suprafață.</p></article>
-          <article class="case-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="0.002"><h3>Ou</h3><p>La încălzire, albușul devine alb și solid pentru că proteinele își schimba structura.</p></article>
-          <article class="case-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="-0.002"><h3>Mar tăiat</h3><p>După contactul cu aerul, suprafața lui se închide la culoare din cauza oxidării enzimatice.</p></article>
-          <article class="case-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="0.002"><h3>Maioneză</h3><p>Este un exemplu simplu de emulsie stabilă între apă și ulei.</p></article>
+        <div class="definition-table">
+          <div class="definition-row"><strong>Reactanti</strong><span><strong>Maillard:</strong> aminoacizi + zaharuri reducatoare (glucoza, fructoza, lactoza) &nbsp;|&nbsp; <strong>Caramelizare:</strong> doar zaharuri (inclusiv zaharoza)</span></div>
+          <div class="definition-row"><strong>Temperatura</strong><span><strong>Maillard:</strong> incepe la ~140°C, optim 150–180°C &nbsp;|&nbsp; <strong>Caramelizare:</strong> incepe la ~160°C pentru zaharoza</span></div>
+          <div class="definition-row"><strong>Produse</strong><span><strong>Maillard:</strong> melanoidine, pirazine, furani, aldehide — arome complexe &nbsp;|&nbsp; <strong>Caramelizare:</strong> diacetil, furan-2(5H)-ona — aroma de caramel</span></div>
+          <div class="definition-row"><strong>Exemple</strong><span><strong>Maillard:</strong> coaja painii, friptura, cafea prajita, biscuiti &nbsp;|&nbsp; <strong>Caramelizare:</strong> caramel, crème brûlée, ceapa calita</span></div>
+          <div class="definition-row"><strong>Inhibare</strong><span><strong>Maillard:</strong> pH acid, temperatura scazuta, reducerea zaharurilor &nbsp;|&nbsp; <strong>Caramelizare:</strong> temperatura sub 160°C</span></div>
         </div>
       </div>
     </section>
 
+    <!-- Studii de caz -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-header section-header-left" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
+          <span class="section-tag">Exemple din viata reala</span>
+          <h2>Reactii chimice pe care le observi zilnic</h2>
+        </div>
+        <div class="case-grid">
+          <article class="case-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="-0.002" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.82)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80'); background-size: cover; background-position: center; color: white;">
+            <h3 style="color: white;">Paine</h3>
+            <p>Drojdia fermenteaza zaharurile din faina → CO₂ face aluatul sa creasca. La coacere, reactia Maillard brunifica coaja si formeaza arome complexe.</p>
+          </article>
+          <article class="case-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="0.002" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.82)), url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&q=80'); background-size: cover; background-position: center; color: white;">
+            <h3 style="color: white;">Ou</h3>
+            <p>La 62°C incepe denaturarea ovoalbuminei. La 70°C albusul devine complet solid. Galbenusul se intareste la 65–70°C. Temperatura conteaza — ouale fierte moale vs tari.</p>
+          </article>
+          <article class="case-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="-0.002" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.82)), url('https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400&q=80'); background-size: cover; background-position: center; color: white;">
+            <h3 style="color: white;">Mar taiat</h3>
+            <p>Polifenol oxidaza din celulele taiate oxideaza compusii fenolici in prezenta O₂ → melanine brune. Acidul citric (lamaie) inhiba enzima si mentine culoarea alba.</p>
+          </article>
+          <article class="case-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="0.002" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.82)), url('https://images.unsplash.com/photo-1587324438673-56c78a866b15?w=400&q=80'); background-size: cover; background-position: center; color: white;">
+            <h3 style="color: white;">Maioneza</h3>
+            <p>Lecitina din galbenus se aseaza la interfata apa-ulei. Agitarea mecanica disperseaza uleiul in picaturi mici. Emulsia este stabila atat timp cat lecitina acopera fiecare picatura.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informatii suplimentare -->
     <section class="section">
       <div class="container two-column-layout">
         <article class="feature-card feature-card-tall" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.002">
-          <span class="eyebrow">Cum urmărești o reacție</span>
-          <h3>La ce merită să fii atent</h3>
-          <ol class="step-list">
-            <li>Cum se numește procesul.</li>
-            <li>Ce componente sunt implicate.</li>
-            <li>In ce condiții apare.</li>
-            <li>Ce schimbare produce în aliment.</li>
-            <li>Ce exemplu concret il arata clar.</li>
-          </ol>
+          <span class="eyebrow">Fermentatie</span>
+          <h3>Tipuri de fermentatie in alimente</h3>
+          <ul class="bullet-list">
+            <li><strong>Lactica:</strong> glucoza → acid lactic (iaurt, muraturi, branza)</li>
+            <li><strong>Alcoolica:</strong> glucoza → etanol + CO₂ (paine, bere, vin)</li>
+            <li><strong>Acetica:</strong> etanol + O₂ → acid acetic (otet)</li>
+            <li><strong>Propionica:</strong> acid lactic → acid propionic + CO₂ (branza Emmental — gaurele)</li>
+          </ul>
+          <p style="margin-top:1rem; color: var(--muted); font-size:14px;">Fermentatia nu inseamna alterare — este un proces controlat care produce alimente sigure si cu proprietati nutritive imbunatatite.</p>
         </article>
         <article class="feature-card feature-card-tall" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.002">
           <span class="eyebrow">Confuzii frecvente</span>
+          <h3>Ce trebuie sa stii clar</h3>
           <ul class="bullet-list">
-            <li>Maillard nu este același lucru cu caramelizarea.</li>
-            <li>Fermentația nu înseamnă automat alterare.</li>
-            <li>Denaturarea nu înseamnă dispariția completă a proteinei.</li>
-            <li>Nu orice schimbare de culoare este produsă de aceeași reacție.</li>
+            <li>Maillard ≠ caramelizare — mecanisme complet diferite</li>
+            <li>Denaturarea nu distruge valoarea nutritiva a proteinelor — aminoacizii raman disponibili</li>
+            <li>Fermentatia nu inseamna automat alterare — depinde de microorganism</li>
+            <li>Nu orice brunificare este Maillard — oxidarea enzimatica produce tot culoare bruna</li>
+            <li>Emulsia nu este o solutie — uleiul nu se dizolva in apa, ci se disperseaza</li>
           </ul>
         </article>
       </div>
     </section>
+
+    <!-- Galerie foto -->
     <section class="section">
       <div class="container">
         <div class="section-header section-header-left" data-parallax data-parallax-speed="0.03" data-rotate-speed="0.001">
-          <span class="section-tag">Galerie foto</span>
-          <h2>Transformari pe care le poti vedea imediat</h2>
-          <p>Imaginile completează reacțiile descrise mai sus prin exemple vizuale despre fermentație, rumenire și efectul căldurii.</p>
+          <span class="section-tag">Galerie</span>
+          <h2>Reactii vizibile in alimente</h2>
         </div>
         <div class="photo-grid">
           <figure class="photo-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="-0.002">
-            <img src="assets/images/bread-loaves.png" alt="Sortimente de paine si produse de panificatie" />
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80" alt="Paine proaspat coapta" />
             <figcaption>
-              <span class="photo-label">Fermentație</span>
-              <h3>Aluat crescut si apoi copt</h3>
-              <p>Painea arata foarte bine legatura dintre dospire, retinerea gazelor si transformarile aparute in cuptor.</p>
+              <span class="photo-label">Maillard + Fermentatie</span>
+              <h3>Painea — doua reactii intr-un produs</h3>
+              <p>Dospirea (fermentatie alcoolica) face aluatul poros. Coacerea (Maillard) brunifica coaja si creeaza arome. Miezul alb si coaja bruna sunt produse ale unor reactii diferite.</p>
             </figcaption>
           </figure>
           <figure class="photo-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="0.002">
-            <img src="assets/images/maillard-diagram.png" alt="Schema reactiei Maillard" />
+            <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=800&q=80" alt="Friptura rumenita" />
             <figcaption>
-              <span class="photo-label">Maillard</span>
-              <h3>Schema rumenirii aromatice</h3>
-              <p>Diagrama explica pe scurt cum aminoacizii si zaharurile reducatoare duc la compusi colorati si arome noi.</p>
+              <span class="photo-label">Reactia Maillard</span>
+              <h3>Rumenirea carnii la prajire</h3>
+              <p>Aminoacizii din proteinele carnii reactioneaza cu zaharurile reducatoare la suprafata. Se formeaza o crusta bruna cu arome complexe — pirazine, furani, aldehide.</p>
             </figcaption>
           </figure>
           <figure class="photo-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="-0.002">
-            <img src="assets/images/popcorn-closeup.png" alt="Boabe de popcorn expandate" />
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80" alt="Caramel" />
             <figcaption>
-              <span class="photo-label">Incalzire rapida</span>
-              <h3>Abur intern si expansiune</h3>
-              <p>Popcornul este un exemplu vizibil de crestere brusca a presiunii interne si de reorganizare a amidonului.</p>
+              <span class="photo-label">Caramelizare</span>
+              <h3>Zaharoza la 160°C</h3>
+              <p>Zaharoza se hidrolizeaza in glucoza + fructoza, care se descompun termic. Produsii intermediari (diacetil, hidroximetilfurfural) dau culoarea ambra si aroma caracteristica.</p>
+            </figcaption>
+          </figure>
+          <figure class="photo-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="0.002">
+            <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=800&q=80" alt="Ou fiert" />
+            <figcaption>
+              <span class="photo-label">Denaturare proteica</span>
+              <h3>Ovoalbumina la caldura</h3>
+              <p>Ovoalbumina (54% din proteinele albusului) se denatureaza la 62°C. Legaturile disulfurice se reformeaza intre lanturile desfasurate, creand o retea solida si opaca.</p>
+            </figcaption>
+          </figure>
+          <figure class="photo-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="-0.002">
+            <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=800&q=80" alt="Mar taiat" />
+            <figcaption>
+              <span class="photo-label">Oxidare enzimatica</span>
+              <h3>Brunificarea merelor</h3>
+              <p>Polifenol oxidaza (PPO) catalizeza oxidarea acidului clorogenic si a altor polifenoli in prezenta O₂. Produsii (o-chinone) se polimerizeaza in melanine brune.</p>
+            </figcaption>
+          </figure>
+          <figure class="photo-card" data-parallax data-parallax-speed="0.028" data-rotate-speed="0.002">
+            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=800&q=80" alt="Iaurt" />
+            <figcaption>
+              <span class="photo-label">Fermentatie lactica</span>
+              <h3>Laptele devine iaurt</h3>
+              <p>Lactobacillus bulgaricus si Streptococcus thermophilus produc acid lactic din lactoza. pH-ul scade de la 6.7 la 4.5, cazeina precipita la punctul izoelectric si laptele se coaguleaza.</p>
             </figcaption>
           </figure>
         </div>
@@ -193,16 +251,16 @@
   <footer class="footer footer-modern">
     <div class="container footer-grid footer-contact-grid" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001">
       <div class="footer-about">
-        <span class="footer-badge">Laborator educational</span>
-        <h3>Laboratorul de Chimie</h3>
-        <p class="footer-text">Explicam chimia alimentatiei pe intelesul tuturor, prin exemple clare, simulari si continut pregatit pentru concursuri.</p>
+        <span class="footer-badge">Chimie alimentară</span>
+        <h3>Chimia în alimentație</h3>
+        <p class="footer-text">Resursă educațională despre procesele chimice din alimente, aditivii alimentari și compușii organici frecvenți.</p>
       </div>
       <div class="footer-links footer-column">
-        <h4>Navigare rapida</h4>
-        <a href="acasa.html">Acasa</a>
+        <h4>Navigare rapidă</h4>
+        <a href="acasa.html">Acasă</a>
         <a href="aditivi.html">Aditivi</a>
         <a href="concepte.html">Concepte</a>
-        <a href="reactii.html">Reactii</a>
+        <a href="reactii.html">Reacții</a>
         <a href="formule.html">Formule</a>
         <a href="resurse.html">Bibliografie</a>
       </div>
@@ -210,15 +268,16 @@
         <h4>Date de contact</h4>
         <p class="footer-contact-row"><strong>Email:</strong> <a href="mailto:laboratoruldechimie@gmail.com">laboratoruldechimie@gmail.com</a></p>
         <p class="footer-contact-row"><strong>Program:</strong> Luni - Vineri, 09:00 - 18:00</p>
-        <p class="footer-note">Pentru intrebari despre materiale, prezentari sau colaborari, scrie-ne pe email.</p>
+        <p class="footer-note">Pentru intrebari despre materiale educationale sau colaborari, scrie-ne pe email.</p>
         <p><a class="button button-secondary footer-cta" href="mailto:laboratoruldechimie@gmail.com?subject=Intrebare%20Laborator">Trimite un mesaj</a></p>
       </div>
     </div>
     <div class="container footer-bottom">
-      <small>© 2026 Laboratorul de Chimie - Toate drepturile rezervate</small>
+      <small>© 2026 Chimia în alimentație — conținut educațional</small>
     </div>
   </footer>
 
+  <script src="animations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

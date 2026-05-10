@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bibliografie</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animations.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
 <body data-page="resurse">
@@ -12,9 +13,9 @@
     <div class="nav-inner">
       <nav>
         <a class="nav-link" data-page="aditivi" href="aditivi.html">Aditivi</a>
-        <a class="nav-link" data-page="home" href="acasa.html">Acasa</a>
+        <a class="nav-link" data-page="home" href="acasa.html">Acasă</a>
         <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
-        <a class="nav-link" data-page="reactii" href="reactii.html">Reactii</a>
+        <a class="nav-link" data-page="reactii" href="reactii.html">Reacții</a>
         <a class="nav-link" data-page="formule" href="formule.html">Formule</a>
         <a class="nav-link" data-page="resurse" href="resurse.html">Bibliografie</a>
       </nav>
@@ -22,9 +23,9 @@
     </div>
     <div class="mobile-menu" id="mobileMenu">
       <a class="nav-link" data-page="aditivi" href="aditivi.html">Aditivi</a>
-      <a class="nav-link" data-page="home" href="acasa.html">Acasa</a>
+      <a class="nav-link" data-page="home" href="acasa.html">Acasă</a>
       <a class="nav-link" data-page="concepte" href="concepte.html">Concepte</a>
-      <a class="nav-link" data-page="reactii" href="reactii.html">Reactii</a>
+      <a class="nav-link" data-page="reactii" href="reactii.html">Reacții</a>
       <a class="nav-link" data-page="formule" href="formule.html">Formule</a>
       <a class="nav-link" data-page="resurse" href="resurse.html">Bibliografie</a>
     </div>
@@ -36,7 +37,32 @@
         <div data-parallax data-parallax-speed="0.05" data-rotate-speed="-0.001">
           <span class="section-tag">Bibliografie</span>
           <h1 class="page-title">Surse folosite</h1>
-          <p class="page-lead">Aceasta pagina include bibliografia de continut pentru proiect, precum si creditele pentru imaginile integrate in site.</p>
+          <p class="page-lead">Această pagină include bibliografia completă de conținut pentru proiect, creditele pentru imagini și informații despre autorii materialului.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Autori -->
+    <section class="section section-soft">
+      <div class="container container-narrow">
+        <div class="section-header">
+          <span class="section-tag">Autori</span>
+          <h2>Creatorii acestui proiect</h2>
+          <p>Proiectul a fost realizat de:</p>
+        </div>
+        <div class="detail-grid">
+          <article class="detail-card" style="text-align:center; padding: 2.5rem 2rem;">
+            <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1d9e75,#21d4fd);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:1.8rem;color:#fff;font-weight:700;">OD</div>
+            <h3 style="font-size:1.4rem;">Olteanu Darius-Cristian</h3>
+            <p style="color:var(--muted);margin-top:0.5rem;">Autor și dezvoltator web</p>
+            <p style="color:var(--muted-light);margin-top:0.3rem;font-size:13px;">Elev al Colegiului Național Gheorghe Munteanu Murgoci, Brăila</p>
+          </article>
+          <article class="detail-card" style="text-align:center; padding: 2.5rem 2rem;">
+            <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#ff6b57);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:1.8rem;color:#fff;font-weight:700;">RA</div>
+            <h3 style="font-size:1.4rem;">Radu Alexandru-Marian</h3>
+            <p style="color:var(--muted);margin-top:0.5rem;">Autor și cercetare conținut</p>
+            <p style="color:var(--muted-light);margin-top:0.3rem;font-size:13px;">Elev al Colegiului Național Gheorghe Munteanu Murgoci, Brăila</p>
+          </article>
         </div>
       </div>
     </section>
@@ -49,36 +75,34 @@
             <button class="bibliography-filter-button" type="button" data-bibliography-filter="imagini" aria-pressed="false">Imagini</button>
             <button class="bibliography-filter-button" type="button" data-bibliography-filter="formule" aria-pressed="false">Formule</button>
             <button class="bibliography-filter-button" type="button" data-bibliography-filter="concepte" aria-pressed="false">Concepte</button>
-            <button class="bibliography-filter-button" type="button" data-bibliography-filter="reactii" aria-pressed="false">Reactii</button>
+            <button class="bibliography-filter-button" type="button" data-bibliography-filter="reactii" aria-pressed="false">Reacții</button>
             <button class="bibliography-filter-button" type="button" data-bibliography-filter="aditivi" aria-pressed="false">Aditivi</button>
-            <button class="bibliography-filter-button" type="button" data-bibliography-filter="nota" aria-pressed="false">Nota</button>
           </div>
-          <p class="bibliography-toolbar-note">Alege o categorie si pagina afiseaza doar sectiunea respectiva.</p>
+          <p class="bibliography-toolbar-note">Alege o categorie și pagina afișează doar secțiunea respectivă.</p>
         </div>
       </div>
     </section>
+
+
 
     <section class="section bibliography-panel" data-bibliography-panel="imagini">
       <div class="container container-narrow">
         <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
           <span class="section-tag">Credite imagini</span>
-          <h2>Sursele imaginilor folosite in site</h2>
-          <p>Imaginile au fost salvate local in proiect. O parte provin din surse reutilizabile, iar o parte au fost furnizate direct pentru acest proiect.</p>
+          <h2>Sursele imaginilor folosite în site</h2>
+          <p>Imaginile provin din Unsplash (licență gratuită pentru uz educațional) și Wikimedia Commons (licențe CC / domeniu public).</p>
         </div>
         <div class="definition-table">
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Imagini suplimentare furnizate pentru proiect</strong><span>Setul nou de imagini integrat in paginile Concepte si Reactii a fost adaugat local in folderul <code>assets/images</code>.</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Roger McLassus / Brown bread crust</strong><span><a href="https://commons.wikimedia.org/wiki/File:Brown_bread_crust.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · licenta CC BY-SA 3.0 / GFDL</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>neekoh.fi / Oil and water</strong><span><a href="https://commons.wikimedia.org/wiki/File:Oil_and_water.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · licenta CC BY 2.0</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Marius Iordache / Sliced apple</strong><span><a href="https://commons.wikimedia.org/wiki/File:Sliced_apple.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Paolo Neo / Bubbles in glass of water</strong><span><a href="https://commons.wikimedia.org/wiki/File:Bubbles_in_glass_of_water.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Paolo Neo / Egg food</strong><span><a href="https://commons.wikimedia.org/wiki/File:Egg_food.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Jon Sullivan / Books on a shelf</strong><span><a href="https://commons.wikimedia.org/wiki/File:Books_on_a_shelf.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Becker, Don, USGS / Female in laboratory</strong><span><a href="https://commons.wikimedia.org/wiki/File:Female_in_laboratory.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Belikov Maxim / Laboratory equipment</strong><span><a href="https://commons.wikimedia.org/wiki/File:Laboratory_equipment.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · fundal pentru laborator</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Salchichon etiqueta</strong><span><a href="https://commons.wikimedia.org/wiki/File:Salchichon_etiqueta.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · fundal pentru aditivi si etichete</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Ingredients for Cooking - 50383814356</strong><span><a href="https://commons.wikimedia.org/wiki/File:Ingredients_for_Cooking_-_50383814356.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · fundal pentru concepte</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Flasks and beakers</strong><span><a href="https://commons.wikimedia.org/wiki/File:Flasks_and_beakers.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · fundal pentru formule</span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Beakers of drinking water</strong><span><a href="https://commons.wikimedia.org/wiki/File:Beakers_of_drinking_water.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · imagine pentru zona de prezentare</span></div>
+          <div class="definition-row"><strong>Unsplash — platformă imagini</strong><span><a href="https://unsplash.com/license" target="_blank" rel="noreferrer">unsplash.com/license</a> · Licență Unsplash — utilizare gratuită, inclusiv educațională, fără atribuire obligatorie</span></div>
+          <div class="definition-row"><strong>Roger McLassus / Coajă de pâine brună</strong><span><a href="https://commons.wikimedia.org/wiki/File:Brown_bread_crust.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · licență CC BY-SA 3.0 / GFDL</span></div>
+          <div class="definition-row"><strong>neekoh.fi / Ulei și apă</strong><span><a href="https://commons.wikimedia.org/wiki/File:Oil_and_water.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · licență CC BY 2.0</span></div>
+          <div class="definition-row"><strong>Marius Iordache / Măr feliat</strong><span><a href="https://commons.wikimedia.org/wiki/File:Sliced_apple.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
+          <div class="definition-row"><strong>Paolo Neo / Bule în apă</strong><span><a href="https://commons.wikimedia.org/wiki/File:Bubbles_in_glass_of_water.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
+          <div class="definition-row"><strong>Paolo Neo / Ou</strong><span><a href="https://commons.wikimedia.org/wiki/File:Egg_food.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
+          <div class="definition-row"><strong>Jon Sullivan / Cărți pe raft</strong><span><a href="https://commons.wikimedia.org/wiki/File:Books_on_a_shelf.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
+          <div class="definition-row"><strong>Becker, Don, USGS / Femeie în laborator</strong><span><a href="https://commons.wikimedia.org/wiki/File:Female_in_laboratory.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · domeniu public</span></div>
+          <div class="definition-row"><strong>Flasks and beakers</strong><span><a href="https://commons.wikimedia.org/wiki/File:Flasks_and_beakers.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · fundal pentru formule</span></div>
+          <div class="definition-row"><strong>Beakers of drinking water</strong><span><a href="https://commons.wikimedia.org/wiki/File:Beakers_of_drinking_water.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a> · imagine pentru zona educațională</span></div>
         </div>
       </div>
     </section>
@@ -86,16 +110,22 @@
     <section class="section bibliography-panel" data-bibliography-panel="formule">
       <div class="container container-narrow">
         <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
-          <span class="section-tag">Lista surselor</span>
-          <h2>Bibliografie pentru continutul despre formule</h2>
-          <p>Sursele de mai jos au fost folosite pentru acizii organici si pentru formula generala a proteinelor din pagina de formule structurale.</p>
+          <span class="section-tag">Formule structurale</span>
+          <h2>Bibliografie pentru conținutul despre formule</h2>
+          <p>Sursele de mai jos au fost folosite pentru acizii organici și pentru formula generală a proteinelor.</p>
         </div>
         <div class="definition-table">
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>PubChem - Lactic Acid</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Lactic-acid" target="_blank" rel="noreferrer">https://pubchem.ncbi.nlm.nih.gov/compound/Lactic-acid</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>PubChem - Malic Acid</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Malate" target="_blank" rel="noreferrer">https://pubchem.ncbi.nlm.nih.gov/compound/Malate</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>PubChem - Citric Acid</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Citric-Acid" target="_blank" rel="noreferrer">https://pubchem.ncbi.nlm.nih.gov/compound/Citric-Acid</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>OpenStax Biology - Proteins</strong><span><a href="https://openstax.org/books/biology/pages/3-4-proteins" target="_blank" rel="noreferrer">https://openstax.org/books/biology/pages/3-4-proteins</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>NCBI Bookshelf - Primary Protein Structure</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK564343/" target="_blank" rel="noreferrer">https://www.ncbi.nlm.nih.gov/books/NBK564343/</a></span></div>
+          <div class="definition-row"><strong>PubChem — Acid lactic</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Lactic-acid" target="_blank" rel="noreferrer">pubchem.ncbi.nlm.nih.gov/compound/Lactic-acid</a> · NCBI, National Library of Medicine</span></div>
+          <div class="definition-row"><strong>PubChem — Acid malic</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Malate" target="_blank" rel="noreferrer">pubchem.ncbi.nlm.nih.gov/compound/Malate</a> · NCBI, National Library of Medicine</span></div>
+          <div class="definition-row"><strong>PubChem — Acid citric</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Citric-Acid" target="_blank" rel="noreferrer">pubchem.ncbi.nlm.nih.gov/compound/Citric-Acid</a> · NCBI, National Library of Medicine</span></div>
+          <div class="definition-row"><strong>PubChem — Acid acetic</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Acetic-acid" target="_blank" rel="noreferrer">pubchem.ncbi.nlm.nih.gov/compound/Acetic-acid</a> · NCBI, National Library of Medicine</span></div>
+          <div class="definition-row"><strong>PubChem — Glucoză</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Glucose" target="_blank" rel="noreferrer">pubchem.ncbi.nlm.nih.gov/compound/Glucose</a> · NCBI, National Library of Medicine</span></div>
+          <div class="definition-row"><strong>PubChem — Zaharoză</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Sucrose" target="_blank" rel="noreferrer">pubchem.ncbi.nlm.nih.gov/compound/Sucrose</a> · NCBI, National Library of Medicine</span></div>
+          <div class="definition-row"><strong>OpenStax Biology — Proteine</strong><span><a href="https://openstax.org/books/biology/pages/3-4-proteins" target="_blank" rel="noreferrer">openstax.org/books/biology/pages/3-4-proteins</a> · OpenStax, Rice University</span></div>
+          <div class="definition-row"><strong>OpenStax Biology — Carbohidrați</strong><span><a href="https://openstax.org/books/biology/pages/3-2-carbohydrates" target="_blank" rel="noreferrer">openstax.org/books/biology/pages/3-2-carbohydrates</a> · OpenStax, Rice University</span></div>
+          <div class="definition-row"><strong>OpenStax Biology — Lipide</strong><span><a href="https://openstax.org/books/biology/pages/3-3-lipids" target="_blank" rel="noreferrer">openstax.org/books/biology/pages/3-3-lipids</a> · OpenStax, Rice University</span></div>
+          <div class="definition-row"><strong>NCBI Bookshelf — Structura primară a proteinelor</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK564343/" target="_blank" rel="noreferrer">ncbi.nlm.nih.gov/books/NBK564343/</a> · StatPearls Publishing</span></div>
+          <div class="definition-row"><strong>NCBI Bookshelf — Aminoacizi și peptide</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK22379/" target="_blank" rel="noreferrer">ncbi.nlm.nih.gov/books/NBK22379/</a> · Biochemistry, 5th edition</span></div>
         </div>
       </div>
     </section>
@@ -103,16 +133,22 @@
     <section class="section bibliography-panel" data-bibliography-panel="concepte">
       <div class="container container-narrow">
         <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
-          <span class="section-tag">Concepte</span>
+          <span class="section-tag">Concepte fundamentale</span>
           <h2>Surse pentru pagina de concepte</h2>
-          <p>Aceste linkuri sustin explicatiile despre apa, glucide, lipide, proteine, pH si enzime.</p>
+          <p>Aceste linkuri susțin explicațiile despre apă, glucide, lipide, proteine, pH și enzime.</p>
         </div>
         <div class="definition-table">
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>USGS - Properties of Water</strong><span><a href="https://www.usgs.gov/index.php/special-topics/water-science-school/properties-water" target="_blank" rel="noreferrer">https://www.usgs.gov/index.php/special-topics/water-science-school/properties-water</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>OpenStax - Biological Molecules</strong><span><a href="https://openstax.org/books/concepts-biology/pages/2-3-biological-molecules" target="_blank" rel="noreferrer">https://openstax.org/books/concepts-biology/pages/2-3-biological-molecules</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>OpenStax - Proteins</strong><span><a href="https://openstax.org/books/biology/pages/3-4-proteins" target="_blank" rel="noreferrer">https://openstax.org/books/biology/pages/3-4-proteins</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>OpenStax - Enzymes</strong><span><a href="https://openstax.org/books/biology/pages/6-5-enzymes" target="_blank" rel="noreferrer">https://openstax.org/books/biology/pages/6-5-enzymes</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>OpenStax - pH and pOH</strong><span><a href="https://openstax.org/books/chemistry-atoms-first-2e/pages/14-2-ph-and-poh" target="_blank" rel="noreferrer">https://openstax.org/books/chemistry-atoms-first-2e/pages/14-2-ph-and-poh</a></span></div>
+          <div class="definition-row"><strong>USGS — Proprietățile apei</strong><span><a href="https://www.usgs.gov/special-topics/water-science-school/science/water-properties-information-system" target="_blank" rel="noreferrer">usgs.gov — Water Science School</a> · U.S. Geological Survey</span></div>
+          <div class="definition-row"><strong>OpenStax — Molecule biologice</strong><span><a href="https://openstax.org/books/concepts-biology/pages/2-3-biological-molecules" target="_blank" rel="noreferrer">openstax.org/books/concepts-biology/pages/2-3-biological-molecules</a></span></div>
+          <div class="definition-row"><strong>OpenStax — Proteine</strong><span><a href="https://openstax.org/books/biology/pages/3-4-proteins" target="_blank" rel="noreferrer">openstax.org/books/biology/pages/3-4-proteins</a></span></div>
+          <div class="definition-row"><strong>OpenStax — Enzime</strong><span><a href="https://openstax.org/books/biology/pages/6-5-enzymes" target="_blank" rel="noreferrer">openstax.org/books/biology/pages/6-5-enzymes</a></span></div>
+          <div class="definition-row"><strong>OpenStax — pH și pOH</strong><span><a href="https://openstax.org/books/chemistry-atoms-first-2e/pages/14-2-ph-and-poh" target="_blank" rel="noreferrer">openstax.org — Chemistry: Atoms First 2e</a></span></div>
+          <div class="definition-row"><strong>OpenStax — Lipide</strong><span><a href="https://openstax.org/books/biology/pages/3-3-lipids" target="_blank" rel="noreferrer">openstax.org/books/biology/pages/3-3-lipids</a></span></div>
+          <div class="definition-row"><strong>NCBI — Activitatea apei în alimente</strong><span><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6723973/" target="_blank" rel="noreferrer">ncbi.nlm.nih.gov/pmc/articles/PMC6723973/</a> · PMC, National Library of Medicine</span></div>
+          <div class="definition-row"><strong>NCBI — Denaturarea proteinelor</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK21581/" target="_blank" rel="noreferrer">ncbi.nlm.nih.gov/books/NBK21581/</a> · Biochemistry, 5th edition</span></div>
+          <div class="definition-row"><strong>NCBI — Emulsii alimentare</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK559084/" target="_blank" rel="noreferrer">ncbi.nlm.nih.gov/books/NBK559084/</a> · StatPearls Publishing</span></div>
+          <div class="definition-row"><strong>Britannica — Enzimă</strong><span><a href="https://www.britannica.com/science/enzyme" target="_blank" rel="noreferrer">britannica.com/science/enzyme</a> · Encyclopædia Britannica</span></div>
+          <div class="definition-row"><strong>Britannica — Lipidă</strong><span><a href="https://www.britannica.com/science/lipid" target="_blank" rel="noreferrer">britannica.com/science/lipid</a> · Encyclopædia Britannica</span></div>
         </div>
       </div>
     </section>
@@ -120,18 +156,23 @@
     <section class="section bibliography-panel" data-bibliography-panel="reactii">
       <div class="container container-narrow">
         <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
-          <span class="section-tag">Reactii</span>
-          <h2>Surse pentru pagina de reactii si procese</h2>
-          <p>Linkurile de mai jos acopera rumenirea, fermentatia, oxidarea si emulsificarea prezentate in site.</p>
+          <span class="section-tag">Reacții și procese</span>
+          <h2>Surse pentru pagina de reacții și procese</h2>
+          <p>Linkurile de mai jos acoperă rumenirea, fermentația, oxidarea, denaturarea și emulsificarea prezentate în site.</p>
         </div>
         <div class="definition-table">
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Britannica - Maillard Reaction</strong><span><a href="https://www.britannica.com/science/Maillard-reaction" target="_blank" rel="noreferrer">https://www.britannica.com/science/Maillard-reaction</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Britannica - Caramelization</strong><span><a href="https://www.britannica.com/topic/caramelization" target="_blank" rel="noreferrer">https://www.britannica.com/topic/caramelization</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>NCBI Bookshelf - Lactic Acid Fermentations</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK234703/" target="_blank" rel="noreferrer">https://www.ncbi.nlm.nih.gov/books/NBK234703/</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>NCBI Bookshelf - Bacterial Metabolism</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK7919/" target="_blank" rel="noreferrer">https://www.ncbi.nlm.nih.gov/books/NBK7919/</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>PMC - Enzymatic Browning</strong><span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10637886/" target="_blank" rel="noreferrer">https://pmc.ncbi.nlm.nih.gov/articles/PMC10637886/</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>NCBI Bookshelf - Vitamin C</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/n/nap9810/ddd0000144/" target="_blank" rel="noreferrer">https://www.ncbi.nlm.nih.gov/books/n/nap9810/ddd0000144/</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>NCBI Bookshelf - Emulsions</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK559084/" target="_blank" rel="noreferrer">https://www.ncbi.nlm.nih.gov/books/NBK559084/</a></span></div>
+          <div class="definition-row"><strong>Britannica — Reacția Maillard</strong><span><a href="https://www.britannica.com/science/Maillard-reaction" target="_blank" rel="noreferrer">britannica.com/science/Maillard-reaction</a> · Encyclopædia Britannica</span></div>
+          <div class="definition-row"><strong>Britannica — Caramelizare</strong><span><a href="https://www.britannica.com/topic/caramelization" target="_blank" rel="noreferrer">britannica.com/topic/caramelization</a> · Encyclopædia Britannica</span></div>
+          <div class="definition-row"><strong>Britannica — Fermentație</strong><span><a href="https://www.britannica.com/science/fermentation" target="_blank" rel="noreferrer">britannica.com/science/fermentation</a> · Encyclopædia Britannica</span></div>
+          <div class="definition-row"><strong>Britannica — Oxidare</strong><span><a href="https://www.britannica.com/science/oxidation-reduction" target="_blank" rel="noreferrer">britannica.com/science/oxidation-reduction</a> · Encyclopædia Britannica</span></div>
+          <div class="definition-row"><strong>NCBI — Fermentație lactică</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK234703/" target="_blank" rel="noreferrer">ncbi.nlm.nih.gov/books/NBK234703/</a> · Biochemistry and Molecular Biology</span></div>
+          <div class="definition-row"><strong>NCBI — Metabolism bacterian</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK7919/" target="_blank" rel="noreferrer">ncbi.nlm.nih.gov/books/NBK7919/</a> · Medical Microbiology, 4th edition</span></div>
+          <div class="definition-row"><strong>PMC — Brunificare enzimatică</strong><span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10637886/" target="_blank" rel="noreferrer">pmc.ncbi.nlm.nih.gov/articles/PMC10637886/</a> · PubMed Central</span></div>
+          <div class="definition-row"><strong>NCBI — Vitamina C și antioxidanți</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/n/nap9810/ddd0000144/" target="_blank" rel="noreferrer">ncbi.nlm.nih.gov — Dietary Reference Intakes</a></span></div>
+          <div class="definition-row"><strong>NCBI — Emulsii</strong><span><a href="https://www.ncbi.nlm.nih.gov/books/NBK559084/" target="_blank" rel="noreferrer">ncbi.nlm.nih.gov/books/NBK559084/</a> · StatPearls Publishing</span></div>
+          <div class="definition-row"><strong>PMC — Reacția Maillard în alimente procesate</strong><span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7824803/" target="_blank" rel="noreferrer">pmc.ncbi.nlm.nih.gov/articles/PMC7824803/</a> · PubMed Central</span></div>
+          <div class="definition-row"><strong>PMC — Fermentație și microbiom alimentar</strong><span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5227968/" target="_blank" rel="noreferrer">pmc.ncbi.nlm.nih.gov/articles/PMC5227968/</a> · PubMed Central</span></div>
+          <div class="definition-row"><strong>ScienceDirect — Caramelizarea zaharurilor</strong><span><a href="https://www.sciencedirect.com/topics/food-science/caramelization" target="_blank" rel="noreferrer">sciencedirect.com/topics/food-science/caramelization</a> · Elsevier</span></div>
         </div>
       </div>
     </section>
@@ -139,30 +180,23 @@
     <section class="section bibliography-panel" data-bibliography-panel="aditivi">
       <div class="container container-narrow">
         <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
-          <span class="section-tag">Aditivi</span>
+          <span class="section-tag">Aditivi alimentari</span>
           <h2>Surse pentru pagina de aditivi alimentari</h2>
-          <p>Pentru zona de E-uri si functiile lor, cele mai utile surse sunt cele oficiale ale Comisiei Europene si EFSA.</p>
+          <p>Sursele oficiale europene și internaționale folosite pentru baza de date cu coduri E.</p>
         </div>
         <div class="definition-table">
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>European Commission - Additives</strong><span><a href="https://food.ec.europa.eu/food-safety/food-improvement-agents/additives_en" target="_blank" rel="noreferrer">https://food.ec.europa.eu/food-safety/food-improvement-agents/additives_en</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>European Commission - Additives Database</strong><span><a href="https://food.ec.europa.eu/food-safety/food-improvement-agents/additives/database_en" target="_blank" rel="noreferrer">https://food.ec.europa.eu/food-safety/food-improvement-agents/additives/database_en</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>European Commission - EU Rules for Food Additives</strong><span><a href="https://food.ec.europa.eu/food-safety/food-improvement-agents/additives/eu-rules_en" target="_blank" rel="noreferrer">https://food.ec.europa.eu/food-safety/food-improvement-agents/additives/eu-rules_en</a></span></div>
-          <div class="definition-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>EFSA - Food Additives</strong><span><a href="https://www.efsa.europa.eu/en/topics/topic/food-additives" target="_blank" rel="noreferrer">https://www.efsa.europa.eu/en/topics/topic/food-additives</a></span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light bibliography-panel" data-bibliography-panel="nota">
-      <div class="container container-narrow">
-        <div class="section-header" data-parallax data-parallax-speed="0.03" data-rotate-speed="-0.001">
-          <span class="section-tag">Nota</span>
-          <h2>Cum poti completa bibliografia</h2>
-        </div>
-        <div class="topic-list">
-          <div class="topic-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Scrie autorul sau institutia</strong><span>De exemplu, numele site-ului, al manualului sau al organizatiei.</span></div>
-          <div class="topic-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Adauga titlul materialului</strong><span>Poti mentiona articolul, pagina sau documentul consultat.</span></div>
-          <div class="topic-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001"><strong>Pune linkul complet</strong><span>Astfel sursa poate fi verificata rapid.</span></div>
-          <div class="topic-row" data-parallax data-parallax-speed="0.02" data-rotate-speed="0.001"><strong>Completeaza anul daca il ai</strong><span>Ajuta la identificarea mai usoara a sursei.</span></div>
+          <div class="definition-row"><strong>Comisia Europeană — Aditivi alimentari</strong><span><a href="https://food.ec.europa.eu/food-safety/food-improvement-agents/additives_en" target="_blank" rel="noreferrer">food.ec.europa.eu — Food additives</a> · Comisia Europeană, DG SANTE</span></div>
+          <div class="definition-row"><strong>Comisia Europeană — Baza de date aditivi</strong><span><a href="https://food.ec.europa.eu/food-safety/food-improvement-agents/additives/database_en" target="_blank" rel="noreferrer">food.ec.europa.eu — Additives database</a> · Comisia Europeană</span></div>
+          <div class="definition-row"><strong>Comisia Europeană — Regulamentul UE privind aditivii</strong><span><a href="https://food.ec.europa.eu/food-safety/food-improvement-agents/additives/eu-rules_en" target="_blank" rel="noreferrer">food.ec.europa.eu — EU rules for food additives</a> · Regulamentul (CE) nr. 1333/2008</span></div>
+          <div class="definition-row"><strong>EFSA — Aditivi alimentari</strong><span><a href="https://www.efsa.europa.eu/en/topics/topic/food-additives" target="_blank" rel="noreferrer">efsa.europa.eu/en/topics/topic/food-additives</a> · Autoritatea Europeană pentru Siguranța Alimentară</span></div>
+          <div class="definition-row"><strong>EFSA — Reevaluarea aditivilor alimentari</strong><span><a href="https://www.efsa.europa.eu/en/topics/topic/re-evaluation-food-additives" target="_blank" rel="noreferrer">efsa.europa.eu — Re-evaluation of food additives</a> · EFSA</span></div>
+          <div class="definition-row"><strong>WHO — Aditivi alimentari</strong><span><a href="https://www.who.int/news-room/fact-sheets/detail/food-additives" target="_blank" rel="noreferrer">who.int/news-room/fact-sheets/detail/food-additives</a> · Organizația Mondială a Sănătății</span></div>
+          <div class="definition-row"><strong>Codex Alimentarius — Standarde internaționale</strong><span><a href="https://www.fao.org/fao-who-codexalimentarius/codex-texts/dbs/gsfa/en/" target="_blank" rel="noreferrer">fao.org — General Standard for Food Additives</a> · FAO/WHO</span></div>
+          <div class="definition-row"><strong>PubChem — Acid ascorbic (E300)</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Ascorbic-acid" target="_blank" rel="noreferrer">pubchem.ncbi.nlm.nih.gov/compound/Ascorbic-acid</a> · NCBI</span></div>
+          <div class="definition-row"><strong>PubChem — Acid sorbic (E200)</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Sorbic-acid" target="_blank" rel="noreferrer">pubchem.ncbi.nlm.nih.gov/compound/Sorbic-acid</a> · NCBI</span></div>
+          <div class="definition-row"><strong>PubChem — Lecitină (E322)</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Lecithin" target="_blank" rel="noreferrer">pubchem.ncbi.nlm.nih.gov/compound/Lecithin</a> · NCBI</span></div>
+          <div class="definition-row"><strong>PubChem — Benzoat de sodiu (E211)</strong><span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Sodium-benzoate" target="_blank" rel="noreferrer">pubchem.ncbi.nlm.nih.gov/compound/Sodium-benzoate</a> · NCBI</span></div>
+          <div class="definition-row"><strong>ScienceDirect — Conservanți alimentari</strong><span><a href="https://www.sciencedirect.com/topics/food-science/food-preservative" target="_blank" rel="noreferrer">sciencedirect.com/topics/food-science/food-preservative</a> · Elsevier</span></div>
         </div>
       </div>
     </section>
@@ -171,32 +205,33 @@
   <footer class="footer footer-modern">
     <div class="container footer-grid footer-contact-grid" data-parallax data-parallax-speed="0.02" data-rotate-speed="-0.001">
       <div class="footer-about">
-        <span class="footer-badge">Laborator educational</span>
-        <h3>Laboratorul de Chimie</h3>
-        <p class="footer-text">Explicam chimia alimentatiei pe intelesul tuturor, prin exemple clare, simulari si continut pregatit pentru concursuri.</p>
+        <span class="footer-badge">Chimie alimentară</span>
+        <h3>Chimia în alimentație</h3>
+        <p class="footer-text">Resursă educațională despre procesele chimice din alimente, aditivii alimentari și compușii organici frecvenți.</p>
       </div>
       <div class="footer-links footer-column">
-        <h4>Navigare rapida</h4>
-        <a href="acasa.html">Acasa</a>
+        <h4>Navigare rapidă</h4>
+        <a href="acasa.html">Acasă</a>
         <a href="aditivi.html">Aditivi</a>
         <a href="concepte.html">Concepte</a>
-        <a href="reactii.html">Reactii</a>
+        <a href="reactii.html">Reacții</a>
         <a href="formule.html">Formule</a>
         <a href="resurse.html">Bibliografie</a>
       </div>
       <div class="footer-contact footer-column">
-        <h4>Date de contact</h4>
-        <p class="footer-contact-row"><strong>Email:</strong> <a href="mailto:laboratoruldechimie@gmail.com">laboratoruldechimie@gmail.com</a></p>
-        <p class="footer-contact-row"><strong>Program:</strong> Luni - Vineri, 09:00 - 18:00</p>
-        <p class="footer-note">Pentru intrebari despre materiale, prezentari sau colaborari, scrie-ne pe email.</p>
-        <p><a class="button button-secondary footer-cta" href="mailto:laboratoruldechimie@gmail.com?subject=Intrebare%20Laborator">Trimite un mesaj</a></p>
+        <h4>Surse principale</h4>
+        <p class="footer-contact-row"><a href="https://pubchem.ncbi.nlm.nih.gov" target="_blank" rel="noreferrer">PubChem — NCBI</a></p>
+        <p class="footer-contact-row"><a href="https://www.efsa.europa.eu" target="_blank" rel="noreferrer">EFSA — Autoritatea Europeana</a></p>
+        <p class="footer-contact-row"><a href="https://openstax.org" target="_blank" rel="noreferrer">OpenStax — Biologie si Chimie</a></p>
+        <p class="footer-contact-row"><a href="https://food.ec.europa.eu" target="_blank" rel="noreferrer">Comisia Europeana — Aditivi</a></p>
       </div>
     </div>
     <div class="container footer-bottom">
-      <small>© 2026 Laboratorul de Chimie - Toate drepturile rezervate</small>
+      <small>© 2026 Chimia în alimentație — conținut educațional</small>
     </div>
   </footer>
 
+  <script src="animations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

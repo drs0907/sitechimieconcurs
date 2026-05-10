@@ -1,0 +1,392 @@
+/* ============================================================
+   animations.css — efecte vizuale avansate
+   ============================================================ */
+
+/* ── Keyframes ─────────────────────────────────────────────── */
+
+@keyframes molBurstAtom {
+  0%   { transform: translate(0,0) scale(1); opacity: 1; }
+  60%  { transform: translate(var(--tx), var(--ty)) scale(1.2); opacity: 0.9; }
+  100% { transform: translate(calc(var(--tx)*1.4), calc(var(--ty)*1.4)) scale(0); opacity: 0; }
+}
+
+@keyframes molBurstLabel {
+  0%   { transform: translate(0,0) scale(0.6); opacity: 0; }
+  20%  { opacity: 1; }
+  60%  { transform: translate(var(--tx), var(--ty)) scale(1); opacity: 0.85; }
+  100% { transform: translate(calc(var(--tx)*1.5), calc(var(--ty)*1.5)) scale(0.7); opacity: 0; }
+}
+
+@keyframes molBurstRing {
+  0%   { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(12); opacity: 0; }
+}
+
+@keyframes cardRipple {
+  0%   { transform: scale(0); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+@keyframes animIn {
+  from { opacity: 0; transform: translateY(28px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes cursorPulse {
+  0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 0.6; }
+  50%       { transform: translate(-50%,-50%) scale(1.4); opacity: 0.3; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(29,158,117,0); }
+  50%       { box-shadow: 0 0 0 4px rgba(29,158,117,0.18); }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Cursor personalizat ───────────────────────────────────── */
+
+.chem-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: normal;
+}
+
+.chem-cursor-dot {
+  position: fixed;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #1d9e75;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+  will-change: transform;
+}
+
+.chem-cursor-ring {
+  position: fixed;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(29,158,117,0.55);
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition: width 0.25s, height 0.25s, border-color 0.25s, opacity 0.25s;
+}
+
+.chem-cursor.is-hover .chem-cursor-dot {
+  width: 12px; height: 12px;
+  background: #ff6b57;
+}
+
+.chem-cursor.is-hover .chem-cursor-ring {
+  width: 52px; height: 52px;
+  border-color: rgba(255,107,87,0.45);
+}
+
+.chem-cursor.is-click .chem-cursor-dot {
+  width: 6px; height: 6px;
+  background: #21d4fd;
+}
+
+.chem-cursor.is-click .chem-cursor-ring {
+  width: 28px; height: 28px;
+  border-color: rgba(33,212,253,0.7);
+}
+
+/* ── Scroll reveal ─────────────────────────────────────────── */
+
+.anim-ready {
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+  transition: none;
+}
+
+.anim-in {
+  animation: animIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--anim-delay, 0ms) both;
+}
+
+/* ── Scroll progress bar ───────────────────────────────────── */
+
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: calc(var(--scroll-progress, 0) * 100%);
+  background: linear-gradient(90deg, #1d9e75, #21d4fd, #ff6b57, #c77f26);
+  background-size: 200% 100%;
+  z-index: 9998;
+  border-radius: 0 2px 2px 0;
+  transition: width 0.05s linear;
+}
+
+/* ── Carduri — hover shimmer ───────────────────────────────── */
+
+.feature-card,
+.detail-card,
+.timeline-card,
+.info-card,
+.photo-card,
+.visual-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::after,
+.detail-card::after,
+.timeline-card::after,
+.photo-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.18) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  background-position: -200% center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.feature-card:hover::after,
+.detail-card:hover::after,
+.timeline-card:hover::after,
+.photo-card:hover::after {
+  opacity: 1;
+  animation: shimmer 0.7s ease forwards;
+}
+
+/* ── Link cards — gradient animat ─────────────────────────── */
+
+.link-card {
+  transition: transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275),
+              box-shadow 0.3s ease,
+              filter 0.3s ease;
+}
+
+.link-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.35);
+  filter: brightness(1.08);
+}
+
+/* ── Stat chips — float ────────────────────────────────────── */
+
+.stat-chip:nth-child(1) { animation: floatUp 3.2s ease-in-out infinite; }
+.stat-chip:nth-child(2) { animation: floatUp 3.2s ease-in-out 0.6s infinite; }
+.stat-chip:nth-child(3) { animation: floatUp 3.2s ease-in-out 1.2s infinite; }
+
+/* ── Hero tags — fade slide ────────────────────────────────── */
+
+.hero-tags span {
+  animation: fadeSlideIn 0.5s ease both;
+}
+.hero-tags span:nth-child(1) { animation-delay: 0.9s; }
+.hero-tags span:nth-child(2) { animation-delay: 1.1s; }
+.hero-tags span:nth-child(3) { animation-delay: 1.3s; }
+
+/* ── Badge hero — scale in ─────────────────────────────────── */
+
+.badge.badge-glow {
+  animation: scaleIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.3s both;
+}
+
+/* ── Butoane — glow animat ─────────────────────────────────── */
+
+.button-primary {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.25s ease, filter 0.2s ease;
+}
+
+.button-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.25), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: inherit;
+}
+
+.button-primary:hover::before { opacity: 1; }
+
+.button-primary:hover {
+  box-shadow: 0 16px 40px rgba(255,107,87,0.4);
+  filter: brightness(1.06);
+}
+
+.button-primary:active {
+  transform: scale(0.96) translateY(1px);
+  filter: brightness(0.95);
+}
+
+/* ── Navbar — blur mai puternic la scroll ──────────────────── */
+
+.navbar {
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* ── Photo cards — zoom pe imagine ────────────────────────── */
+
+.photo-card img {
+  transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94),
+              filter 0.4s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.04) saturate(1.1);
+}
+
+/* ── Section tags — glow ───────────────────────────────────── */
+
+.section-tag {
+  transition: letter-spacing 0.3s ease, color 0.3s ease;
+}
+
+.section-header:hover .section-tag {
+  letter-spacing: 0.18em;
+  color: #0d4d3f;
+}
+
+/* ── Definition rows — highlight la hover ─────────────────── */
+
+.definition-row {
+  transition: background 0.25s ease, padding-left 0.25s ease;
+  border-radius: 8px;
+}
+
+.definition-row:hover {
+  background: rgba(29,158,117,0.06);
+  padding-left: 12px;
+}
+
+/* ── Visual cards — border glow ────────────────────────────── */
+
+.visual-card {
+  transition: transform 0.35s cubic-bezier(0.175,0.885,0.32,1.275),
+              box-shadow 0.35s ease;
+}
+
+.visual-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(10,55,43,0.16), 0 0 0 2px rgba(29,158,117,0.2);
+}
+
+/* ── Case cards — scale ────────────────────────────────────── */
+
+.case-card {
+  transition: transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275),
+              filter 0.3s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  filter: brightness(1.12);
+}
+
+/* ── Detail overlay — animatie intrare ─────────────────────── */
+
+.detail-overlay.open .detail-content {
+  animation: scaleIn 0.35s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+/* ── Hero panel — border animat ────────────────────────────── */
+
+.hero-panel {
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* ── Tilt 3D pe carduri ────────────────────────────────────── */
+
+.tilt-ready {
+  transform-style: preserve-3d;
+  transform: perspective(800px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 0.15s ease;
+}
+
+/* ── Gradient animat pe sectiunea de aditivi ───────────────── */
+
+.section-soft {
+  background: linear-gradient(270deg,
+    rgba(223,244,234,0.5),
+    rgba(245,225,191,0.28),
+    rgba(223,244,234,0.5)
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* ── Nav links — underline animat mai fluid ────────────────── */
+
+.nav-link::after {
+  transition: transform 0.25s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* ── Highlight strip ───────────────────────────────────────── */
+
+.highlight-strip {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-strip:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(10,55,43,0.12);
+}
+
+/* ── Quote panel ───────────────────────────────────────────── */
+
+.quote-panel {
+  transition: transform 0.3s ease;
+}
+
+.quote-panel:hover {
+  transform: translateY(-4px) rotate(0.3deg);
+}
+
+/* ── Responsive — dezactiveaza animatii complexe pe mobile ─── */
+
+@media (max-width: 600px) {
+  .stat-chip { animation: none; }
+  .hero-tags span { animation: none; opacity: 1; }
+  .badge.badge-glow { animation: none; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

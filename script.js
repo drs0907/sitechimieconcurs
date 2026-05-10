@@ -3,7 +3,7 @@ const visualDetails = {
     title: "Stiinta Coacerii",
     description:
       "Cand painea intra in cuptor, are loc o transformare dramatica. Caldura determina evaporarea apei de la suprafata, permitand temperaturii sa creasca peste 140C, punctul unde incepe schimbarea chimica intensa.",
-    image: "assets/images/bread-loaves.png",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Brown%20bread%20crust.jpg?width=1200",
     examples: [
       { name: "Expansiunea gazelor", text: "Dioxidul de carbon produs de drojdie se dilata rapid si face painea sa creasca." },
       { name: "Formarea crustei", text: "Reacția Maillard creează arome noi și culoarea brună specifică." }
@@ -13,7 +13,7 @@ const visualDetails = {
     title: "Chimia apei",
     description:
       "Apa este un solvent polar. Poate dizolva usor anumite substante, dar interactioneaza mai greu cu grasimile. Diferenta aceasta explica de ce unele amestecuri raman omogene, iar altele se separa rapid.",
-    image: "assets/images/water-bubbles.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Bubbles%20in%20glass%20of%20water.jpg?width=1200",
     examples: [
       { name: "Polaritatea", text: "Molecula de apa are o distributie inegala a sarcinilor si devine foarte buna pentru dizolvare si transport." },
       { name: "Tensiunea superficiala", text: "Forta de la suprafata lichidului influenteaza forma picaturilor si felul in care apa se distribuie pe alte materiale." }
@@ -23,7 +23,7 @@ const visualDetails = {
     title: "Biochimia Fructelor",
     description:
       "Fructele sunt organisme vii care respira. Cand taiem un mar, distrugem celulele si eliberam enzime care, in contact cu oxigenul, incep un proces vizibil prin schimbarea culorii.",
-    image: "assets/images/sliced-apple.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Sliced%20apple.jpg?width=1200",
     examples: [
       { name: "Polifenoloxidaza", text: "Enzima principala responsabila pentru inchiderea la culoare a fructelor." },
       { name: "Antioxidanții naturali", text: "Vitamina C poate încetini acest proces prin reacția ei rapidă cu oxigenul." }
@@ -84,7 +84,7 @@ const conceptDetails = {
     title: "Apa in alimente",
     description:
       "Apa nu este doar un ingredient, ci mediul in care au loc interactiunile chimice. Ea influenteaza direct textura, stabilitatea si modul in care caldura este transferata in interiorul alimentului.",
-    image: "assets/images/water-bubbles.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Bubbles%20in%20glass%20of%20water.jpg?width=1200",
     examples: [
       { name: "Activitatea apei", text: "Reprezinta apa libera care poate fi folosita de microorganisme pentru a se dezvolta." },
       { name: "Hidratarea", text: "Procesul prin care proteinele si amidonul absorb apa, esential in formarea aluatului." }
@@ -94,7 +94,7 @@ const conceptDetails = {
     title: "Carbohidratii",
     description:
       "Sunt compusi organici formati din carbon, hidrogen si oxigen. In bucatarie, ei sunt responsabili pentru gustul dulce, structura oferita de amidon si culoarea bruna obtinuta prin caramelizare.",
-    image: "assets/images/carbohydrates-foods.png",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Ingredients%20for%20Cooking%20-%2050383814356.jpg?width=1200",
     examples: [
       { name: "Amidonul", text: "La incalzire in prezenta apei, granulele de amidon se umfla si gelifica sosurile." },
       { name: "Zaharurile reducătoare", text: "Acestea participă la reacția Maillard și contribuie la aroma de copt." }
@@ -104,7 +104,7 @@ const conceptDetails = {
     title: "Lipidele",
     description:
       "Grasimile sunt esentiale pentru transportul aromelor si pentru crearea texturilor fine. Ele ofera energie concentrata si ajuta la transferul termic uniform in timpul prajirii.",
-    image: "assets/images/lipid-foods.png",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Oil%20and%20water.jpg?width=1200",
     examples: [
       { name: "Punctul de fum", text: "Temperatura la care o grasime incepe sa se descompuna si sa scoata fum." },
       { name: "Auto-oxidarea", text: "Procesul chimic prin care grasimile reactioneaza cu oxigenul si duc la rancezire." }
@@ -114,7 +114,7 @@ const conceptDetails = {
     title: "Proteinele",
     description:
       "Sunt molecule mari formate din lanturi de aminoacizi. In chimia alimentara, ele dau structura prin coagulare si permit formarea spumelor, cum se intampla la albusul batut.",
-    image: "assets/images/protein-foods.png",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Egg%20food.jpg?width=1200",
     examples: [
       { name: "Forma glutenului", text: "Dupa hidratare, glutenul nu are granule regulate, ci formeaza structuri neregulate, alungite si elastice care se unesc intr-o retea continua in aluat." },
       { name: "Denaturarea", text: "Procesul prin care proteinele isi pierd structura nativa sub influenta caldurii sau a acizilor." }
@@ -166,7 +166,7 @@ const reactionDetails = {
     title: "Reacția Maillard",
     description:
       "Este o reacție chimică complexă între aminoacizi și zaharuri reducătoare, care are loc de obicei la temperaturi ridicate. Aceasta conferă alimentelor gătite culoarea brună caracteristică și aromele de prăjit sau copt.",
-    image: "assets/images/maillard-diagram.png",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Flasks%20and%20beakers.jpg?width=1200",
     imageFit: "contain",
     examples: [
       { name: "Painea proaspat coapta", text: "Coaja maronie si mirosul specific sunt rezultatul direct al acestei reactii." },
@@ -177,7 +177,7 @@ const reactionDetails = {
     title: "Caramelizarea",
     description:
       "Spre deosebire de Maillard, caramelizarea implica doar descompunerea zaharurilor sub actiunea caldurii intense. Procesul elimina apa si creeaza compusi cu gust dulce-amarui si culoare aurie spre maro inchis.",
-    image: "assets/images/sugar-liquid-detail.png",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Bubbles%20in%20glass%20of%20water.jpg?width=1200",
     examples: [
       { name: "Zaharul ars", text: "Exemplul clasic in care zaharul alb devine un lichid brun si aromat." },
       { name: "Legumele sote", text: "Ceapa devine dulce si maronie cand este gatita lent datorita caramelizarii propriilor zaharuri." }
@@ -187,7 +187,7 @@ const reactionDetails = {
     title: "Denaturarea si coagularea",
     description:
       "Denaturarea reprezinta modificarea structurii tridimensionale a proteinelor sub influenta caldurii, acizilor sau fortei mecanice. Coagularea este etapa urmatoare, unde proteinele desfacute se leaga intre ele si formeaza o retea solida.",
-    image: "assets/images/egg-food.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Egg%20food.jpg?width=1200",
     examples: [
       { name: "Oul prajit", text: "Albusul devine alb si solid deoarece proteinele se denatureaza termic si coaguleaza." },
       { name: "Branza", text: "Acidul adaugat in lapte denatureaza cazeina si duce la formarea cheagului." }
@@ -197,7 +197,7 @@ const reactionDetails = {
     title: "Fermentația",
     description:
       "Un proces metabolic prin care microorganismele, precum drojdiile sau bacteriile, transforma glucidele in alcool, acizi sau gaze. Este esentiala pentru conservare si pentru dezvoltarea unor arome complexe.",
-    image: "assets/images/bread-loaves.png",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Brown%20bread%20crust.jpg?width=1200",
     examples: [
       { name: "Iaurtul", text: "Bacteriile lactice transforma lactoza in acid lactic si ingroasa laptele." },
       { name: "Dospirea aluatului", text: "Drojdia produce dioxid de carbon, care creeaza bulele de aer din paine." },
@@ -209,7 +209,7 @@ const reactionDetails = {
     title: "Oxidarea",
     description:
       "Reacția substanțelor din alimente cu oxigenul. În bucătărie apare des oxidarea enzimatică, adică închiderea la culoare a fructelor, dar și râncezirea grăsimilor.",
-    image: "assets/images/sliced-apple.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Sliced%20apple.jpg?width=1200",
     examples: [
       { name: "Marul taiat", text: "Enzimele din mar reactioneaza cu aerul si produc pigmenti bruni." },
       { name: "Vitamina C pe mar", text: "Daca ungem cu o pensula o solutie de vitamina C pe suprafata marului taiat, procesul de oxidare este mult mai intarziat." },
@@ -220,7 +220,7 @@ const reactionDetails = {
     title: "Emulsificarea",
     description:
       "Procesul de amestecare a doua lichide care in mod normal nu se combina, ca apa si uleiul. Un agent emulsificator ajuta la stabilizarea picaturilor mici de ulei in apa.",
-    image: "assets/images/water-polarity.png",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Oil%20and%20water.jpg?width=1200",
     imageFit: "contain",
     examples: [
       { name: "Maioneza", text: "O emulsie stabila de ulei in suc de lamaie sau otet, legata de galbenusul de ou." },
@@ -292,17 +292,20 @@ const parallaxElements = Array.from(document.querySelectorAll("[data-parallax]")
 const pageName = document.body.dataset.page;
 const navLinks = Array.from(document.querySelectorAll(".nav-link[data-page]"));
 
-const GOOGLE_TRANSLATE_LANGS = "ro|en";
+const GOOGLE_TRANSLATE_LANGS = "ro,en";
 
-const setGoogleComboLanguage = (lang) => {
-  const combo = document.querySelector(".goog-te-combo");
-  if (!(combo instanceof HTMLSelectElement)) {
-    return false;
-  }
+const setCookie = (name, value) => {
+  document.cookie = `${name}=${value};path=/;max-age=31536000`;
+  document.cookie = `${name}=${value};domain=.${window.location.hostname};path=/;max-age=31536000`;
+};
 
-  combo.value = lang;
-  combo.dispatchEvent(new Event("change"));
-  return true;
+const getCookie = (name) => {
+  const target = `${name}=`;
+  return document.cookie
+    .split(";")
+    .map((entry) => entry.trim())
+    .find((entry) => entry.startsWith(target))
+    ?.slice(target.length);
 };
 
 const ensureGoogleTranslate = () => {
@@ -313,6 +316,11 @@ const ensureGoogleTranslate = () => {
   const mount = document.createElement("div");
   mount.id = "google_translate_element";
   mount.setAttribute("aria-hidden", "true");
+  mount.style.position = "fixed";
+  mount.style.left = "-9999px";
+  mount.style.bottom = "0";
+  mount.style.opacity = "0.01";
+  mount.style.pointerEvents = "none";
   document.body.append(mount);
 
   window.googleTranslateElementInit = () => {
@@ -350,15 +358,21 @@ const applySiteLanguage = (language) => {
     button.setAttribute("aria-pressed", String(isActive));
   });
 
-  const applied = setGoogleComboLanguage(lang);
-  if (!applied) {
-    let tries = 0;
-    const interval = window.setInterval(() => {
-      tries += 1;
-      if (setGoogleComboLanguage(lang) || tries > 24) {
-        window.clearInterval(interval);
-      }
-    }, 250);
+  const desiredCookie = `/ro/${lang}`;
+  const currentCookie = decodeURIComponent(getCookie("googtrans") || "");
+  const shouldReloadForTranslation = currentCookie !== desiredCookie;
+
+  setCookie("googtrans", desiredCookie);
+
+  if (shouldReloadForTranslation) {
+    const reloadKey = "__lang_reload_guard__";
+    const alreadyReloaded = sessionStorage.getItem(reloadKey) === desiredCookie;
+    if (!alreadyReloaded) {
+      sessionStorage.setItem(reloadKey, desiredCookie);
+      window.location.reload();
+      return;
+    }
+    sessionStorage.removeItem(reloadKey);
   }
 };
 
@@ -391,6 +405,14 @@ document.documentElement.classList.add("js-enhanced");
 mountLanguageSwitcher();
 ensureGoogleTranslate();
 applySiteLanguage(localStorage.getItem("site-language") || "ro");
+
+// Forțează afișarea switch-ului de limbă
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('site-language') || 'ro';
+  document.querySelectorAll('.lang-switch-btn').forEach(btn => {
+    btn.classList.toggle('is-active', btn.dataset.langValue === savedLang);
+  });
+});
 
 const scrollProgress = document.createElement("div");
 scrollProgress.className = "scroll-progress";
@@ -434,6 +456,12 @@ window.addEventListener("pointerdown", (event) => {
   burst.className = "chem-burst";
   burst.style.setProperty("--burst-x", `${event.clientX}px`);
   burst.style.setProperty("--burst-y", `${event.clientY}px`);
+
+  // Paleta de culori noi — vibrant, chimic
+  const colors = ["#f59e0b","#10b981","#3b82f6","#ec4899","#8b5cf6","#f97316","#06b6d4","#ef4444"];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  burst.style.setProperty("--burst-color", color);
+
   document.body.append(burst);
   window.setTimeout(() => burst.remove(), 820);
 }, { passive: true });
@@ -452,7 +480,7 @@ const finaleData = {
   home: {
     intro: {
       kicker: "Mini rezumat",
-      title: "Tot proiectul intr-un traseu de prezentare",
+      title: "Tot proiectul intr-un traseu de invatare",
       text: "Pornesti de la un fenomen observabil, explici moleculele implicate, demonstrezi prin simulator si inchei cu baza de date pentru aditivi."
     },
     panel: `
@@ -528,6 +556,11 @@ const buildQuizFinale = (quiz) => `
 `;
 
 const mountPageFinale = () => {
+  const enableFinaleSection = false;
+  if (!enableFinaleSection) {
+    return;
+  }
+
   const config = finaleData[pageName];
   const main = document.querySelector("main");
 
@@ -845,13 +878,13 @@ const updatePhSimulator = () => {
   phReadout.textContent = `pH ${phValue.toFixed(1)}`;
 
   if (phValue < 4) {
-    phResult.textContent = "Acid puternic: potrivit pentru exemple precum lamaia, otetul si oprirea oxidarii la fructe.";
+    phResult.textContent = "Acid pronuntat: util pentru exemple precum lamaia sau otetul; poate incetini unele procese de oxidare.";
     phResult.style.background = "rgba(255, 107, 87, 0.14)";
     return;
   }
 
   if (phValue < 6.8) {
-    phResult.textContent = "Usor acid: zona multor alimente fermentate, unde gustul si conservarea se modifica vizibil.";
+    phResult.textContent = "Usor acid: interval frecvent in alimente fermentate, unde gustul si stabilitatea se pot modifica vizibil.";
     phResult.style.background = "rgba(245, 225, 191, 0.72)";
     return;
   }
@@ -934,15 +967,11 @@ quizOptions?.addEventListener("click", (event) => {
   const isCorrect = selected.dataset.correct === "true";
   selected.classList.add(isCorrect ? "is-correct" : "is-wrong");
   quizResult.textContent = isCorrect
-    ? "Corect. Reacția Maillard apare între aminoacizi și zaharuri reducătoare la temperatură ridicată."
-    : "Aproape, dar aici răspunsul corect este Reacția Maillard, responsabilă pentru crustă și aroma de copt.";
+    ? "Corect. Reactia Maillard implica aminoacizi si zaharuri reducatoare la temperaturi ridicate, contribuind la culoare si aroma."
+    : "Raspunsul corect este Reactia Maillard, asociata cu brunificarea si aparitia aromelor specifice de copt.";
 });
 
-document.getElementById("presenterModeBtn")?.addEventListener("click", () => {
-  document.body.classList.toggle("presentation-mode");
-  const isActive = document.body.classList.contains("presentation-mode");
-  document.getElementById("presenterModeBtn").textContent = isActive ? "Iesi din prezentare" : "Mod prezentare";
-});
+// Presentation mode disabled for didactic-focused version.
 
 document.querySelectorAll("[data-shiny-text]").forEach((element) => {
   const speed = Number(element.dataset.speed ?? 2);

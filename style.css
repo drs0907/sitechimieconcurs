@@ -81,7 +81,7 @@ a {
 }
 
 .section-header-left {
-  text-align: left;
+  text-align: center;
 }
 
 .section-tag {
@@ -1169,37 +1169,37 @@ img {
 .page-hero-visual.visual-card-bread {
   background-image:
     linear-gradient(135deg, rgba(255, 248, 237, 0.96) 0%, rgba(255, 244, 230, 0.84) 46%, rgba(255, 248, 237, 0.12) 100%),
-    url("assets/images/bread-crust.jpg");
+    url("https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600&q=80");
 }
 
 .page-hero-visual.visual-card-liquid {
   background-image:
     linear-gradient(135deg, rgba(240, 249, 244, 0.96) 0%, rgba(232, 243, 238, 0.84) 46%, rgba(240, 249, 244, 0.12) 100%),
-    url("assets/images/water-pouring.png");
+    url("https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1600&q=80");
 }
 
 .page-hero-visual.visual-card-water {
   background-image:
     linear-gradient(135deg, rgba(241, 249, 250, 0.96) 0%, rgba(231, 243, 245, 0.84) 46%, rgba(241, 249, 250, 0.16) 100%),
-    url("assets/images/water-pouring.png");
+    url("https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=1600&q=80");
 }
 
 .page-hero-visual.visual-card-fruit {
   background-image:
     linear-gradient(135deg, rgba(252, 249, 242, 0.96) 0%, rgba(248, 242, 230, 0.84) 46%, rgba(252, 249, 242, 0.12) 100%),
-    url("assets/images/sliced-apple.jpg");
+    url("https://images.unsplash.com/photo-1568702846914-c74a3d3ed393?w=1600&q=80");
 }
 
 .page-hero-visual.visual-card-books {
   background-image:
     linear-gradient(135deg, rgba(251, 245, 235, 0.96) 0%, rgba(243, 233, 216, 0.88) 46%, rgba(251, 245, 235, 0.18) 100%),
-    url("assets/images/books-shelf.jpg");
+    url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1600&q=80");
 }
 
 .page-hero-visual.visual-card-lab {
   background-image:
     linear-gradient(135deg, rgba(244, 249, 245, 0.96) 0%, rgba(232, 241, 235, 0.88) 46%, rgba(244, 249, 245, 0.14) 100%),
-    url("assets/images/female-lab.jpg");
+    url("https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1600&q=80");
 }
 
 .visual-gallery {
@@ -1282,7 +1282,7 @@ img {
 .visual-card-bread .visual-art {
   background-image:
     linear-gradient(180deg, rgba(84, 48, 20, 0.16) 0%, rgba(84, 48, 20, 0.3) 100%),
-    url("assets/images/bread-crust.jpg");
+    url("https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600&q=80");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1299,7 +1299,7 @@ img {
 .visual-card-liquid .visual-art {
   background-image:
     linear-gradient(180deg, rgba(12, 37, 31, 0.1) 0%, rgba(12, 37, 31, 0.28) 100%),
-    url("assets/images/water-pouring.png");
+    url("https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1600&q=80");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1317,7 +1317,7 @@ img {
 .visual-card-water .visual-art {
   background-image:
     linear-gradient(180deg, rgba(17, 49, 63, 0.08) 0%, rgba(17, 49, 63, 0.24) 100%),
-    url("assets/images/water-pouring.png");
+    url("https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=1600&q=80");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1346,7 +1346,7 @@ img {
 .visual-card-fruit .visual-art {
   background-image:
     linear-gradient(180deg, rgba(76, 55, 18, 0.1) 0%, rgba(76, 55, 18, 0.24) 100%),
-    url("assets/images/sliced-apple.jpg");
+    url("https://images.unsplash.com/photo-1568702846914-c74a3d3ed393?w=1600&q=80");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1363,7 +1363,7 @@ img {
 .visual-card-egg .visual-art {
   background-image:
     linear-gradient(180deg, rgba(89, 57, 21, 0.08) 0%, rgba(89, 57, 21, 0.22) 100%),
-    url("assets/images/egg-food.jpg");
+    url("https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=1600&q=80");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1733,7 +1733,7 @@ img {
   border-radius: 24px;
   background:
     linear-gradient(180deg, rgba(6, 27, 31, 0.94), rgba(13, 77, 63, 0.9)),
-    url("assets/images/female-lab.jpg");
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Female%20in%20laboratory.jpg?width=1600");
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -1789,10 +1789,10 @@ img {
 }
 
 .quiz-options button {
-  justify-content: flex-start;
+  justify-content: center;
   min-height: 52px;
   padding: 0 18px;
-  text-align: left;
+  text-align: center;
   border-radius: 18px;
 }
 
@@ -2541,7 +2541,7 @@ img {
   background: rgba(255, 255, 255, 0.1);
   color: var(--white);
   padding: 12px 14px;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
 }
@@ -3438,8 +3438,8 @@ body[data-page="resurse"] .page-hero {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  border: 2px solid rgba(72, 202, 228, 0.88);
-  box-shadow: 0 0 12px rgba(255, 183, 3, 0.34);
+  border: 2px solid var(--burst-color, rgba(72, 202, 228, 0.88));
+  box-shadow: 0 0 14px var(--burst-color, rgba(255, 183, 3, 0.5));
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0.2);
   animation: chemBurst 760ms ease-out forwards;
@@ -3451,12 +3451,12 @@ body[data-page="resurse"] .page-hero {
   position: absolute;
   inset: -6px;
   border-radius: inherit;
-  border: 1px solid rgba(255, 183, 3, 0.7);
+  border: 1px solid var(--burst-color, rgba(255, 183, 3, 0.7));
   transform: rotate(45deg) scaleX(1.8);
 }
 
 .chem-burst::after {
-  border-color: rgba(255, 90, 95, 0.62);
+  border-color: var(--burst-color, rgba(255, 90, 95, 0.62));
   transform: rotate(-45deg) scaleX(1.8);
 }
 
@@ -3727,7 +3727,7 @@ body[data-page="resurse"] .page-hero {
   color: var(--green-dark);
   font: inherit;
   font-weight: 800;
-  text-align: left;
+  text-align: center;
   padding: 0 16px;
   cursor: pointer;
   transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
@@ -3874,6 +3874,8 @@ body[data-page="resurse"] .page-hero {
   gap: 0.45rem;
   align-items: center;
   text-align: center;
+  justify-self: center;
+  width: min(100%, 280px);
 }
 
 .footer-modern .footer-links a,
@@ -3973,4 +3975,276 @@ body[data-page="resurse"] .page-hero {
   .footer-modern .footer-cta {
     width: 100%;
   }
+}
+
+/* Visual polish and premium footer refresh */
+body {
+  background:
+    radial-gradient(circle at 8% 10%, rgba(77, 166, 255, 0.14), transparent 30%),
+    radial-gradient(circle at 88% 14%, rgba(116, 201, 255, 0.12), transparent 28%),
+    linear-gradient(180deg, #f8fbff 0%, #eef5ff 42%, #f9fbff 100%);
+  color: #13223d;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid rgba(19, 34, 61, 0.1);
+  box-shadow: 0 8px 24px rgba(16, 33, 58, 0.08);
+}
+
+.navbar nav {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(19, 34, 61, 0.08);
+}
+
+.hero-panel,
+.lab-card,
+.feature-card,
+.detail-card,
+.timeline-card,
+.case-card,
+.info-card,
+.link-card,
+.photo-card,
+.additive-result-card,
+.hero-search-box,
+.definition-table,
+.topic-list {
+  border: 1px solid rgba(19, 34, 61, 0.08);
+  box-shadow: 0 14px 36px rgba(16, 33, 58, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.section-showcase {
+  background: linear-gradient(145deg, #0d1f3f 0%, #132b54 46%, #1a3e78 100%);
+  color: rgba(240, 246, 255, 0.86);
+}
+
+.section-tag {
+  color: #2e7fdd;
+}
+
+.button-primary {
+  background: linear-gradient(135deg, #2f8fff, #4fb2ff 52%, #78d0ff);
+  box-shadow: 0 12px 28px rgba(47, 143, 255, 0.28);
+}
+
+.button-secondary {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.footer-modern {
+  margin-top: 3.2rem;
+  padding: 54px 0 0;
+  border-top: 0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(124, 223, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 88% 0%, rgba(155, 188, 255, 0.2), transparent 30%),
+    linear-gradient(145deg, #081227 0%, #0d1f3f 52%, #15335f 100%);
+  color: #eaf2ff;
+}
+
+.footer-modern .footer-contact-grid {
+  grid-template-columns: 1.1fr 0.95fr 1.15fr;
+  gap: 1.25rem;
+  padding-bottom: 1.8rem;
+}
+
+.footer-modern .footer-about,
+.footer-modern .footer-links,
+.footer-modern .footer-contact {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 1.25rem 1.2rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.04));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 14px 30px rgba(2, 8, 20, 0.3);
+}
+
+.footer-modern .footer-about h3 {
+  font-size: 1.42rem;
+  margin: 0.45rem 0 0.55rem;
+}
+
+.footer-badge {
+  background: rgba(124, 223, 255, 0.16);
+  border-color: rgba(124, 223, 255, 0.38);
+  color: #dff6ff;
+}
+
+.footer-modern .footer-text {
+  font-size: 0.98rem;
+  line-height: 1.58;
+  color: #d7e7ff;
+}
+
+.footer-modern .footer-column h4 {
+  text-align: center;
+  font-size: 1.04rem;
+  margin-bottom: 0.85rem;
+}
+
+.footer-modern .footer-links a {
+  min-width: 170px;
+  text-align: center;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.footer-modern .footer-links a:hover {
+  transform: translateY(-1px);
+  background: rgba(124, 223, 255, 0.14);
+  border-color: rgba(124, 223, 255, 0.34);
+}
+
+.footer-modern .footer-contact::after {
+  width: 12px;
+  height: 12px;
+  background: #7ce2ff;
+  box-shadow: 0 0 0 5px rgba(124, 226, 255, 0.2), 0 0 18px rgba(124, 226, 255, 0.56);
+}
+
+.footer-contact-row {
+  font-size: 0.95rem;
+}
+
+.footer-modern .footer-note {
+  color: #c8dbfb;
+}
+
+.footer-modern .footer-cta {
+  background: linear-gradient(135deg, rgba(95, 181, 255, 0.26), rgba(124, 223, 255, 0.18));
+  border-color: rgba(124, 223, 255, 0.44);
+}
+
+.footer-modern .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: #c2d7fa;
+  font-size: 0.88rem;
+}
+
+/* Jury-focused centered layout */
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+span,
+small {
+  text-align: center;
+}
+
+.section-header-left,
+.page-lead,
+.hero-lead,
+.showcase-copy,
+.panel-item,
+.lab-card-head,
+.additive-result-head,
+.definition-row,
+.topic-row,
+.footer-contact,
+.footer-about {
+  text-align: center !important;
+}
+
+.bullet-list,
+.step-list {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.hero-actions,
+.hero-tags,
+.challenge-actions,
+.additive-search-form,
+.additive-chip-list,
+.additive-related-list,
+.footer-modern .footer-links {
+  justify-content: center;
+}
+
+.hero-grid,
+.page-hero-grid,
+.showcase-grid,
+.additive-shell,
+.highlight-grid {
+  justify-items: center;
+}
+
+.feature-card,
+.detail-card,
+.timeline-card,
+.case-card,
+.info-card,
+.link-card,
+.photo-card,
+.lab-card,
+.hero-panel,
+.additive-result-card,
+.definition-table,
+.topic-list {
+  border-radius: 24px;
+  box-shadow: 0 18px 42px rgba(9, 28, 52, 0.14);
+}
+
+.section-tag,
+.card-index,
+.eyebrow,
+.photo-label {
+  letter-spacing: 0.12em;
+}
+
+.hero h1,
+.page-title,
+.showcase-copy h2 {
+  text-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+}
+
+.button {
+  box-shadow: 0 10px 24px rgba(33, 112, 206, 0.22);
+}
+
+.button:hover {
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Home page hard-centering */
+body[data-page="home"] main,
+body[data-page="home"] .section,
+body[data-page="home"] .container,
+body[data-page="home"] .hero-copy,
+body[data-page="home"] .showcase-copy,
+body[data-page="home"] .section-header,
+body[data-page="home"] .panel-item,
+body[data-page="home"] .lab-card,
+body[data-page="home"] .link-card,
+body[data-page="home"] .info-card {
+  text-align: center !important;
+}
+
+body[data-page="home"] .hero-grid,
+body[data-page="home"] .showcase-grid,
+body[data-page="home"] .lab-dashboard,
+body[data-page="home"] .link-grid,
+body[data-page="home"] .info-list,
+body[data-page="home"] .hero-actions,
+body[data-page="home"] .hero-tags,
+body[data-page="home"] .challenge-actions {
+  justify-content: center !important;
+  justify-items: center !important;
+}
+
+body[data-page="home"] .hero-lead,
+body[data-page="home"] .section-header p,
+body[data-page="home"] .showcase-copy p {
+  margin-left: auto;
+  margin-right: auto;
 }
