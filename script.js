@@ -1242,10 +1242,42 @@ const updateAdditiveMeta = (message) => {
   }
 };
 
+const getToxicityLevel = (bodyEffect) => {
+  const text = (bodyEffect || "").toLowerCase();
+  // Check for danger level keywords
+  if (text.includes("pericol") || text.includes("interzis") || text.includes("cancerigen") || 
+      text.includes("evitare obligatorie") || text.includes("evitare strictă") || text.includes("toxic") ||
+      text.includes("periculos")) {
+    return "danger";
+  }
+  // Check for warning level keywords
+  if (text.includes("problemat") || text.includes("atenție") || text.includes("evitare recomandată") || 
+      text.includes("risc")) {
+    return "warning";
+  }
+  // Check for safe level keywords
+  if (text.includes("sigur")) {
+    return "safe";
+  }
+  return "unknown";
+};
+
+const getToxicityLabel = (level) => {
+  switch (level) {
+    case "safe": return "SIGUR";
+    case "warning": return "ATENȚIE";
+    case "danger": return "PERICOL";
+    default: return "NECUNOSCUT";
+  }
+};
+
 const renderAdditiveResult = (selectedAdditive, matches, query) => {
   if (!additiveResult) {
     return;
   }
+
+  const toxicityLevel = getToxicityLevel(selectedAdditive.bodyEffect);
+  const toxicityLabel = getToxicityLabel(toxicityLevel);
 
   const alternateMatches = matches.filter((additive) => additive.code !== selectedAdditive.code).slice(0, 6);
   const relatedMarkup = alternateMatches.length
@@ -1274,9 +1306,8 @@ const renderAdditiveResult = (selectedAdditive, matches, query) => {
         <h2>${escapeHtml(selectedAdditive.name)}</h2>
         <p class="additive-result-summary">${escapeHtml(selectedAdditive.type)}</p>
       </div>
-      <div class="additive-result-stat">
-        <strong>${matches.length}</strong>
-        <span>${matches.length === 1 ? "potrivire" : "potriviri"} pentru "${escapeHtml(query)}"</span>
+      <div class="additive-toxicity-indicator additive-toxicity-${toxicityLevel}" role="status" aria-label="Nivel de toxicitate: ${toxicityLabel}">
+        <span class="additive-toxicity-label">${toxicityLabel}</span>
       </div>
     </div>
     <div class="additive-meta-grid">

@@ -3096,6 +3096,79 @@ body::after {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
+/* Toxicity Indicator - replaces the old stat box */
+.additive-toxicity-indicator {
+  min-width: 120px;
+  padding: 14px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: toxicityPulse 2s ease-in-out infinite;
+}
+
+.additive-toxicity-indicator:hover {
+  transform: scale(1.05);
+}
+
+.additive-toxicity-safe {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.35);
+}
+
+.additive-toxicity-warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+}
+
+.additive-toxicity-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.35);
+}
+
+.additive-toxicity-unknown {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(107, 114, 128, 0.35);
+}
+
+@keyframes toxicityPulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(var(--toxicity-shadow-rgb, 34, 197, 94), 0.35);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(var(--toxicity-shadow-rgb, 34, 197, 94), 0.5);
+  }
+}
+
+.additive-toxicity-safe {
+  --toxicity-shadow-rgb: 34, 197, 94;
+}
+
+.additive-toxicity-warning {
+  --toxicity-shadow-rgb: 245, 158, 11;
+}
+
+.additive-toxicity-danger {
+  --toxicity-shadow-rgb: 239, 68, 68;
+}
+
+.additive-toxicity-unknown {
+  --toxicity-shadow-rgb: 107, 114, 128;
+}
+
+.additive-toxicity-label {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
 .button {
   position: relative;
   overflow: hidden;
