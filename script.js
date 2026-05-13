@@ -451,20 +451,7 @@ window.addEventListener("pointermove", (event) => {
   document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
 }, { passive: true });
 
-window.addEventListener("pointerdown", (event) => {
-  const burst = document.createElement("span");
-  burst.className = "chem-burst";
-  burst.style.setProperty("--burst-x", `${event.clientX}px`);
-  burst.style.setProperty("--burst-y", `${event.clientY}px`);
-
-  // Paleta de culori noi — vibrant, chimic
-  const colors = ["#f59e0b","#10b981","#3b82f6","#ec4899","#8b5cf6","#f97316","#06b6d4","#ef4444"];
-  const color = colors[Math.floor(Math.random() * colors.length)];
-  burst.style.setProperty("--burst-color", color);
-
-  document.body.append(burst);
-  window.setTimeout(() => burst.remove(), 820);
-}, { passive: true });
+// Click burst animation is handled by animations.js (createChemBurst function)
 
 const localLinks = Array.from(document.querySelectorAll("a[href]"))
   .map((link) => link.getAttribute("href"))

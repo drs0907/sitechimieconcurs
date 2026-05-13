@@ -3502,7 +3502,6 @@ body[data-page="resurse"] .page-hero {
   background-position: center;
 }
 
-/* Advanced chemistry animations */
 .chem-burst {
   position: fixed;
   left: var(--burst-x);

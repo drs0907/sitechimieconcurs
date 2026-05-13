@@ -90,6 +90,16 @@ const initScrollReveal = () => {
     el.style.setProperty('--anim-delay', `${(i % 8) * 60}ms`);
     observer.observe(el);
   });
+
+  requestAnimationFrame(() => {
+    targets.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('anim-in');
+        observer.unobserve(el);
+      }
+    });
+  });
 };
 
 // ─── 4. COUNTER ANIMAT PE STAT-CHIPS ─────────────────────────────────────────
@@ -247,7 +257,7 @@ const initSectionGlow = () => {
 };
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
+const initAnimations = () => {
   initCustomCursor();
   initScrollReveal();
   initCounters();
@@ -257,4 +267,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initCardRipple();
   initScrollProgress();
   initSectionGlow();
-});
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAnimations);
+} else {
+  initAnimations();
+}
